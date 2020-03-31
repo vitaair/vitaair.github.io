@@ -150,6 +150,9 @@
 
 <p>可一键部署博客及备份博客源码至github的分支hexoCode上。</p>
 ]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
       <tags>
         <tag>blog</tag>
       </tags>
@@ -246,6 +249,9 @@
 
 <p>访问服务器地址进行检查</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">http:<span class="comment">//vitaair.github.io</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
       <tags>
         <tag>blog</tag>
       </tags>
@@ -263,6 +269,9 @@
 
 <h3 id="步骤4、启动-Gitee-Pages-服务"><a href="#步骤4、启动-Gitee-Pages-服务" class="headerlink" title="步骤4、启动 Gitee Pages 服务"></a>步骤4、启动 Gitee Pages 服务</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">点击gitee页面右上方 service（服务）-&gt; Gitee Pages页面，</span><br><span class="line">进入后点击左下角 “更新” 按钮</span><br><span class="line">更新成功后，页面中间会出现一行橙色字体 “ 已开启Gitee 服务，网站地址是 http:<span class="comment">//vitaair.gitee.io ”</span></span><br></pre></td></tr></table></figure>
 ]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
       <tags>
         <tag>blog</tag>
       </tags>
@@ -284,6 +293,9 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 ]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
       <tags>
         <tag>blog</tag>
       </tags>
