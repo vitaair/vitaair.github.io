@@ -9,8 +9,28 @@
     <atom:link href="/rss2.html" rel="self" type="application/rss+xml"/>
     
     <description>Less is more</description>
-    <pubDate>Tue, 31 Mar 2020 17:26:05 GMT</pubDate>
+    <pubDate>Tue, 31 Mar 2020 18:26:35 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Git常用命令</title>
+      <link>https://vitaair.github.io/blog/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html</link>
+      <guid>https://vitaair.github.io/blog/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html</guid>
+      <pubDate>Tue, 31 Mar 2020 18:13:55 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;h3 id=&quot;本地git获得github的提交权限&quot;&gt;&lt;a href=&quot;#本地git获得github的提交权限&quot; class=&quot;headerlink&quot; title=&quot;本地git获得github的提交权限&quot;&gt;&lt;/a&gt;本地git获得github的提交权限&lt;/h3&gt;&lt;figure c
+        
+      
+      </description>
+      
+      
+      <content:encoded><![CDATA[<h3 id="本地git获得github的提交权限"><a href="#本地git获得github的提交权限" class="headerlink" title="本地git获得github的提交权限"></a>本地git获得github的提交权限</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置用户名和邮箱</span></span><br><span class="line">git config --global user.name <span class="string">'your_name'</span></span><br><span class="line">git config --global user.email <span class="string">'your_email'</span></span><br><span class="line"><span class="comment"># 生成SSH密匙,之后按三次回车</span></span><br><span class="line">ssh-keygen -t rsa -C <span class="string">'your_email'</span></span><br><span class="line"><span class="comment"># 之后再/c/user/用户名/.ssh文件下，找到id_rsa.pub文件，打开复制</span></span><br></pre></td></tr></table></figure><h3 id="添加公钥到github"><a href="#添加公钥到github" class="headerlink" title="添加公钥到github"></a>添加公钥到github</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">添加生成的id_rsa.pub文件中的公钥到github的**setting / SSH AND GPG KEY / SSH keys</span><br></pre></td></tr></table></figure><h3 id="测试是否关联成功"><a href="#测试是否关联成功" class="headerlink" title="测试是否关联成功"></a>测试是否关联成功</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git bash输入ssh git@github.com, 如果提示successfully authenticated则成功</span><br></pre></td></tr></table></figure><h3 id="创建本地仓库"><a href="#创建本地仓库" class="headerlink" title="创建本地仓库"></a>创建本地仓库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cd到项目目录,初始化git仓库</span></span><br><span class="line">git init</span><br><span class="line"><span class="comment"># 把所有项目文件添加到提交暂存区</span></span><br><span class="line">git add .</span><br><span class="line"><span class="comment"># 把暂存区中的内容提交到仓库</span></span><br><span class="line">git commit -m <span class="string">'commit first'</span></span><br></pre></td></tr></table></figure><h3 id="创建远程仓库"><a href="#创建远程仓库" class="headerlink" title="创建远程仓库"></a>创建远程仓库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 登录github，创建仓库，之后复制仓库地址</span></span><br><span class="line">git@github.com:vitaair/hexo_blog.git</span><br></pre></td></tr></table></figure><h3 id="同步本地仓库到远程仓库"><a href="#同步本地仓库到远程仓库" class="headerlink" title="同步本地仓库到远程仓库"></a>同步本地仓库到远程仓库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 关联本地仓库和远程仓库</span></span><br><span class="line">git remote add origin git@github.com:vitaair/hexo_blog.git</span><br><span class="line"><span class="comment"># 把本地仓库内容push到远程仓库的master分支 </span></span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure><blockquote><p><code>push</code>的<code>-u</code>参数是设置本地仓库默认的<code>upstream</code>,这里就是把本地仓库同远程仓库的master分支进行关联，之后在这个仓库pull时不带参数也默认从master分支拉取。</p></blockquote>]]></content:encoded>
+      
+      <comments>https://vitaair.github.io/blog/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html#disqus_thread</comments>
+    </item>
     
     <item>
       <title>心经的不可思议</title>
@@ -93,26 +113,6 @@
       <content:encoded><![CDATA[<p>找到：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">settings-&gt;system settings-&gt;updata</span><br></pre></td></tr></table></figure><p>去掉：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Use secure Connetion</span><br><span class="line">或者</span><br><span class="line">Ignored Updates里的ip:<span class="number">192.7</span><span class="number">.142</span><span class="number">.36</span></span><br></pre></td></tr></table></figure><p>原因：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">是使用了https协议下载导致的问题</span><br></pre></td></tr></table></figure>]]></content:encoded>
       
       <comments>https://vitaair.github.io/blog/Idea%20%E6%8F%92%E4%BB%B6%E4%B8%8B%E8%BD%BD%E8%B6%85%E6%97%B6%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%20.html#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>photoshop cc 2019 主页一直显示正在载入处理</title>
-      <link>https://vitaair.github.io/blog/photoshop%20cc%202019%20%E4%B8%BB%E9%A1%B5%E4%B8%80%E7%9B%B4%E6%98%BE%E7%A4%BA%E6%AD%A3%E5%9C%A8%E8%BD%BD%E5%85%A5%E5%A4%84%E7%90%86.html</link>
-      <guid>https://vitaair.github.io/blog/photoshop%20cc%202019%20%E4%B8%BB%E9%A1%B5%E4%B8%80%E7%9B%B4%E6%98%BE%E7%A4%BA%E6%AD%A3%E5%9C%A8%E8%BD%BD%E5%85%A5%E5%A4%84%E7%90%86.html</guid>
-      <pubDate>Tue, 31 Mar 2020 17:03:55 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;h2 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h2&gt;&lt;p&gt;photoshop 是一款常用的图片处理软件，目前版本已经升级到 CC 2019版本了，2019版软件现在是直接连通网络的，所以打开软件的时
-        
-      
-      </description>
-      
-      
-      <content:encoded><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>photoshop 是一款常用的图片处理软件，目前版本已经升级到 CC 2019版本了，2019版软件现在是直接连通网络的，所以打开软件的时候主页会一直显示正在载入。下面教大家如何关闭主页屏幕</p><h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="1-启动photoshop-cc-2019软件"><a href="#1-启动photoshop-cc-2019软件" class="headerlink" title="1 启动photoshop cc 2019软件"></a>1 启动photoshop cc 2019软件</h3><h3 id="2-我们会看到主页显示“正在载入中”"><a href="#2-我们会看到主页显示“正在载入中”" class="headerlink" title="2 我们会看到主页显示“正在载入中”"></a>2 我们会看到主页显示“正在载入中”</h3><h3 id="3-接下来我们找到上方导航栏目中的“编辑”"><a href="#3-接下来我们找到上方导航栏目中的“编辑”" class="headerlink" title="3 接下来我们找到上方导航栏目中的“编辑”"></a>3 接下来我们找到上方导航栏目中的“编辑”</h3><h3 id="4-鼠标点击“编辑”在下拉菜单中找到“首选项”，点击“首选项”找到“常规”，点击进入"><a href="#4-鼠标点击“编辑”在下拉菜单中找到“首选项”，点击“首选项”找到“常规”，点击进入" class="headerlink" title="4 鼠标点击“编辑”在下拉菜单中找到“首选项”，点击“首选项”找到“常规”，点击进入"></a>4 鼠标点击“编辑”在下拉菜单中找到“首选项”，点击“首选项”找到“常规”，点击进入</h3><h3 id="5-在弹出的窗口中找到“停用主页屏幕”，并勾选上"><a href="#5-在弹出的窗口中找到“停用主页屏幕”，并勾选上" class="headerlink" title="5 在弹出的窗口中找到“停用主页屏幕”，并勾选上"></a>5 在弹出的窗口中找到“停用主页屏幕”，并勾选上</h3><h3 id="6-然后点击“确定”"><a href="#6-然后点击“确定”" class="headerlink" title="6 然后点击“确定”"></a>6 然后点击“确定”</h3><h3 id="7-点击软件右上角的“X”关闭软件"><a href="#7-点击软件右上角的“X”关闭软件" class="headerlink" title="7 点击软件右上角的“X”关闭软件"></a>7 点击软件右上角的“X”关闭软件</h3><h3 id="8-重新启动软件，软件界面的“正在载入”就消失不见了"><a href="#8-重新启动软件，软件界面的“正在载入”就消失不见了" class="headerlink" title="8 重新启动软件，软件界面的“正在载入”就消失不见了"></a>8 重新启动软件，软件界面的“正在载入”就消失不见了</h3>]]></content:encoded>
-      
-      <comments>https://vitaair.github.io/blog/photoshop%20cc%202019%20%E4%B8%BB%E9%A1%B5%E4%B8%80%E7%9B%B4%E6%98%BE%E7%A4%BA%E6%AD%A3%E5%9C%A8%E8%BD%BD%E5%85%A5%E5%A4%84%E7%90%86.html#disqus_thread</comments>
     </item>
     
   </channel>
