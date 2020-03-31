@@ -200,7 +200,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://vitaair.github.io/blog/%E4%BC%98%E5%8C%96Hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2.html">
+    <link itemprop="mainEntityOfPage" href="https://vitaair.github.io/blog/%E5%AD%A6%E4%BC%9A9%E4%B8%AA%E5%8F%A4%E8%80%81%E5%92%92%E8%AF%AD%EF%BC%8C%E9%A9%B1%E5%8A%A8%E4%BD%A0%E7%9A%84%E5%B9%B8%E7%A6%8F%E8%83%BD%E5%9C%BA.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -214,7 +214,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/blog/%E4%BC%98%E5%8C%96Hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2.html" class="post-title-link" itemprop="url">优化Hexo个人博客 </a>
+            <a href="/blog/%E5%AD%A6%E4%BC%9A9%E4%B8%AA%E5%8F%A4%E8%80%81%E5%92%92%E8%AF%AD%EF%BC%8C%E9%A9%B1%E5%8A%A8%E4%BD%A0%E7%9A%84%E5%B9%B8%E7%A6%8F%E8%83%BD%E5%9C%BA.html" class="post-title-link" itemprop="url">学会9个古老咒语，驱动你的幸福能场</a>
         </h2>
 
         <div class="post-meta">
@@ -223,23 +223,17 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-03-31 22:40:54" itemprop="dateCreated datePublished" datetime="2020-03-31T22:40:54+08:00">2020-03-31</time>
+              <time title="创建时间：2020-04-01 00:41:55 / 修改时间：00:44:37" itemprop="dateCreated datePublished" datetime="2020-04-01T00:41:55+08:00">2020-04-01</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-01 00:08:58" itemprop="dateModified" datetime="2020-04-01T00:08:58+08:00">2020-04-01</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/blog/" itemprop="url" rel="index"><span itemprop="name">blog</span></a>
+                  <a href="/categories/%E7%BB%8F%E5%92%92/" itemprop="url" rel="index"><span itemprop="name">经咒</span></a>
                 </span>
             </span>
 
@@ -254,152 +248,101 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="转载自"><a href="#转载自" class="headerlink" title="转载自"></a>转载自</h2><p><a href="https://zhuanlan.zhihu.com/p/71164003" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/71164003</a></p>
-<h2 id="安装主题"><a href="#安装主题" class="headerlink" title="安装主题"></a>安装主题</h2><p>在 Hexo 项目源码目录下，有两个重要的配置文件，其名称均为 _config.yml 。 其中，一份位于站点根目录下，主要包含 Hexo本身的配置；另一份位于主题目录下，主要用于主题相关的配置。为了描述方便，在以下说明中，将前者称为<strong>站点配置文件</strong>， 后者称为<strong>主题配置文件</strong>。</p>
-<h2 id="下载NexT主题"><a href="#下载NexT主题" class="headerlink" title="下载NexT主题"></a>下载NexT主题</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd hexo</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
-
-<h2 id="启用NexT主题"><a href="#启用NexT主题" class="headerlink" title="启用NexT主题"></a>启用NexT主题</h2><p>修改<strong>站点配置文件</strong>，查找关键词theme，并修改为主题名字next：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Extensions    #(注意冒号间的空格)</span><br><span class="line">## Plugins: https:&#x2F;&#x2F;hexo.io&#x2F;plugins&#x2F;</span><br><span class="line">## Themes: https:&#x2F;&#x2F;hexo.io&#x2F;themes&#x2F;</span><br><span class="line">theme: next</span><br></pre></td></tr></table></figure>
-
-<p>在切换主题之后、验证之前， 我们最好使用 hexo clean 来清除 Hexo 的缓存。</p>
-<h2 id="主题设置"><a href="#主题设置" class="headerlink" title="主题设置"></a>主题设置</h2><h2 id="设置Scheme"><a href="#设置Scheme" class="headerlink" title="设置Scheme"></a>设置Scheme</h2><p>在Hexo主题中，有四种不同的模式！进入<strong>主题配置文件</strong>，搜索关键词找到scheme属性，选择自己喜欢的模式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># ---------------------------------------------------------------</span><br><span class="line"># Scheme Settings</span><br><span class="line"># ---------------------------------------------------------------</span><br><span class="line"># Schemes</span><br><span class="line"># scheme: Muse    # 默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白</span><br><span class="line">scheme: Mist     # Muse 的紧凑版本，整洁有序的单栏外观</span><br><span class="line"># scheme: Pisces  # 默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白</span><br><span class="line"># scheme: Gemini  # 类似 Pisces</span><br></pre></td></tr></table></figure>
-
-<h2 id="设置语言"><a href="#设置语言" class="headerlink" title="设置语言"></a>设置语言</h2><p>编辑<strong>站点配置文件</strong>，搜索关键词language，并设置成你所需要的语言：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">language: zh-CN</span><br></pre></td></tr></table></figure>
-
-<h2 id="设置菜单"><a href="#设置菜单" class="headerlink" title="设置菜单"></a>设置菜单</h2><p>进入<strong>主题配置文件</strong>，找到menu字段，菜单内容的设置格式是：item name: link || menu photo，其中item name 是一个名称，link时具体菜单分类，菜单的||后面是菜单的图标,具体菜单图标可参考<a href="https://link.zhihu.com/?target=http%3A//fontawesome.dashgame.com/">Font Awesome</a>网站。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 菜单示例配置</span><br><span class="line">menu:</span><br><span class="line">  home: &#x2F; || home</span><br><span class="line">  reading: &#x2F;reading&#x2F; || book</span><br><span class="line">  archives: &#x2F;archives&#x2F; || archive</span><br><span class="line">  categories: &#x2F;categories&#x2F; || th</span><br><span class="line">  #tags: &#x2F;tags&#x2F; || tags</span><br><span class="line">  about: &#x2F;about&#x2F; || user</span><br></pre></td></tr></table></figure>
-
-<h2 id="头像设置"><a href="#头像设置" class="headerlink" title="头像设置"></a>头像设置</h2><p>在<strong>主题配置文件</strong>，搜索字段avatar，值设置成头像的链接地址。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 将头像放置主题目录下的 source&#x2F;uploads&#x2F; （新建uploads目录若不存在） 配置为：</span><br><span class="line">avatar: &#x2F;uploads&#x2F;avatar.png</span><br><span class="line"># 放置在 source&#x2F;images&#x2F; 目录下, 配置为：</span><br><span class="line">avatar: &#x2F;images&#x2F;avatar.png</span><br><span class="line"># 完整的互联网 URI</span><br><span class="line">avatar:</span><br><span class="line">   url: http:&#x2F;&#x2F;example.com&#x2F;avatar.png</span><br></pre></td></tr></table></figure>
-
-<h2 id="设置侧边栏"><a href="#设置侧边栏" class="headerlink" title="设置侧边栏"></a>设置侧边栏</h2><p>在<strong>主题配置文件</strong>，搜索sidebar关键词，设置为hide模式，如下图所示：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sidebar:</span><br><span class="line">  #display: post    &#x2F;&#x2F; 默认显示方式</span><br><span class="line">  #display: always  &#x2F;&#x2F; 一直显示</span><br><span class="line">  display: hide     &#x2F;&#x2F; 初始隐藏</span><br><span class="line">  #display: remove  &#x2F;&#x2F; 移除侧边栏</span><br></pre></td></tr></table></figure>
-
-<p>各位可根据个人喜好进行设置。</p>
-<h2 id="设置站点描述"><a href="#设置站点描述" class="headerlink" title="设置站点描述"></a>设置站点描述</h2><p>在<strong>站点配置文件</strong>中，搜索关键词Site，如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: Chloneda             #你的站点标题</span><br><span class="line">subtitle: Less is more</span><br><span class="line">description: Less is more   #你的站点描述</span><br><span class="line">keywords: chloneda</span><br><span class="line">author: chloneda            #站点作者</span><br></pre></td></tr></table></figure>
-
-<h2 id="进阶设定"><a href="#进阶设定" class="headerlink" title="进阶设定"></a>进阶设定</h2><h2 id="添加标签页面"><a href="#添加标签页面" class="headerlink" title="添加标签页面"></a>添加标签页面</h2><p>hexo根目录下，执行以下命令，新建标签页面。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
-
-<p>修改站点目录<strong>source/tags</strong>的 index.md 文件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 添加标签页面测试</span><br><span class="line">tags: Test  #添加标签</span><br><span class="line">categories: Test    #添加分类</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<p>修改<strong>主题配置文件</strong>，搜索关键词menu，取消 <strong>#tags: /tags/ || tags</strong>注释，内容如下:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 菜单示例配置</span><br><span class="line">menu:</span><br><span class="line">  home: &#x2F; || home</span><br><span class="line">  reading: &#x2F;reading&#x2F; || book</span><br><span class="line">  archives: &#x2F;archives&#x2F; || archive</span><br><span class="line">  categories: &#x2F;categories&#x2F; || th</span><br><span class="line">  tags: &#x2F;tags&#x2F; || tags</span><br><span class="line">  about: &#x2F;about&#x2F; || user</span><br></pre></td></tr></table></figure>
-
-<h2 id="新添菜单翻译对应的中文"><a href="#新添菜单翻译对应的中文" class="headerlink" title="新添菜单翻译对应的中文"></a>新添菜单翻译对应的中文</h2><p>打开 <strong>hexo&gt;theme&gt;next&gt;languages&gt;zh-CN.yml</strong>文件，在menu下添加 <strong>tags: 标签</strong>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: 首页</span><br><span class="line">  archives: 目录</span><br><span class="line">  categories: 分类</span><br><span class="line">  tags: 标签</span><br><span class="line">  about: 关于</span><br><span class="line">  search: 搜索</span><br><span class="line">  schedule: 日程表</span><br><span class="line">  sitemap: 站点地图</span><br><span class="line">  commonweal: 公益404</span><br><span class="line">  resources: 资源</span><br></pre></td></tr></table></figure>
-
-<p><strong>注：添加其他页面也类似。</strong></p>
-<h2 id="首页显示预览"><a href="#首页显示预览" class="headerlink" title="首页显示预览"></a>首页显示预览</h2><p>首页显示文章列表，列表里的每一篇文章只显示预览，不显示全文。</p>
-<p>进入<strong>主题配置文件</strong>，搜索关键词<strong>auto_excerpt</strong>，把enable对应的false改为true。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Automatically Excerpt. Not recommand.</span><br><span class="line"># Please use &lt;!-- more --&gt; in the post to control excerpt accurately.</span><br><span class="line">auto_excerpt:</span><br><span class="line">  enable: false</span><br><span class="line">  length: 150</span><br></pre></td></tr></table></figure>
-
-<h2 id="友情链接"><a href="#友情链接" class="headerlink" title="友情链接"></a>友情链接</h2><p>打开<strong>主题配置文件</strong>,搜索关键字 Blog rolls,添加自己需要的链接：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">links: #连接</span><br><span class="line">  baidu: https:&#x2F;&#x2F;www.baidu.com&#x2F;</span><br><span class="line">  google: https:&#x2F;&#x2F;www.google.com&#x2F;</span><br></pre></td></tr></table></figure>
-
-<h2 id="本地搜索"><a href="#本地搜索" class="headerlink" title="本地搜索"></a>本地搜索</h2><p>在<strong>Hexo</strong>的根目录下执行以下命令。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
-
-<p>打开<strong>主题配置文件</strong>,搜索关键字local_search,将enable的值设置为 true：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Local search</span><br><span class="line"># Dependencies: https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-generator-searchdb</span><br><span class="line">local_search:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure>
-
-<p>打开<strong>站点配置文件</strong>，搜索关键词search，修改为如下内容：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 本地搜索</span><br><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: 10000</span><br></pre></td></tr></table></figure>
-
-<h2 id="添加RSS"><a href="#添加RSS" class="headerlink" title="添加RSS"></a>添加RSS</h2><p>在Hexo根目录执行安装指令，安装 <strong>hexo-generator-feed</strong> 插件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-feed --save</span><br></pre></td></tr></table></figure>
-
-<p>打开<strong>站点配置文件</strong>，追加feed信息:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 设置RSS</span><br><span class="line">feed:</span><br><span class="line">  type: rss2</span><br><span class="line">  path: rss2.html</span><br><span class="line">  limit: 5</span><br><span class="line">  hub:</span><br><span class="line">  content: &#39;true&#39;</span><br></pre></td></tr></table></figure>
-
-<p>打开<strong>主题配置文件</strong>，找到rss，设置为:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rss: &#x2F;atom.xml</span><br></pre></td></tr></table></figure>
-
-<h2 id="添加社交链接"><a href="#添加社交链接" class="headerlink" title="添加社交链接"></a>添加社交链接</h2><p>在<strong>主题配置文件</strong>中，找到social属性，添加社交链接，步骤如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">social:</span><br><span class="line">  E-Mail: mailto:yourname@gmail.com || envelope</span><br><span class="line">  Google: https:&#x2F;&#x2F;plus.google.com&#x2F;yourname || google</span><br><span class="line">  Twitter: https:&#x2F;&#x2F;twitter.com&#x2F;yourname || twitter</span><br><span class="line">  Facebook: https:&#x2F;&#x2F;www.facebook.com&#x2F;yourname || facebook</span><br></pre></td></tr></table></figure>
-
-<p>格式为： 社交平台名称：链接</p>
-<h2 id="设置代码高亮"><a href="#设置代码高亮" class="headerlink" title="设置代码高亮"></a>设置代码高亮</h2><p>首先需要改动的地方有： + 站点配置文件_config.yml。 + 主题配置文件_config.yml。</p>
-<p>在<strong>站点配置文件</strong>中，搜索highlight关键词:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">highlight:</span><br><span class="line">  enable: true</span><br><span class="line">  line_number: true</span><br><span class="line">  auto_detect: true</span><br><span class="line">  tab_replace:</span><br></pre></td></tr></table></figure>
-
-<p>文字自动检测默认不启动，改成true使其起作用。</p>
-<p>再到<strong>主题配置文件</strong>，搜索highlight_theme关键词，修改代码主题样式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Code Highlight theme</span><br><span class="line"># Available values: normal | night | night eighties | night blue | night bright</span><br><span class="line"># https:&#x2F;&#x2F;github.com&#x2F;chriskempson&#x2F;tomorrow-theme</span><br><span class="line">highlight_theme: night</span><br></pre></td></tr></table></figure>
-
-<h2 id="添加复制按钮"><a href="#添加复制按钮" class="headerlink" title="添加复制按钮"></a>添加复制按钮</h2><p>在<strong>主题配置文件</strong>中，搜索关键词codeblock，将copy_button的enable值修改为true。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">codeblock:</span><br><span class="line">  # Manual define the border radius in codeblock</span><br><span class="line">  # Leave it empty for the default 1</span><br><span class="line">  border_radius:</span><br><span class="line">  # Add copy button on codeblock</span><br><span class="line">  copy_button:</span><br><span class="line">    enable: true</span><br></pre></td></tr></table></figure>
-
-<h2 id="添加阅读次数统计"><a href="#添加阅读次数统计" class="headerlink" title="添加阅读次数统计"></a>添加阅读次数统计</h2><p><strong>主题配置文件</strong>中，搜索关键词busuanzi_count，设置文章阅读次数统计及网站访客量:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># Show Views&#x2F;Visitors of the website&#x2F;page with busuanzi.</span><br><span class="line"># Get more information on http:&#x2F;&#x2F;ibruce.info&#x2F;2015&#x2F;04&#x2F;04&#x2F;busuanzi</span><br><span class="line">busuanzi_count:</span><br><span class="line">  enable: true</span><br><span class="line">  total_visitors: true</span><br><span class="line">  total_visitors_icon: user</span><br><span class="line">  total_views: true</span><br><span class="line">  total_views_icon: eye</span><br><span class="line">  post_views: true</span><br><span class="line">  post_views_icon: eye</span><br></pre></td></tr></table></figure>
-
-<h2 id="添加-README-md"><a href="#添加-README-md" class="headerlink" title="添加 README.md"></a>添加 README.md</h2><p>每个项目<strong>README.md</strong>文件可以简单说明这个项目的用途。在Hexo目录下的 source 根目录下添加一个 README.md 文件，修改<strong>站点配置文件</strong>，将 skip_render 参数的值设置为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">skip_render: README.md</span><br></pre></td></tr></table></figure>
-
-<p>再次使用<strong>hexo d</strong>命令部署博客的时候就不会在渲染 README.md 这个文件。</p>
-<h2 id="进阶配置"><a href="#进阶配置" class="headerlink" title="进阶配置"></a>进阶配置</h2><h2 id="自定义网站头像"><a href="#自定义网站头像" class="headerlink" title="自定义网站头像"></a>自定义网站头像</h2><p>自定义头像可以使用 <strong>比特虫</strong> 网站制作！</p>
-<p>在<strong>主题配置文件</strong>中，按以下修改：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">favicon:</span><br><span class="line">  small: &#x2F;images&#x2F;favicon-16x16-next.png     #你的头像名称</span><br><span class="line">  medium: &#x2F;images&#x2F;favicon-32x32-next.png    #你的头像名称</span><br><span class="line">  apple_touch_icon: &#x2F;images&#x2F;apple-touch-icon-next.png</span><br><span class="line">  safari_pinned_tab: &#x2F;images&#x2F;logo.svg</span><br><span class="line">  #android_manifest: &#x2F;images&#x2F;manifest.json</span><br><span class="line">  #ms_browserconfig: &#x2F;images&#x2F;browserconfig.xml</span><br></pre></td></tr></table></figure>
-
-<h2 id="添加自定义页面-友链"><a href="#添加自定义页面-友链" class="headerlink" title="添加自定义页面[友链]"></a>添加自定义页面[友链]</h2><p><strong>设置菜单项的显示中文文本</strong>，打开<strong>themes/next/languages/zh-CN.yml</strong>文件,搜索 menu 关键字，修改对应中文或者新增。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: 首页</span><br><span class="line">  archives: 目录</span><br><span class="line">  categories: 分类</span><br><span class="line">  tags: 标签</span><br><span class="line">  about: 关于</span><br><span class="line">  search: 搜索</span><br><span class="line">  # schedule: 日程表</span><br><span class="line">  # sitemap: 站点地图</span><br><span class="line">  # commonweal: 公益404</span><br><span class="line">  # 新增menu</span><br><span class="line">  links: 友链 # 新增该选项表示新增“友链”菜单</span><br></pre></td></tr></table></figure>
-
-<p>在<strong>主题配置文件</strong>，搜索menu，新增<strong>links: /links/ || link</strong>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 菜单示例配置</span><br><span class="line">menu:</span><br><span class="line">  home: &#x2F; || home</span><br><span class="line">  reading: &#x2F;reading&#x2F; || book</span><br><span class="line">  archives: &#x2F;archives&#x2F; || archive</span><br><span class="line">  categories: &#x2F;categories&#x2F; || th</span><br><span class="line">  #tags: &#x2F;tags&#x2F; || tags</span><br><span class="line">  about: &#x2F;about&#x2F; || user</span><br><span class="line">  links: &#x2F;links&#x2F; || link</span><br></pre></td></tr></table></figure>
-
-<p>hexo根目录下，执行以下命令，新建友链页面。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page links</span><br></pre></td></tr></table></figure>
-
-<p>修改站点目录下<strong>source/links</strong>的 index.md 文件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 友链</span><br><span class="line">tags: links</span><br><span class="line">categories: links</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<p><strong>注：其它自定义菜单也是类似步骤</strong></p>
-<h2 id="增加背景音乐"><a href="#增加背景音乐" class="headerlink" title="增加背景音乐"></a>增加背景音乐</h2><p>在本博客的<strong>侧边栏</strong>增加网易云音乐，生成音乐外链可参考<strong>链接</strong> ，复制链接，将外链插入到Hexo根路径的侧边栏文件中：<strong>/themes/next/layout/_macro/sidebar.swig</strong>，即侧边栏友情链接<strong>theme.links</strong>这一项之后。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if theme.links %&#125;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;div class&#x3D;&quot;links-of-blogroll-title&quot;&gt;</span><br><span class="line">       ....省略部分代码</span><br><span class="line">      &lt;&#x2F;div&gt;</span><br><span class="line">      &lt;ul class&#x3D;&quot;links-of-blogroll-list&quot;&gt;</span><br><span class="line">        ....省略部分代码</span><br><span class="line">      &lt;&#x2F;ul&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">    &lt;div id&#x3D;&quot;music163player&quot;&gt;</span><br><span class="line">    &lt;iframe frameborder&#x3D;&quot;no&quot; border&#x3D;&quot;0&quot; marginwidth&#x3D;&quot;0&quot; marginheight&#x3D;&quot;0&quot; width&#x3D;330 height&#x3D;86</span><br><span class="line">        src&#x3D;&quot;&#x2F;&#x2F;music.163.com&#x2F;outchain&#x2F;player?type&#x3D;2&amp;id&#x3D;5239700&amp;auto&#x3D;0&amp;height&#x3D;66&quot;&gt;</span><br><span class="line">    &lt;&#x2F;iframe&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="添加打赏功能"><a href="#添加打赏功能" class="headerlink" title="添加打赏功能"></a>添加打赏功能</h2><p>如今已进入知识付费时代，打赏是读者对笔者创造的最大支持，更是对劳动者的尊重。打赏功能具体步骤为： <strong>获取二维码</strong> - 微信二维码的获取（可百度）。 - 获取支付宝收款二维码（可百度）。</p>
-<p><strong>添加二维码图片资源</strong> 得到二维码图片资源后，读者们可将二维码图片放到<strong>NexT根目录/source/images/</strong>文件夹下。</p>
-<p><strong>开启打赏功能</strong> 打开<strong>主题配置文件</strong>，搜索reward关键词，添加打赏的配置信息。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># Reward</span><br><span class="line"># If true, reward would be displayed in every article by default.</span><br><span class="line"># And you can show or hide one article specially through add page variable &#96;reward: true&#x2F;false&#96;.</span><br><span class="line">reward:</span><br><span class="line">  enable: true  &#x2F;&#x2F;默认是false，改为true</span><br><span class="line">  comment: 您的支持是对我最大的鼓励</span><br><span class="line">  wechatpay: &#x2F;images&#x2F;wechatpay.jpg  #图片链接或图片相对路径</span><br><span class="line">  alipay: &#x2F;images&#x2F;alipay.jpg      #图片链接或图片相对路径</span><br></pre></td></tr></table></figure>
-
-<h2 id="开启版权声明"><a href="#开启版权声明" class="headerlink" title="开启版权声明"></a>开启版权声明</h2><p>打开<strong>主题配置文件</strong>,搜索关键字 creative_commons , post 改为 true：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">creative_commons:</span><br><span class="line">  license: by-nc-sa</span><br><span class="line">  sidebar: false</span><br><span class="line">  post: true</span><br></pre></td></tr></table></figure>
-
-<h2 id="优化及设置"><a href="#优化及设置" class="headerlink" title="优化及设置"></a>优化及设置</h2><h2 id="优化url"><a href="#优化url" class="headerlink" title="优化url"></a>优化url</h2><p>seo搜索引擎优化认为，网站的最佳结构是三层，但是默认hexo编译的站点打开文章的url是：sitename/year/mounth/day/title四层的结构，url不利于搜索引擎搜索。</p>
-<p>因此，我们可以将url直接改成sitename/blog/title的形式，同时title最好是用英文，在<strong>站点配置文件</strong>搜索permalink关键词，并修改如下。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">url: https:&#x2F;&#x2F;chloneda.github.io&#x2F;</span><br><span class="line">root: &#x2F;</span><br><span class="line">permalink: &#x2F;blog&#x2F;:title.html</span><br><span class="line">permalink_defaults:</span><br></pre></td></tr></table></figure>
-
-<h2 id="Hexo博客备份"><a href="#Hexo博客备份" class="headerlink" title="Hexo博客备份"></a>Hexo博客备份</h2><p>利用github分支功能进行博客备份，思路说明: + master分支：存放博客的静态网页(默认分支)。 + hexo分支：存放Hexo博客的源码文件。</p>
-<p><strong>master分支部署</strong> 进入<strong>站点配置文件</strong>编辑，搜索deploy关键词：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https:&#x2F;&#x2F;github.com&#x2F;你的github用户名&#x2F;你的github用户名.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>修改更新博客内容并保存。</li>
-<li>执行hexo clean清除本地旧代码。</li>
-<li>执行hexo g -d生成静态网站并部署到GitHub的master分支上。</li>
-</ul>
-<p><strong>hexo分支配置</strong> - hexo分支，该分支为博客源码分支。 - 使用git clone -b hexo 你的github仓库路径， 拷贝源码仓库。 - 修改hexo主配置_config.xml的deploy部分配置，设置静态页面的发布分支为master。 - 添加.gitignore文件，将静态网页的目录及其他无需提交的源文件及目录排除掉。</p>
-<p><strong>博客源码更新</strong> 在本地对博客进行修改后，提交hexo源代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git checkout hexo</span><br><span class="line">git add .</span><br><span class="line">git commit -m &#39;Code update&#39;</span><br><span class="line">git push origin hexo</span><br></pre></td></tr></table></figure>
-
-<p><strong>发布hexo静态文件</strong> hexo根目录依次执行以下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate   或者   hexo g</span><br><span class="line">hexo deploy 或者   hexo d</span><br></pre></td></tr></table></figure>
-
-<p>本地资料丢失或其他主机搭建博客步骤： + 拷贝hexo分支源码到本地：git clone -b hexo github项目地址.git。 + 安装hexo及各类插件。 + 本地安装调试。</p>
-<h2 id="Hexo部署脚本"><a href="#Hexo部署脚本" class="headerlink" title="Hexo部署脚本"></a>Hexo部署脚本</h2><p>Hexo修改后利用deploy.sh脚本一键部署，提高部署效率。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line">DIR&#x3D;&#96;dirname $0&#96;</span><br><span class="line"></span><br><span class="line"># Generate blog</span><br><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">sleep 5</span><br><span class="line"></span><br><span class="line"># Deploy</span><br><span class="line">hexo deploy</span><br><span class="line">sleep 5</span><br><span class="line"></span><br><span class="line"># Push hexo code</span><br><span class="line">git add .</span><br><span class="line">current_date&#x3D;&#96;date &quot;+%Y-%m-%d %H:%M:%S&quot;&#96;</span><br><span class="line">git commit -m &quot;Blog updated: $current_date&quot;</span><br><span class="line"></span><br><span class="line">sleep 2</span><br><span class="line">git push origin hexo</span><br><span class="line"></span><br><span class="line">echo &quot;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&gt;Finish!&lt;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&quot;</span><br></pre></td></tr></table></figure>
-
-<p>把该脚本存放至 hexo根目录中，并附加脚本执行权限:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 775 deploy.sh</span><br></pre></td></tr></table></figure>
-
-<p>在hexo目录根执行脚本:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;deploy.sh</span><br></pre></td></tr></table></figure>
-
-<p>可一键部署博客及备份博客源码至github的分支hexoCode上。</p>
+          <h2 id="零、轉載自：https-www-liaotuo-com"><a href="#零、轉載自：https-www-liaotuo-com" class="headerlink" title="零、轉載自：https://www.liaotuo.com"></a>零、轉載自：<a href="https://www.liaotuo.com" target="_blank" rel="noopener">https://www.liaotuo.com</a></h2><p><img src="https://www.liaotuo.com/uploadfile/2017/0327/20170327103927118.jpeg" alt="学会9个古老咒语，驱动你的幸福能场"></p>
+<p>　　<strong>【第1咒】阿弥陀佛心咒【（ 心念耳闻 ）嗡 阿 弥 爹 哇 噻】</strong>——呼唤宇宙的祝福能量</p>
+<p>　　<strong>【第2咒】六字真言【唵 嘛 呢 叭 咪 吽】</strong>——开启善待自己、善待他人的慈悲心</p>
+<p>　　<strong>【第3咒】文殊咒</strong>【<strong>嗡 阿 喇 巴 札 那 谛</strong>】****——开启<a href="https://www.liaotuo.com/remen/zhihui.html" target="_blank" rel="noopener">智慧</a>的力量</p>
+<p>　　<strong>【第4咒】心经咒【揭谛揭谛 波罗揭谛 波罗僧揭谛 菩提娑婆诃</strong>】——回归心灵的<a href="https://www.liaotuo.com/remen/zizai.html" target="_blank" rel="noopener">自在</a>力</p>
+<p>　　<strong>【第5咒】绿度母心咒【嗡 大咧 度大咧 度咧 梭哈】</strong>——<a href="https://www.liaotuo.com/remen/shengming.html" target="_blank" rel="noopener">生命</a><a href="https://www.liaotuo.com/remen/yuanman.html" target="_blank" rel="noopener">圆满</a>的<a href="https://www.liaotuo.com/remen/qiyuan.html" target="_blank" rel="noopener">祈愿</a></p>
+<p>　　<strong>【第6咒】莲师心咒</strong> 【<strong>嗡 啊 吽 班杂 咕噜 贝玛 悉地 吽</strong>】——净化驱邪第一咒，净<a href="https://www.liaotuo.com/remen/huashen.html" target="_blank" rel="noopener">化身</a>、语、意</p>
+<p>　　<strong>【第7咒】准提心咒 【南无飒哆喃 三藐三菩陀 俱胝喃 怛侄他 唵折戾主戾 准提娑婆诃</strong> 】——接轨宇宙的清净力量</p>
+<p>　　<strong>【第8咒】七佛灭罪真言【离婆离婆帝 求诃求诃帝 陀罗尼帝 尼诃啰帝 毗黎你帝 摩诃伽帝 真陵乾帝 莎婆诃】</strong>——更改业力程式的密码</p>
+<p>　　<strong>【第9咒】药师心咒【 喋雅他嗡 贝堪则贝堪则 玛哈贝堪则 拉杂萨目 嘎喋梭哈】</strong>——疗愈身心的宇宙圣药</p>
+<h2 id="一、咒语为什么有效？"><a href="#一、咒语为什么有效？" class="headerlink" title="一、咒语为什么有效？"></a>一、<a href="https://www.liaotuo.com/remen/zhouyu.html" target="_blank" rel="noopener">咒语</a>为什么有效？</h2><h3 id="1-咒语，宇宙共通的语言"><a href="#1-咒语，宇宙共通的语言" class="headerlink" title="　　1. 咒语，宇宙共通的语言"></a>　　1. 咒语，宇宙共通的语言</h3><p>　　心中存了怎样的念头，就会引动宇宙怎样的力量。</p>
+<h3 id="2-咒语，接通宇宙能量的秘密通道"><a href="#2-咒语，接通宇宙能量的秘密通道" class="headerlink" title="　　2. 咒语，接通宇宙能量的秘密通道"></a>　　2. 咒语，接通宇宙能量的秘密通道</h3><p>　　德国物理学家普朗克说：万物因为力而得以兴起与存在……我们必须得假设在“力”的背后存在有<a href="https://www.liaotuo.com/remen/yishi.html" target="_blank" rel="noopener">意识</a>、有智慧的心智，这个心智就是万物的母体。</p>
+<h3 id="3-咒语完整封存了神圣经典的精髓"><a href="#3-咒语完整封存了神圣经典的精髓" class="headerlink" title="　　3. 咒语完整封存了神圣经典的精髓"></a>　　3. 咒语完整封存了神圣经典的精髓</h3><p>　　咒语是一种神圣的记忆装置，在此装置内“完整封装”了一段神圣经典的核心要义。</p>
+<h3 id="4-细微心念拥有超乎想像的巨大影响力"><a href="#4-细微心念拥有超乎想像的巨大影响力" class="headerlink" title="　　4. 细微心念拥有超乎想像的巨大影响力"></a>　　4. 细微心念拥有超乎想像的巨大影响力</h3><p>　　我们身处在一个看似稳固的世界，事实上这个世界一点也不稳固；相反的，它时时刻刻都在变化。而这看似稳固的状态，其实涵藏无尽的细微变化。</p>
+<h3 id="5-一朝相连，永不分离——从“因缘”到“量子纠缠”的神秘连结"><a href="#5-一朝相连，永不分离——从“因缘”到“量子纠缠”的神秘连结" class="headerlink" title="　　5. 一朝相连，永不分离——从“因缘”到“量子纠缠”的神秘连结"></a>　　5. 一朝相连，永不分离——从“<a href="https://www.liaotuo.com/remen/yinyuan1.html" target="_blank" rel="noopener">因缘</a>”到“量子纠缠”的神秘连结</h3><p>　　一旦两个物体发生连结，它们的关系就永远存在。</p>
+<h3 id="6-心的力量有多大——把“可能”转变为“真实”的超能力"><a href="#6-心的力量有多大——把“可能”转变为“真实”的超能力" class="headerlink" title="　　6. 心的力量有多大——把“可能”转变为“真实”的超能力"></a>　　6. 心的力量有多大——把“可能”转变为“真实”的超能力</h3><p>　　哪怕是一立方公尺的能量，也足以煮沸全世界的海洋。</p>
+<h3 id="7-意识创造出宇宙万物"><a href="#7-意识创造出宇宙万物" class="headerlink" title="　　7. 意识创造出宇宙万物"></a>　　7. 意识创造出宇宙万物</h3><p>　　意识形成能量，能量创造宇宙万物。</p>
+<h3 id="8-接通宇宙意识的直达车"><a href="#8-接通宇宙意识的直达车" class="headerlink" title="　　8. 接通宇宙意识的直达车"></a>　　8. 接通宇宙意识的直达车</h3><p>　　<a href="https://www.liaotuo.com/remen/xinshi.html" target="_blank" rel="noopener">心识</a>意念结合咒语，呼唤宇宙的能量。</p>
+<h2 id="二、学会9个古老咒语，驱动你的幸福能场"><a href="#二、学会9个古老咒语，驱动你的幸福能场" class="headerlink" title="二、学会9个古老咒语，驱动你的幸福能场"></a>二、学会9个古老咒语，驱动你的幸福能场</h2><h3 id="【第1咒】阿弥陀佛心咒——呼唤宇宙的祝福能量"><a href="#【第1咒】阿弥陀佛心咒——呼唤宇宙的祝福能量" class="headerlink" title="　　【第1咒】阿弥陀佛心咒——呼唤宇宙的祝福能量"></a>　　【第1咒】阿弥陀<a href="https://www.liaotuo.com/remen/foxin.html" target="_blank" rel="noopener">佛心</a>咒——呼唤宇宙的祝福能量</h3><p>　　<strong>1. 宇宙西方的智慧光是祝福的源头</strong></p>
+<p>　　呼唤宇宙西方的无量智慧光，与我们的身心灵共振，便是最大的祝福力。</p>
+<p>　　<strong>2. 借助他力，到达净土</strong></p>
+<p>　　人们必须借助宇宙的智慧能量，才有机会前往纯净美好的智慧空间。</p>
+<p>　　<strong>3. 诸佛是宇宙智慧能量的汇聚处</strong></p>
+<p>　　宇宙的智慧能量并非唯一，所有超越时空的诸佛都可以与我们连结。</p>
+<p>　　<strong>4. 唤醒本有的觉醒能力</strong></p>
+<p>　　运用咒语，可以协助人们开发那潜藏在心灵深处的智慧能量。</p>
+<p>　　<strong>5. “南摩”能启动一百分的祝福力</strong></p>
+<p>　　“南摩”是威力强大的咒字，代表心灵意识全部地奉献给神圣的宇宙智者，能启动一百分的祝福能量。</p>
+<h3 id="【第2咒】六字真言——开启善待自己、善待他人的慈悲心"><a href="#【第2咒】六字真言——开启善待自己、善待他人的慈悲心" class="headerlink" title="　　【第2咒】六字真言——开启善待自己、善待他人的慈悲心"></a>　　【第2咒】六字<a href="https://www.liaotuo.com/remen/zhenyan.html" target="_blank" rel="noopener">真言</a>——开启善待自己、善待他人的慈悲心</h3><p>　　<strong>1. 慈悲是宇宙万物的神秘键结</strong></p>
+<p>　　在慈悲里，宇宙神圣意识体与个人意识及潜意识是相连结的</p>
+<p>　　<strong>2. 慈悲的能量作用</strong></p>
+<p>　　自己<a href="https://www.liaotuo.com/remen/jietuo.html" target="_blank" rel="noopener">解脱</a><a href="https://www.liaotuo.com/remen/fannao.html" target="_blank" rel="noopener">烦恼</a>，也要别人一起解脱烦恼，如此才算是圆满。</p>
+<p>　　<strong>3. 启动宇宙的慈悲能量</strong></p>
+<p>　　礼敬莲中宝：不仅为自己，凡事也多为他人着想。</p>
+<p>　　<strong>4. 重整心灵的驱动程式</strong></p>
+<p>　　持咒是向宇宙资料库重新下载心灵程式，让心识回到清明无染的原始状态。</p>
+<p>　　<strong>5. 宇宙运作的两种秩序</strong></p>
+<p>　　在量子力学的前提下，所有事物在具有物质形式之前，都是从一个意识开始。可见的物质世界是“显现于外的秩序”；肉眼看不见的世界充满各种形式能量，是“内在隐含的秩序”。</p>
+<h3 id="【第3咒】文殊咒——开启智慧的力量"><a href="#【第3咒】文殊咒——开启智慧的力量" class="headerlink" title="【第3咒】文殊咒——开启智慧的力量"></a>【第3咒】文殊咒——开启智慧的力量</h3><p>　　<strong>1. 具备人间智慧与觉醒智慧</strong></p>
+<p>　　这股内在心灵与宇宙共通的善与美，就是转化我们所存在之物质世界的神奇力量。</p>
+<p>　　<strong>2. 让咒语启动你的直觉和灵感</strong></p>
+<p>　　咒语无论是有意义或无意义，均蕴藏伟大的能量，丝毫不减损其威力。</p>
+<h3 id="【第4咒】心经咒——回归心灵的自在力"><a href="#【第4咒】心经咒——回归心灵的自在力" class="headerlink" title="　　【第4咒】心经咒——回归心灵的自在力"></a>　　【第4咒】心经咒——回归心灵的自在力</h3><p>　　<strong>1. 获取自在力的途径</strong></p>
+<p>　　由“<a href="https://www.liaotuo.com/remen/rensheng.html" target="_blank" rel="noopener">人生</a>智慧”走向“宇宙智慧”，达到自由自在、心无挂碍的境界。</p>
+<p>　　<strong>2. 经与咒：两种心灵路径</strong></p>
+<p>　　“<a href="https://www.liaotuo.com/remen/dujing.html" target="_blank" rel="noopener">读经</a>”是思维文字语言而体悟的智慧，“持咒”是透过音声直接连通宇宙的智慧。</p>
+<p>　　<strong>3. 念诵梵字咒语的简单法则</strong></p>
+<p>　　<a href="https://www.liaotuo.com/fozhou/" target="_blank" rel="noopener">念咒</a>的第一个简单技巧，就是学会简单的断音法。</p>
+<p>　　<strong>4. 暂停一下！学习四短咒的叮咛</strong></p>
+<p>　　呼唤宇宙无限量的光芒：阿弥陀佛心咒</p>
+<p>　　连结宇宙慈悲的能量：六字真言</p>
+<p>　　下载宇宙智慧的能量：文殊咒</p>
+<p>　　通往宇宙自在大道：心经咒</p>
+<h3 id="【第5咒】绿度母心咒——生命圆满的祈愿"><a href="#【第5咒】绿度母心咒——生命圆满的祈愿" class="headerlink" title="　　【第5咒】绿度母心咒——生命圆满的祈愿"></a>　　【第5咒】绿度母心咒——生命圆满的祈愿</h3><p>　　<strong>1. 让我们都成为度母吧！</strong></p>
+<p>　　嗡！度母啊！祈请度母啊！快速成为度母啊！吉祥成就！</p>
+<p>　　<strong>2. 度母心咒藏有三个幸福码</strong></p>
+<p>　　从物质的满愿，到心灵的救度，再到全宇宙的圆满。</p>
+<h3 id="【第6咒】莲师心咒——净化驱邪第一咒，净化身、语、意"><a href="#【第6咒】莲师心咒——净化驱邪第一咒，净化身、语、意" class="headerlink" title="　　【第6咒】莲师心咒——净化驱邪第一咒，净化身、语、意"></a>　　【第6咒】莲师心咒——净化驱邪第一咒，净化身、语、意</h3><p>　　<strong>1. 第二位人间佛陀——莲华生大师</strong></p>
+<p>　　他的足迹往北到达西藏，往西最远到达阿富汗，往东则曾抵缅甸，在各地留下<a href="https://www.liaotuo.com/remen/fofa.html" target="_blank" rel="noopener">佛法</a>的秘密教导。</p>
+<p>　　<strong>2. 让身、语、意直达宇宙能量场</strong></p>
+<p>　　宇宙最根本的三个音声：“嗡”连结身体，“啊”连结语言，“轰”连结心灵。</p>
+<p>　　<strong>3. 观想能加快持咒的效力</strong></p>
+<p>　　持咒包括三个心理转化过程：“祈求”宇宙能量、“相信”宇宙能量，与最后“接收到”宇宙能量。</p>
+<p>　　<strong>4. 藏传佛教里的本尊相应法</strong></p>
+<p>　　西藏佛教秘密教法里的“究竟本尊”，很接近量子力学里的“万物母体”</p>
+<p>　　<strong>5. 脉轮是能量的启动枢纽</strong></p>
+<p>　　三个咒音“嗡、啊、轰”依序被安置于“顶轮、喉轮、脐轮”三个轮脉，对应出“身、语、意”，是三个重要的能量启动枢纽。</p>
+<h3 id="【第7咒】准提心咒——接轨宇宙的清净力量"><a href="#【第7咒】准提心咒——接轨宇宙的清净力量" class="headerlink" title="　　【第7咒】准提心咒——接轨宇宙的清净力量"></a>　　【第7咒】准提心咒——接轨宇宙的清净力量</h3><p>　　<strong>1. 七千万个宇宙智慧能量的汇聚处</strong></p>
+<p>　　宇宙在过去、现在、未来都存在着智慧、清净的泉源，其中所具有的神奇力量就是“准提”。</p>
+<p>　　<strong>2. 最大的清净力量</strong></p>
+<p>　　下载宇宙的清净力量，回复心灵的原厂设定。</p>
+<p>　　<strong>3. 认识业力这回事</strong></p>
+<p>　　业就好比电脑中无法移除的原始软体，从一出厂就跟着系统程式。</p>
+<h3 id="【第8咒】七佛灭罪真言——更改业力程式的密码"><a href="#【第8咒】七佛灭罪真言——更改业力程式的密码" class="headerlink" title="　　【第8咒】七佛灭罪真言——更改业力程式的密码"></a>　　【第8咒】七佛灭罪真言——更改业力程式的密码</h3><p>　　<strong>1. 请求七位宇宙智者，移除累世业力</strong></p>
+<p>　　引动七位宇宙智慧者的超自然力量，消灭根除因业力而带来的负面能量。</p>
+<p>　　<strong>2. 呼唤超自然力量移除恶业</strong></p>
+<p>　　业力会组成种种的<a href="https://www.liaotuo.com/remen/yinguo.html" target="_blank" rel="noopener">因果</a>关系，想要消除，就要转化负面能量。</p>
+<h3 id="【第9咒】药师咒——疗愈身心的宇宙圣药"><a href="#【第9咒】药师咒——疗愈身心的宇宙圣药" class="headerlink" title="　　【第9咒】药师咒——疗愈身心的宇宙圣药"></a>　　【第9咒】<a href="https://www.liaotuo.com/fozhou/yaoshizhou/42882.html" target="_blank" rel="noopener">药师咒</a>——疗愈身心的宇宙圣药</h3><p>　　<strong>1. 情绪与细胞（DNA）的实验</strong></p>
+<p>　　对于已离开身体的细胞，情绪的影响力依旧存在，彼此的<a href="https://www.liaotuo.com/remen/ganying.html" target="_blank" rel="noopener">感应</a>仍十分强烈且明显。</p>
+<p>　　<strong>2. 以心控物，让药显现</strong></p>
+<p>　　“以心控物”的能力，可以超越时间和空间的限制。</p>
+<p>　　<strong>3. 宇宙大医王的疗愈力</strong></p>
+<p>　　在咒语里融入大医王的智慧明光，疗愈“身体”与“心灵”两种层面的<a href="https://www.liaotuo.com/remen/tongku.html" target="_blank" rel="noopener">痛苦</a>。</p>
+<p>　　<strong>4. 助念是一种神奇的治疗念力</strong></p>
+<p>　　治疗师完全不认识这些病人，也没见过他们，但远距念力所发挥的疗效却令人惊叹不已！</p>
+<h2 id="三、这样持咒才有效！"><a href="#三、这样持咒才有效！" class="headerlink" title="三、这样持咒才有效！"></a>三、这样持咒才有效！</h2><h3 id="1-感激"><a href="#1-感激" class="headerlink" title="　　1. 感激"></a>　　1. 感激</h3><p>　　唯有心灵丰足了，才能心想事成。</p>
+<h3 id="2-远离负面想法"><a href="#2-远离负面想法" class="headerlink" title="　　2. 远离负面想法"></a>　　2. 远离负面想法</h3><p>　　神秘的渴望、远大的目标、崇高的梦想，忽然之间一一实现了。</p>
+<h3 id="3-回到纯净赤裸的心"><a href="#3-回到纯净赤裸的心" class="headerlink" title="　　3. 回到纯净赤裸的心"></a>　　3. 回到纯净赤裸的心</h3><p>　　超越人类语言的限制约束，让自己的心识先回到语言的源头。</p>
+<h3 id="4-回向"><a href="#4-回向" class="headerlink" title="　　4. 回向"></a>　　4. <a href="https://www.liaotuo.com/remen/huixiang.html" target="_blank" rel="noopener">回向</a></h3><p>　　呼唤咒语既能提供“自身”解决问题的能量，也能转化给相连结的“一切生命体”。</p>
+<h3 id="5-持咒可以带来什么生活好处？"><a href="#5-持咒可以带来什么生活好处？" class="headerlink" title="　　5. 持咒可以带来什么生活好处？"></a>　　5. 持咒可以带来什么<a href="https://www.liaotuo.com/remen/shenghuo.html" target="_blank" rel="noopener">生活</a>好处？</h3><p>　　引动宇宙美善的力量，实现自己的愿望。</p>
+<h3 id="6-持咒时，你的心在做什么？"><a href="#6-持咒时，你的心在做什么？" class="headerlink" title="　　6. 持咒时，你的心在做什么？"></a>　　6. 持咒时，你的心在做什么？</h3><p>　　透过咒语进行个人的心智重整，在这难得平静喜悦的片刻，好好地享受宇宙智慧的温暖守护。</p>
+<h3 id="7-随时创造自己的神圣空间"><a href="#7-随时创造自己的神圣空间" class="headerlink" title="　　7. 随时创造自己的神圣空间"></a>　　7. 随时创造自己的神圣空间</h3><p>　　专注的持咒，能创造出自己的神圣空间，轻松撷取宇宙能量。</p>
+<h3 id="8-不同的情况、心境与困难，可以持什么咒？"><a href="#8-不同的情况、心境与困难，可以持什么咒？" class="headerlink" title="　　8. 不同的情况、心境与困难，可以持什么咒？"></a>　　8. 不同的情况、心境与困难，可以持什么咒？</h3><p>　　各个咒语的主要作用都不同，可按自身情况、时地加以选择应用。</p>
+<h2 id="咒语，宇宙共通的语言"><a href="#咒语，宇宙共通的语言" class="headerlink" title="咒语，宇宙共通的语言"></a>咒语，宇宙共通的语言</h2><p>　　心中存了怎样的念头，就会引动宇宙怎样的力量。</p>
+<p>　　人的深层意识是<a href="https://www.liaotuo.com/remen/shane.html" target="_blank" rel="noopener">善恶</a>并存的，既有天使般的善，也有魔鬼般的恶，再良善之人也难免心生恶念，再邪恶者也有心地美好的时刻。每个人的内心都是一个小宇宙，如果我们引发出心中的善，就如同与天使做朋友；诱导出心中的恶，则等同跟魔鬼打交道。一个人内心的小宇宙是这样，我们所身处的这个大宇宙更是如此，某些场域汇聚着正面的智慧能量，某些空间却涵藏着超强破坏力。那么，你心中的念头会引发出正面或负面的能量呢？</p>
 
       
     </div>
@@ -418,7 +361,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -486,20 +429,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
