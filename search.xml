@@ -65,7 +65,9 @@
 <blockquote>
 <p><code>push</code>的<code>-u</code>参数是设置本地仓库默认的<code>upstream</code>,这里就是把本地仓库同远程仓库的master分支进行关联，之后在这个仓库pull时不带参数也默认从master分支拉取。</p>
 </blockquote>
-]]></content>
+<h3 id="删除-idea-文件夹"><a href="#删除-idea-文件夹" class="headerlink" title="删除.idea 文件夹"></a>删除.idea 文件夹</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git rm -r --cached .idea  <span class="comment">#--cached不会把本地的.idea删除</span></span><br><span class="line">git commit -m <span class="string">'delete .idea dir'</span></span><br><span class="line">git push -u origin mastergit remote add origin git@github.com:vitaair/hexo_blog.git</span><br><span class="line"><span class="comment"># 把本地仓库内容push到远程仓库的master分支 </span></span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除-iml文件-先手动删除iml文件-再操作如下指令即可"><a href="#删除-iml文件-先手动删除iml文件-再操作如下指令即可" class="headerlink" title="删除.iml文件(先手动删除iml文件,再操作如下指令即可)"></a>删除.iml文件(先手动删除iml文件,再操作如下指令即可)</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git status                       <span class="comment"># 查看当前状态，确认是否已经删除了iml文件</span></span><br><span class="line">git pull                         <span class="comment"># 不是必要步骤，只要能保证项目是最新的即可</span></span><br><span class="line">git add .                        <span class="comment"># add后面有一个空格然后是 . 号，添加改变的文件</span></span><br><span class="line">git commit -m <span class="string">'delete iml file'</span>  <span class="comment"># 提交到本地仓库</span></span><br><span class="line">git push                         <span class="comment"># 提交到远程仓库</span></span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>terminal</category>
       </categories>
