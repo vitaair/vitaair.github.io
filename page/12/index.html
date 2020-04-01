@@ -200,7 +200,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://vitaair.github.io/blog/%E4%BD%BF%E7%94%A8github%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2.html">
+    <link itemprop="mainEntityOfPage" href="https://vitaair.github.io/blog/%E4%BC%98%E5%8C%96Hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -214,7 +214,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/blog/%E4%BD%BF%E7%94%A8github%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2.html" class="post-title-link" itemprop="url">使用github搭建个人博客</a>
+            <a href="/blog/%E4%BC%98%E5%8C%96Hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2.html" class="post-title-link" itemprop="url">优化Hexo个人博客 </a>
         </h2>
 
         <div class="post-meta">
@@ -223,10 +223,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-03-31 18:34:53 / 修改时间：23:44:54" itemprop="dateCreated datePublished" datetime="2020-03-31T18:34:53+08:00">2020-03-31</time>
+              <time title="创建时间：2020-03-31 22:40:54" itemprop="dateCreated datePublished" datetime="2020-03-31T22:40:54+08:00">2020-03-31</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-01 14:42:06" itemprop="dateModified" datetime="2020-04-01T14:42:06+08:00">2020-04-01</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -248,95 +254,153 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h5 id="步骤一：创建一个自己的github账号"><a href="#步骤一：创建一个自己的github账号" class="headerlink" title="步骤一：创建一个自己的github账号"></a>步骤一：创建一个自己的github账号</h5><h5 id="步骤二：创建一个自己的项目"><a href="#步骤二：创建一个自己的项目" class="headerlink" title="步骤二：创建一个自己的项目"></a>步骤二：创建一个自己的项目</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">注意： 我自己的 github 账号是 vitaair，然后我的github.io的前缀也是vitaair【必须是你的用户名，其它名称无效】</span><br></pre></td></tr></table></figure>
+          <h2 id="转载自"><a href="#转载自" class="headerlink" title="转载自"></a>转载自</h2><p><a href="https://zhuanlan.zhihu.com/p/71164003" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/71164003</a></p>
+<h2 id="安装主题"><a href="#安装主题" class="headerlink" title="安装主题"></a>安装主题</h2><p>在 Hexo 项目源码目录下，有两个重要的配置文件，其名称均为 _config.yml 。 其中，一份位于站点根目录下，主要包含 Hexo本身的配置；另一份位于主题目录下，主要用于主题相关的配置。为了描述方便，在以下说明中，将前者称为<strong>站点配置文件</strong>， 后者称为<strong>主题配置文件</strong>。</p>
+<h2 id="下载NexT主题"><a href="#下载NexT主题" class="headerlink" title="下载NexT主题"></a>下载NexT主题</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd hexo</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
 
-<p>所以我的博客地址就是：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vitaair.github.io</span><br></pre></td></tr></table></figure>
+<h2 id="启用NexT主题"><a href="#启用NexT主题" class="headerlink" title="启用NexT主题"></a>启用NexT主题</h2><p>修改<strong>站点配置文件</strong>，查找关键词theme，并修改为主题名字next：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Extensions    #(注意冒号间的空格)</span><br><span class="line">## Plugins: https:&#x2F;&#x2F;hexo.io&#x2F;plugins&#x2F;</span><br><span class="line">## Themes: https:&#x2F;&#x2F;hexo.io&#x2F;themes&#x2F;</span><br><span class="line">theme: next</span><br></pre></td></tr></table></figure>
 
-<h5 id="步骤三：创建好之后，拉取到本地"><a href="#步骤三：创建好之后，拉取到本地" class="headerlink" title="步骤三：创建好之后，拉取到本地"></a>步骤三：创建好之后，拉取到本地</h5><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">git</span>@github.com:vitaair/vitaair.github.io.git</span><br></pre></td></tr></table></figure>
+<p>在切换主题之后、验证之前， 我们最好使用 hexo clean 来清除 Hexo 的缓存。</p>
+<h2 id="主题设置"><a href="#主题设置" class="headerlink" title="主题设置"></a>主题设置</h2><h2 id="设置Scheme"><a href="#设置Scheme" class="headerlink" title="设置Scheme"></a>设置Scheme</h2><p>在Hexo主题中，有四种不同的模式！进入<strong>主题配置文件</strong>，搜索关键词找到scheme属性，选择自己喜欢的模式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># ---------------------------------------------------------------</span><br><span class="line"># Scheme Settings</span><br><span class="line"># ---------------------------------------------------------------</span><br><span class="line"># Schemes</span><br><span class="line"># scheme: Muse    # 默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白</span><br><span class="line">scheme: Mist     # Muse 的紧凑版本，整洁有序的单栏外观</span><br><span class="line"># scheme: Pisces  # 默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白</span><br><span class="line"># scheme: Gemini  # 类似 Pisces</span><br></pre></td></tr></table></figure>
 
-<h5 id="步骤四：然后采用下面的命令进行添加"><a href="#步骤四：然后采用下面的命令进行添加" class="headerlink" title="步骤四：然后采用下面的命令进行添加"></a>步骤四：然后采用下面的命令进行添加</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">echo <span class="string">"# vitaair.github.io"</span> &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m <span class="string">"first commit"</span></span><br><span class="line">git remote add origin https:<span class="comment">//github.com/vitaair/vitaair.github.io.git</span></span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+<h2 id="设置语言"><a href="#设置语言" class="headerlink" title="设置语言"></a>设置语言</h2><p>编辑<strong>站点配置文件</strong>，搜索关键词language，并设置成你所需要的语言：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">language: zh-CN</span><br></pre></td></tr></table></figure>
 
-<p>仓库地址：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="comment">//github.com/vitaair/vitaair.github.io</span></span><br></pre></td></tr></table></figure>
+<h2 id="设置菜单"><a href="#设置菜单" class="headerlink" title="设置菜单"></a>设置菜单</h2><p>进入<strong>主题配置文件</strong>，找到menu字段，菜单内容的设置格式是：item name: link || menu photo，其中item name 是一个名称，link时具体菜单分类，菜单的||后面是菜单的图标,具体菜单图标可参考<a href="https://link.zhihu.com/?target=http%3A//fontawesome.dashgame.com/">Font Awesome</a>网站。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 菜单示例配置</span><br><span class="line">menu:</span><br><span class="line">  home: &#x2F; || home</span><br><span class="line">  reading: &#x2F;reading&#x2F; || book</span><br><span class="line">  archives: &#x2F;archives&#x2F; || archive</span><br><span class="line">  categories: &#x2F;categories&#x2F; || th</span><br><span class="line">  #tags: &#x2F;tags&#x2F; || tags</span><br><span class="line">  about: &#x2F;about&#x2F; || user</span><br></pre></td></tr></table></figure>
 
-<p>然后就可以访问了：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping vitaair.github.io</span><br></pre></td></tr></table></figure>
+<h2 id="头像设置"><a href="#头像设置" class="headerlink" title="头像设置"></a>头像设置</h2><p>在<strong>主题配置文件</strong>，搜索字段avatar，值设置成头像的链接地址。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 将头像放置主题目录下的 source&#x2F;uploads&#x2F; （新建uploads目录若不存在） 配置为：</span><br><span class="line">avatar: &#x2F;uploads&#x2F;avatar.png</span><br><span class="line"># 放置在 source&#x2F;images&#x2F; 目录下, 配置为：</span><br><span class="line">avatar: &#x2F;images&#x2F;avatar.png</span><br><span class="line"># 完整的互联网 URI</span><br><span class="line">avatar:</span><br><span class="line">   url: http:&#x2F;&#x2F;example.com&#x2F;avatar.png</span><br></pre></td></tr></table></figure>
 
-<h5 id="步骤五：SSH-授权"><a href="#步骤五：SSH-授权" class="headerlink" title="步骤五：SSH 授权"></a>步骤五：SSH 授权</h5><p>本地生成 SSH 秘钥</p>
-<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -<span class="built_in">t</span> rsa -C <span class="string">"vitaair@outlook.com"</span></span><br></pre></td></tr></table></figure>
+<h2 id="设置侧边栏"><a href="#设置侧边栏" class="headerlink" title="设置侧边栏"></a>设置侧边栏</h2><p>在<strong>主题配置文件</strong>，搜索sidebar关键词，设置为hide模式，如下图所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sidebar:</span><br><span class="line">  #display: post    &#x2F;&#x2F; 默认显示方式</span><br><span class="line">  #display: always  &#x2F;&#x2F; 一直显示</span><br><span class="line">  display: hide     &#x2F;&#x2F; 初始隐藏</span><br><span class="line">  #display: remove  &#x2F;&#x2F; 移除侧边栏</span><br></pre></td></tr></table></figure>
 
-<p>生成密钥目录</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">私钥：<span class="selector-tag">id_rsa</span></span><br><span class="line">公钥：<span class="selector-tag">id_rsa</span><span class="selector-class">.pub</span></span><br></pre></td></tr></table></figure>
+<p>各位可根据个人喜好进行设置。</p>
+<h2 id="设置站点描述"><a href="#设置站点描述" class="headerlink" title="设置站点描述"></a>设置站点描述</h2><p>在<strong>站点配置文件</strong>中，搜索关键词Site，如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: Chloneda             #你的站点标题</span><br><span class="line">subtitle: Less is more</span><br><span class="line">description: Less is more   #你的站点描述</span><br><span class="line">keywords: chloneda</span><br><span class="line">author: chloneda            #站点作者</span><br></pre></td></tr></table></figure>
 
-<p>现在用记事本打开 id_rsa.pub，复制文件中的所有内容</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-rsa nTZ34Fj3YtEhct8oEHPk3wshYNCsSj4UdeFNcK26QzpWDv+<span class="number">91</span>nx9uZio62vo/<span class="number">4f</span>LI45yEIq50fRn5chLyin463NtimcN8B+N2k= vitaair<span class="meta">@outlook</span>.com</span><br></pre></td></tr></table></figure>
+<h2 id="进阶设定"><a href="#进阶设定" class="headerlink" title="进阶设定"></a>进阶设定</h2><h2 id="添加标签页面"><a href="#添加标签页面" class="headerlink" title="添加标签页面"></a>添加标签页面</h2><p>hexo根目录下，执行以下命令，新建标签页面。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
 
-<p>访问：</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="regexp">//gi</span>thub.com<span class="regexp">/settings/</span>ssh</span><br></pre></td></tr></table></figure>
+<p>修改站点目录<strong>source/tags</strong>的 index.md 文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 添加标签页面测试</span><br><span class="line">tags: Test  #添加标签</span><br><span class="line">categories: Test    #添加分类</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 
-<p>添加新秘钥</p>
-<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Title</span>：自己随便取</span><br><span class="line"><span class="built_in">Key</span>：  把刚刚复制的都粘贴进来</span><br></pre></td></tr></table></figure>
+<p>修改<strong>主题配置文件</strong>，搜索关键词menu，取消 <strong>#tags: /tags/ || tags</strong>注释，内容如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 菜单示例配置</span><br><span class="line">menu:</span><br><span class="line">  home: &#x2F; || home</span><br><span class="line">  reading: &#x2F;reading&#x2F; || book</span><br><span class="line">  archives: &#x2F;archives&#x2F; || archive</span><br><span class="line">  categories: &#x2F;categories&#x2F; || th</span><br><span class="line">  tags: &#x2F;tags&#x2F; || tags</span><br><span class="line">  about: &#x2F;about&#x2F; || user</span><br></pre></td></tr></table></figure>
 
-<h5 id="步骤六：采用hexo搭建自己博客"><a href="#步骤六：采用hexo搭建自己博客" class="headerlink" title="步骤六：采用hexo搭建自己博客"></a>步骤六：采用hexo搭建自己博客</h5><p>安装cnpm，输入以下命令：</p>
-<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> install -g cnpm --registry=https://registry.<span class="built_in">npm</span>.taobao.org</span><br></pre></td></tr></table></figure>
+<h2 id="新添菜单翻译对应的中文"><a href="#新添菜单翻译对应的中文" class="headerlink" title="新添菜单翻译对应的中文"></a>新添菜单翻译对应的中文</h2><p>打开 <strong>hexo&gt;theme&gt;next&gt;languages&gt;zh-CN.yml</strong>文件，在menu下添加 <strong>tags: 标签</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: 首页</span><br><span class="line">  archives: 目录</span><br><span class="line">  categories: 分类</span><br><span class="line">  tags: 标签</span><br><span class="line">  about: 关于</span><br><span class="line">  search: 搜索</span><br><span class="line">  schedule: 日程表</span><br><span class="line">  sitemap: 站点地图</span><br><span class="line">  commonweal: 公益404</span><br><span class="line">  resources: 资源</span><br></pre></td></tr></table></figure>
 
-<p>新建一个空白的文件夹，比如hexo_blog, 然后采用命令行窗口进入：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<p><strong>注：添加其他页面也类似。</strong></p>
+<h2 id="首页显示预览"><a href="#首页显示预览" class="headerlink" title="首页显示预览"></a>首页显示预览</h2><p>首页显示文章列表，列表里的每一篇文章只显示预览，不显示全文。</p>
+<p>进入<strong>主题配置文件</strong>，搜索关键词<strong>auto_excerpt</strong>，把enable对应的false改为true。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Automatically Excerpt. Not recommand.</span><br><span class="line"># Please use &lt;!-- more --&gt; in the post to control excerpt accurately.</span><br><span class="line">auto_excerpt:</span><br><span class="line">  enable: false</span><br><span class="line">  length: 150</span><br></pre></td></tr></table></figure>
 
-<p>检查是否安装成功：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -version</span><br></pre></td></tr></table></figure>
+<h2 id="友情链接"><a href="#友情链接" class="headerlink" title="友情链接"></a>友情链接</h2><p>打开<strong>主题配置文件</strong>,搜索关键字 Blog rolls,添加自己需要的链接：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">links: #链接接</span><br><span class="line">  baidu: https:&#x2F;&#x2F;www.baidu.com&#x2F;</span><br><span class="line">  google: https:&#x2F;&#x2F;www.google.com&#x2F;</span><br></pre></td></tr></table></figure>
 
-<p>然后运行初始化命令：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+<h2 id="本地搜索"><a href="#本地搜索" class="headerlink" title="本地搜索"></a>本地搜索</h2><p>在<strong>Hexo</strong>的根目录下执行以下命令。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
 
-<p>运行成功会得到如下提示：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INFO  Start blogging with Hexo!</span><br></pre></td></tr></table></figure>
+<p>打开<strong>主题配置文件</strong>,搜索关键字local_search,将enable的值设置为 true：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Local search</span><br><span class="line"># Dependencies: https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-generator-searchdb</span><br><span class="line">local_search:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure>
 
-<p>运行下面来启动服务：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<p>打开<strong>站点配置文件</strong>，搜索关键词search，修改为如下内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 本地搜索</span><br><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: 10000</span><br></pre></td></tr></table></figure>
 
-<p>在浏览器输入地址，可以看到博客已经生成</p>
-<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">http:</span><span class="comment">//localhost:4000/</span></span><br></pre></td></tr></table></figure>
+<h2 id="添加RSS"><a href="#添加RSS" class="headerlink" title="添加RSS"></a>添加RSS</h2><p>在Hexo根目录执行安装指令，安装 <strong>hexo-generator-feed</strong> 插件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-feed --save</span><br></pre></td></tr></table></figure>
 
-<p>下载yelee主题：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:<span class="comment">//github.com/MOxFIVE/hexo-theme-yelee.git themes/yelee</span></span><br></pre></td></tr></table></figure>
+<p>打开<strong>站点配置文件</strong>，追加feed信息:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 设置RSS</span><br><span class="line">feed:</span><br><span class="line">  type: rss2</span><br><span class="line">  path: rss2.html</span><br><span class="line">  limit: 5</span><br><span class="line">  hub:</span><br><span class="line">  content: &#39;true&#39;</span><br></pre></td></tr></table></figure>
 
-<p>下载好主题文件之后，我们现在要修改目录下的项目配置文件：<strong>_config.yml</strong>，该成对应主题目录名，如下:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: yelee</span><br></pre></td></tr></table></figure>
+<p>打开<strong>主题配置文件</strong>，找到rss，设置为:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rss: &#x2F;atom.xml</span><br></pre></td></tr></table></figure>
 
-<p>更改主题目录名后，需要重新生成主题静态内容：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
+<h2 id="添加社交链接"><a href="#添加社交链接" class="headerlink" title="添加社交链接"></a>添加社交链接</h2><p>在<strong>主题配置文件</strong>中，找到social属性，添加社交链接，步骤如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">social:</span><br><span class="line">  E-Mail: mailto:yourname@gmail.com || envelope</span><br><span class="line">  Google: https:&#x2F;&#x2F;plus.google.com&#x2F;yourname || google</span><br><span class="line">  Twitter: https:&#x2F;&#x2F;twitter.com&#x2F;yourname || twitter</span><br><span class="line">  Facebook: https:&#x2F;&#x2F;www.facebook.com&#x2F;yourname || facebook</span><br></pre></td></tr></table></figure>
 
-<p>重启 hexo 本地服务</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<p>格式为： 社交平台名称：链接</p>
+<h2 id="设置代码高亮"><a href="#设置代码高亮" class="headerlink" title="设置代码高亮"></a>设置代码高亮</h2><p>首先需要改动的地方有： + 站点配置文件_config.yml。 + 主题配置文件_config.yml。</p>
+<p>在<strong>站点配置文件</strong>中，搜索highlight关键词:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">highlight:</span><br><span class="line">  enable: true</span><br><span class="line">  line_number: true</span><br><span class="line">  auto_detect: true</span><br><span class="line">  tab_replace:</span><br></pre></td></tr></table></figure>
 
-<p>重新访问</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="comment">//localhost:4000/</span></span><br></pre></td></tr></table></figure>
+<p>文字自动检测默认不启动，改成true使其起作用。</p>
+<p>再到<strong>主题配置文件</strong>，搜索highlight_theme关键词，修改代码主题样式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Code Highlight theme</span><br><span class="line"># Available values: normal | night | night eighties | night blue | night bright</span><br><span class="line"># https:&#x2F;&#x2F;github.com&#x2F;chriskempson&#x2F;tomorrow-theme</span><br><span class="line">highlight_theme: night</span><br></pre></td></tr></table></figure>
 
-<p>要把本地的静态博客同步到 Github，我们还需要先安装两个跟部署相关的 hexo 插件：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cnpm install hexo -server --save</span><br><span class="line">cnpm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<h2 id="添加复制按钮"><a href="#添加复制按钮" class="headerlink" title="添加复制按钮"></a>添加复制按钮</h2><p>在<strong>主题配置文件</strong>中，搜索关键词codeblock，将copy_button的enable值修改为true。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">codeblock:</span><br><span class="line">  # Manual define the border radius in codeblock</span><br><span class="line">  # Leave it empty for the default 1</span><br><span class="line">  border_radius:</span><br><span class="line">  # Add copy button on codeblock</span><br><span class="line">  copy_button:</span><br><span class="line">    enable: true</span><br></pre></td></tr></table></figure>
 
-<p>在配置文件<strong>_config.yml</strong> 中配置</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:vitaair/vitaair.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+<h2 id="添加阅读次数统计"><a href="#添加阅读次数统计" class="headerlink" title="添加阅读次数统计"></a>添加阅读次数统计</h2><p><strong>主题配置文件</strong>中，搜索关键词busuanzi_count，设置文章阅读次数统计及网站访客量:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># Show Views&#x2F;Visitors of the website&#x2F;page with busuanzi.</span><br><span class="line"># Get more information on http:&#x2F;&#x2F;ibruce.info&#x2F;2015&#x2F;04&#x2F;04&#x2F;busuanzi</span><br><span class="line">busuanzi_count:</span><br><span class="line">  enable: true</span><br><span class="line">  total_visitors: true</span><br><span class="line">  total_visitors_icon: user</span><br><span class="line">  total_views: true</span><br><span class="line">  total_views_icon: eye</span><br><span class="line">  post_views: true</span><br><span class="line">  post_views_icon: eye</span><br></pre></td></tr></table></figure>
 
-<p>先清除掉已经生成的旧文件：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+<h2 id="添加-README-md"><a href="#添加-README-md" class="headerlink" title="添加 README.md"></a>添加 README.md</h2><p>每个项目<strong>README.md</strong>文件可以简单说明这个项目的用途。在Hexo目录下的 source 根目录下添加一个 README.md 文件，修改<strong>站点配置文件</strong>，将 skip_render 参数的值设置为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">skip_render: README.md</span><br></pre></td></tr></table></figure>
 
-<p>再生成一次静态文件</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
+<p>再次使用<strong>hexo d</strong>命令部署博客的时候就不会在渲染 README.md 这个文件。</p>
+<h2 id="进阶配置"><a href="#进阶配置" class="headerlink" title="进阶配置"></a>进阶配置</h2><h2 id="自定义网站头像"><a href="#自定义网站头像" class="headerlink" title="自定义网站头像"></a>自定义网站头像</h2><p>自定义头像可以使用 <strong>比特虫</strong> 网站制作！</p>
+<p>在<strong>主题配置文件</strong>中，按以下修改：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">favicon:</span><br><span class="line">  small: &#x2F;images&#x2F;favicon-16x16-next.png     #你的头像名称</span><br><span class="line">  medium: &#x2F;images&#x2F;favicon-32x32-next.png    #你的头像名称</span><br><span class="line">  apple_touch_icon: &#x2F;images&#x2F;apple-touch-icon-next.png</span><br><span class="line">  safari_pinned_tab: &#x2F;images&#x2F;logo.svg</span><br><span class="line">  #android_manifest: &#x2F;images&#x2F;manifest.json</span><br><span class="line">  #ms_browserconfig: &#x2F;images&#x2F;browserconfig.xml</span><br></pre></td></tr></table></figure>
 
-<p>重启 hexo 本地服务</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<h2 id="添加自定义页面-友链"><a href="#添加自定义页面-友链" class="headerlink" title="添加自定义页面[友链]"></a>添加自定义页面[友链]</h2><p><strong>设置菜单项的显示中文文本</strong>，打开<strong>themes/next/languages/zh-CN.yml</strong>文件,搜索 menu 关键字，修改对应中文或者新增。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: 首页</span><br><span class="line">  archives: 目录</span><br><span class="line">  categories: 分类</span><br><span class="line">  tags: 标签</span><br><span class="line">  about: 关于</span><br><span class="line">  search: 搜索</span><br><span class="line">  # schedule: 日程表</span><br><span class="line">  # sitemap: 站点地图</span><br><span class="line">  # commonweal: 公益404</span><br><span class="line">  # 新增menu</span><br><span class="line">  links: 友链 # 新增该选项表示新增“友链”菜单</span><br></pre></td></tr></table></figure>
 
-<p>本地没问题之后， 停掉本地预览</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ctrl + C</span><br></pre></td></tr></table></figure>
+<p>在<strong>主题配置文件</strong>，搜索menu，新增<strong>links: /links/ || link</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 菜单示例配置</span><br><span class="line">menu:</span><br><span class="line">  home: &#x2F; || home</span><br><span class="line">  reading: &#x2F;reading&#x2F; || book</span><br><span class="line">  archives: &#x2F;archives&#x2F; || archive</span><br><span class="line">  categories: &#x2F;categories&#x2F; || th</span><br><span class="line">  #tags: &#x2F;tags&#x2F; || tags</span><br><span class="line">  about: &#x2F;about&#x2F; || user</span><br><span class="line">  links: &#x2F;links&#x2F; || link</span><br></pre></td></tr></table></figure>
 
-<p>部署到 Github 上,有弹出下面提示框，请输入：yes</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<p>hexo根目录下，执行以下命令，新建友链页面。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page links</span><br></pre></td></tr></table></figure>
 
-<p>访问服务器地址进行检查</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="comment">//vitaair.github.io</span></span><br></pre></td></tr></table></figure>
+<p>修改站点目录下<strong>source/links</strong>的 index.md 文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 友链</span><br><span class="line">tags: links</span><br><span class="line">categories: links</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p><strong>注：其它自定义菜单也是类似步骤</strong></p>
+<h2 id="增加背景音乐"><a href="#增加背景音乐" class="headerlink" title="增加背景音乐"></a>增加背景音乐</h2><p>在本博客的<strong>侧边栏</strong>增加网易云音乐，生成音乐外链可参考<strong>链接</strong> ，复制链接，将外链插入到Hexo根路径的侧边栏文件中：<strong>/themes/next/layout/_macro/sidebar.swig</strong>，即侧边栏友情链接<strong>theme.links</strong>这一项之后。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if theme.links %&#125;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;div class&#x3D;&quot;links-of-blogroll-title&quot;&gt;</span><br><span class="line">       ....省略部分代码</span><br><span class="line">      &lt;&#x2F;div&gt;</span><br><span class="line">      &lt;ul class&#x3D;&quot;links-of-blogroll-list&quot;&gt;</span><br><span class="line">        ....省略部分代码</span><br><span class="line">      &lt;&#x2F;ul&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">    &lt;div id&#x3D;&quot;music163player&quot;&gt;</span><br><span class="line">    &lt;iframe frameborder&#x3D;&quot;no&quot; border&#x3D;&quot;0&quot; marginwidth&#x3D;&quot;0&quot; marginheight&#x3D;&quot;0&quot; width&#x3D;330 height&#x3D;86</span><br><span class="line">        src&#x3D;&quot;&#x2F;&#x2F;music.163.com&#x2F;outchain&#x2F;player?type&#x3D;2&amp;id&#x3D;5239700&amp;auto&#x3D;0&amp;height&#x3D;66&quot;&gt;</span><br><span class="line">    &lt;&#x2F;iframe&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="添加打赏功能"><a href="#添加打赏功能" class="headerlink" title="添加打赏功能"></a>添加打赏功能</h2><p>如今已进入知识付费时代，打赏是读者对笔者创造的最大支持，更是对劳动者的尊重。打赏功能具体步骤为： <strong>获取二维码</strong> - 微信二维码的获取（可百度）。 - 获取支付宝收款二维码（可百度）。</p>
+<p><strong>添加二维码图片资源</strong> 得到二维码图片资源后，读者们可将二维码图片放到<strong>NexT根目录/source/images/</strong>文件夹下。</p>
+<p><strong>开启打赏功能</strong> 打开<strong>主题配置文件</strong>，搜索reward关键词，添加打赏的配置信息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># Reward</span><br><span class="line"># If true, reward would be displayed in every article by default.</span><br><span class="line"># And you can show or hide one article specially through add page variable &#96;reward: true&#x2F;false&#96;.</span><br><span class="line">reward:</span><br><span class="line">  enable: true  &#x2F;&#x2F;默认是false，改为true</span><br><span class="line">  comment: 您的支持是对我最大的鼓励</span><br><span class="line">  wechatpay: &#x2F;images&#x2F;wechatpay.jpg  #图片链接或图片相对路径</span><br><span class="line">  alipay: &#x2F;images&#x2F;alipay.jpg      #图片链接或图片相对路径</span><br></pre></td></tr></table></figure>
+
+<h2 id="开启版权声明"><a href="#开启版权声明" class="headerlink" title="开启版权声明"></a>开启版权声明</h2><p>打开<strong>主题配置文件</strong>,搜索关键字 creative_commons , post 改为 true：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">creative_commons:</span><br><span class="line">  license: by-nc-sa</span><br><span class="line">  sidebar: false</span><br><span class="line">  post: true</span><br></pre></td></tr></table></figure>
+
+<h2 id="优化及设置"><a href="#优化及设置" class="headerlink" title="优化及设置"></a>优化及设置</h2><h2 id="优化url"><a href="#优化url" class="headerlink" title="优化url"></a>优化url</h2><p>seo搜索引擎优化认为，网站的最佳结构是三层，但是默认hexo编译的站点打开文章的url是：sitename/year/mounth/day/title四层的结构，url不利于搜索引擎搜索。</p>
+<p>因此，我们可以将url直接改成sitename/blog/title的形式，同时title最好是用英文，在<strong>站点配置文件</strong>搜索permalink关键词，并修改如下。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">url: https:&#x2F;&#x2F;chloneda.github.io&#x2F;</span><br><span class="line">root: &#x2F;</span><br><span class="line">permalink: &#x2F;blog&#x2F;:title.html</span><br><span class="line">permalink_defaults:</span><br></pre></td></tr></table></figure>
+
+<h2 id="Hexo博客备份"><a href="#Hexo博客备份" class="headerlink" title="Hexo博客备份"></a>Hexo博客备份</h2><p>利用github分支功能进行博客备份，思路说明: + master分支：存放博客的静态网页(默认分支)。 + hexo分支：存放Hexo博客的源码文件。</p>
+<p><strong>master分支部署</strong> 进入<strong>站点配置文件</strong>编辑，搜索deploy关键词：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https:&#x2F;&#x2F;github.com&#x2F;你的github用户名&#x2F;你的github用户名.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改更新博客内容并保存。</li>
+<li>执行hexo clean清除本地旧代码。</li>
+<li>执行hexo g -d生成静态网站并部署到GitHub的master分支上。</li>
+</ul>
+<p><strong>hexo分支配置</strong> - hexo分支，该分支为博客源码分支。 - 使用git clone -b hexo 你的github仓库路径， 拷贝源码仓库。 - 修改hexo主配置_config.xml的deploy部分配置，设置静态页面的发布分支为master。 - 添加.gitignore文件，将静态网页的目录及其他无需提交的源文件及目录排除掉。</p>
+<p><strong>博客源码更新</strong> 在本地对博客进行修改后，提交hexo源代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git checkout hexo</span><br><span class="line">git add .</span><br><span class="line">git commit -m &#39;Code update&#39;</span><br><span class="line">git push origin hexo</span><br></pre></td></tr></table></figure>
+
+<p><strong>发布hexo静态文件</strong> hexo根目录依次执行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate   或者   hexo g</span><br><span class="line">hexo deploy 或者   hexo d</span><br></pre></td></tr></table></figure>
+
+<p>本地资料丢失或其他主机搭建博客步骤： + 拷贝hexo分支源码到本地：git clone -b hexo github项目地址.git。 + 安装hexo及各类插件。 + 本地安装调试。</p>
+<h2 id="Hexo部署脚本"><a href="#Hexo部署脚本" class="headerlink" title="Hexo部署脚本"></a>Hexo部署脚本</h2><p>Hexo修改后利用deploy.sh脚本一键部署，提高部署效率。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line">DIR&#x3D;&#96;dirname $0&#96;</span><br><span class="line"></span><br><span class="line"># Generate blog</span><br><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">sleep 5</span><br><span class="line"></span><br><span class="line"># Deploy</span><br><span class="line">hexo deploy</span><br><span class="line">sleep 5</span><br><span class="line"></span><br><span class="line"># Push hexo code</span><br><span class="line">git add .</span><br><span class="line">current_date&#x3D;&#96;date &quot;+%Y-%m-%d %H:%M:%S&quot;&#96;</span><br><span class="line">git commit -m &quot;Blog updated: $current_date&quot;</span><br><span class="line"></span><br><span class="line">sleep 2</span><br><span class="line">git push origin hexo</span><br><span class="line"></span><br><span class="line">echo &quot;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&gt;Finish!&lt;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&quot;</span><br></pre></td></tr></table></figure>
+
+<p>把该脚本存放至 hexo根目录中，并附加脚本执行权限:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 775 deploy.sh</span><br></pre></td></tr></table></figure>
+
+<p>在hexo目录根执行脚本:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;deploy.sh</span><br></pre></td></tr></table></figure>
+
+<p>可一键部署博客及备份博客源码至github的分支hexoCode上。</p>
+
       
     </div>
 
@@ -354,7 +418,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/11/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/13/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/11/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/13/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -422,7 +486,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
