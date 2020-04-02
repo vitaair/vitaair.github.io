@@ -9,8 +9,28 @@
     <atom:link href="/rss2.html" rel="self" type="application/rss+xml"/>
     
     <description>Less is more</description>
-    <pubDate>Wed, 01 Apr 2020 09:03:10 GMT</pubDate>
+    <pubDate>Thu, 02 Apr 2020 03:52:40 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>金光神咒</title>
+      <link>https://vitaair.github.io/blog/%E9%87%91%E5%85%89%E7%A5%9E%E5%92%92.html</link>
+      <guid>https://vitaair.github.io/blog/%E9%87%91%E5%85%89%E7%A5%9E%E5%92%92.html</guid>
+      <pubDate>Thu, 02 Apr 2020 03:51:07 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;天地玄宗，万炁本根。广修亿劫，证吾神通。&lt;br&gt;三界内外，惟道独尊。体有金光，覆映吾身。&lt;br&gt;视之不见，听之不闻。包罗天地，养育群生。&lt;br&gt;受持万遍，身有光明。三界侍卫，五帝司迎。&lt;br&gt;万神朝礼，役使雷霆。鬼妖丧胆，精怪忘形。&lt;br&gt;内有霹雳，雷神隐名。洞慧交彻，五炁
+        
+      
+      </description>
+      
+      
+      <content:encoded><![CDATA[<p>天地玄宗，万炁本根。广修亿劫，证吾神通。<br>三界内外，惟道独尊。体有金光，覆映吾身。<br>视之不见，听之不闻。包罗天地，养育群生。<br>受持万遍，身有光明。三界侍卫，五帝司迎。<br>万神朝礼，役使雷霆。鬼妖丧胆，精怪忘形。<br>内有霹雳，雷神隐名。洞慧交彻，五炁腾腾。<br>金光速现，覆护真人。急急如律令！</p>]]></content:encoded>
+      
+      <comments>https://vitaair.github.io/blog/%E9%87%91%E5%85%89%E7%A5%9E%E5%92%92.html#disqus_thread</comments>
+    </item>
     
     <item>
       <title>求工作疏</title>
@@ -91,27 +111,6 @@
       <content:encoded><![CDATA[<h3 id="本地git获得github的提交权限"><a href="#本地git获得github的提交权限" class="headerlink" title="本地git获得github的提交权限"></a>本地git获得github的提交权限</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置用户名和邮箱</span></span><br><span class="line">git config --global user.name <span class="string">'your_name'</span></span><br><span class="line">git config --global user.email <span class="string">'your_email'</span></span><br><span class="line"><span class="comment"># 生成SSH密匙,之后按三次回车</span></span><br><span class="line">ssh-keygen -t rsa -C <span class="string">'your_email'</span></span><br><span class="line"><span class="comment"># 之后再/c/user/用户名/.ssh文件下，找到id_rsa.pub文件，打开复制</span></span><br></pre></td></tr></table></figure><h3 id="添加公钥到github"><a href="#添加公钥到github" class="headerlink" title="添加公钥到github"></a>添加公钥到github</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">添加生成的id_rsa.pub文件中的公钥到github的**setting / SSH AND GPG KEY / SSH keys</span><br></pre></td></tr></table></figure><h3 id="测试是否关联成功"><a href="#测试是否关联成功" class="headerlink" title="测试是否关联成功"></a>测试是否关联成功</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git bash输入ssh git@github.com, 如果提示successfully authenticated则成功</span><br></pre></td></tr></table></figure><h3 id="创建本地仓库"><a href="#创建本地仓库" class="headerlink" title="创建本地仓库"></a>创建本地仓库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cd到项目目录,初始化git仓库</span></span><br><span class="line">git init</span><br><span class="line"><span class="comment"># 把所有项目文件添加到提交暂存区</span></span><br><span class="line">git add .</span><br><span class="line"><span class="comment"># 把暂存区中的内容提交到仓库</span></span><br><span class="line">git commit -m <span class="string">'commit first'</span></span><br></pre></td></tr></table></figure><h3 id="创建远程仓库"><a href="#创建远程仓库" class="headerlink" title="创建远程仓库"></a>创建远程仓库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 登录github，创建仓库，之后复制仓库地址</span></span><br><span class="line">git@github.com:vitaair/hexo_blog.git</span><br></pre></td></tr></table></figure><h3 id="同步本地仓库到远程仓库"><a href="#同步本地仓库到远程仓库" class="headerlink" title="同步本地仓库到远程仓库"></a>同步本地仓库到远程仓库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 关联本地仓库和远程仓库</span></span><br><span class="line">git remote add origin git@github.com:vitaair/hexo_blog.git</span><br><span class="line"><span class="comment"># 把本地仓库内容push到远程仓库的master分支 </span></span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure><blockquote><p><code>push</code>的<code>-u</code>参数是设置本地仓库默认的<code>upstream</code>,这里就是把本地仓库同远程仓库的master分支进行关联，之后在这个仓库pull时不带参数也默认从master分支拉取。</p></blockquote><h3 id="删除-idea-文件夹"><a href="#删除-idea-文件夹" class="headerlink" title="删除.idea 文件夹"></a>删除.idea 文件夹</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git rm -r --cached .idea  <span class="comment">#--cached不会把本地的.idea删除</span></span><br><span class="line">git commit -m <span class="string">'delete .idea dir'</span></span><br><span class="line">git push -u origin mastergit remote add origin git@github.com:vitaair/hexo_blog.git</span><br><span class="line"><span class="comment"># 把本地仓库内容push到远程仓库的master分支 </span></span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure><h3 id="删除-iml文件-先手动删除iml文件-再操作如下指令即可"><a href="#删除-iml文件-先手动删除iml文件-再操作如下指令即可" class="headerlink" title="删除.iml文件(先手动删除iml文件,再操作如下指令即可)"></a>删除.iml文件(先手动删除iml文件,再操作如下指令即可)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git status                       <span class="comment"># 查看当前状态，确认是否已经删除了iml文件</span></span><br><span class="line">git pull                         <span class="comment"># 不是必要步骤，只要能保证项目是最新的即可</span></span><br><span class="line">git add .                        <span class="comment"># add后面有一个空格然后是 . 号，添加改变的文件</span></span><br><span class="line">git commit -m <span class="string">'delete iml file'</span>  <span class="comment"># 提交到本地仓库</span></span><br><span class="line">git push                         <span class="comment"># 提交到远程仓库</span></span><br></pre></td></tr></table></figure>]]></content:encoded>
       
       <comments>https://vitaair.github.io/blog/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>心经的不可思议</title>
-      <link>https://vitaair.github.io/blog/%E5%BF%83%E7%BB%8F%E7%9A%84%E4%B8%8D%E5%8F%AF%E6%80%9D%E8%AE%AE.html</link>
-      <guid>https://vitaair.github.io/blog/%E5%BF%83%E7%BB%8F%E7%9A%84%E4%B8%8D%E5%8F%AF%E6%80%9D%E8%AE%AE.html</guid>
-      <pubDate>Tue, 31 Mar 2020 17:23:55 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;​        根据一些修行人的经验，心经可以帮你相当大的忙，你可以三遍心经21遍心咒（揭谛揭谛波罗揭谛 波罗僧揭谛菩提娑婆诃。&lt;/p&gt;
-
-        
-      
-      </description>
-      
-      
-      <content:encoded><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>​        根据一些修行人的经验，心经可以帮你相当大的忙，你可以三遍心经21遍心咒（揭谛揭谛波罗揭谛 波罗僧揭谛菩提娑婆诃。</p><p>​        反复的求观世音菩萨帮你达成你心中的好的愿望！一般而言，观世音菩萨绝对会闻声救苦，帮你达成你的善愿，关键就是看你去不去念。其次你要注意的是：<strong>你是念心经，不是首先要去理解其中的深奥意思的。</strong>我的意思就是说：<strong>什么都不管，念就是了！！！</strong></p><h2 id="念的程序是这样的：（口念和心念都无所谓！）"><a href="#念的程序是这样的：（口念和心念都无所谓！）" class="headerlink" title="念的程序是这样的：（口念和心念都无所谓！）"></a>念的程序是这样的：（口念和心念都无所谓！）</h2><p>​        <strong>从头到尾念第一遍</strong></p><p>​        <strong>从头到尾念第二遍</strong></p><p>​        <strong>从头到尾念第三遍</strong></p><p>​        <strong>再念心经心咒21遍（揭谛揭谛 波罗揭谛 波罗僧揭谛 菩提娑婆诃）</strong></p><p>​        再念祈求文：<strong>弟子诚心祈求南无大悲观世音菩萨和诸护法金刚帮弟子达成……（你的良好愿望）</strong></p><p>​        再念感谢文：<strong>弟子诚心感谢南无大悲观世音菩萨和诸护法金刚！</strong></p><h2 id="附：心经全文："><a href="#附：心经全文：" class="headerlink" title="附：心经全文："></a>附：心经全文：</h2><p><strong>《般若波罗蜜多心经》</strong></p><p><strong>观自在菩萨 行深般若波罗蜜多时</strong></p><p><strong>照见五蕴皆空 度一切苦厄</strong></p><p><strong>舍利子</strong></p><p><strong>色不异空 空不异色</strong></p><p><strong>色即是空 空即是色</strong></p><p><strong>受想行识 亦复如是</strong></p><p><strong>舍利子</strong></p><p><strong>是诸法空相 不生不灭</strong></p><p><strong>不垢不净 不增不减</strong></p><p><strong>是故空中无色 无受想行识</strong></p><p><strong>无眼耳鼻舌身意 无色声香味触法</strong></p><p><strong>无眼界 乃至无意识界</strong></p><p><strong>无无明 亦无无明尽</strong></p><p><strong>乃至无老死 亦无老死尽</strong></p><p><strong>无苦集灭道 无智亦无得 以无所得故</strong></p><p><strong>菩提萨陲 依般若波罗蜜多故</strong></p><p><strong>心无挂碍 无挂碍故 无有恐怖</strong></p><p><strong>远离颠倒梦想 究竟涅槃</strong></p><p><strong>三世诸佛 依般若波罗蜜多故</strong></p><p><strong>得阿耨多罗三藐三菩提</strong></p><p><strong>故知般若波罗蜜多</strong></p><p><strong>是大神咒 是大明咒 是无上咒</strong></p><p><strong>是无等等咒 能除一切苦 真实不虚</strong></p><p><strong>故说般若波罗蜜多咒</strong></p><p><strong>即说咒曰 揭谛揭谛 波罗揭谛</strong></p><p><strong>波罗僧揭谛 菩提娑婆诃</strong></p><h2 id="结束语："><a href="#结束语：" class="headerlink" title="结束语："></a>结束语：</h2><p>​        你能遇见心经，就是知！你能念诵心经，就是行！你能得到加持，就是证！</p><p>​        非常的高兴你能念心经，其实这个心经非常的重要，平时有麻烦是可以靠心经来帮你度过难关的！简单又功效宏大！</p><p>​        像这样的三遍心经加21遍心咒，是完整的一次祈愿程序。当然越多次完整的越好，多多益善！到时候你就会知道心经的厉害！多多念心经吧！</p><h2 id="转载："><a href="#转载：" class="headerlink" title="转载："></a>转载：</h2><p>——以上内容转自元音法师，有缘者得之。</p>]]></content:encoded>
-      
-      <comments>https://vitaair.github.io/blog/%E5%BF%83%E7%BB%8F%E7%9A%84%E4%B8%8D%E5%8F%AF%E6%80%9D%E8%AE%AE.html#disqus_thread</comments>
     </item>
     
   </channel>
