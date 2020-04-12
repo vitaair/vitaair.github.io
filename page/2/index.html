@@ -200,7 +200,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://vitaair.github.io/blog/%E9%87%91%E5%85%89%E7%A5%9E%E5%92%92.html">
+    <link itemprop="mainEntityOfPage" href="https://vitaair.github.io/blog/JS%E5%AE%9E%E7%8E%B0%E9%A1%B5%E9%9D%A2%E8%B6%85%E6%97%B6%E5%90%8E%E8%87%AA%E5%8A%A8%E8%B7%B3%E8%BD%AC%E5%88%B0%E7%99%BB%E9%99%86%E9%A1%B5%E9%9D%A2.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -214,7 +214,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/blog/%E9%87%91%E5%85%89%E7%A5%9E%E5%92%92.html" class="post-title-link" itemprop="url">金光神咒</a>
+            <a href="/blog/JS%E5%AE%9E%E7%8E%B0%E9%A1%B5%E9%9D%A2%E8%B6%85%E6%97%B6%E5%90%8E%E8%87%AA%E5%8A%A8%E8%B7%B3%E8%BD%AC%E5%88%B0%E7%99%BB%E9%99%86%E9%A1%B5%E9%9D%A2.html" class="post-title-link" itemprop="url">JS实现页面超时后自动跳转到登陆页面</a>
         </h2>
 
         <div class="post-meta">
@@ -225,7 +225,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-04-02 11:51:07 / 修改时间：11:52:40" itemprop="dateCreated datePublished" datetime="2020-04-02T11:51:07+08:00">2020-04-02</time>
+              <time title="创建时间：2020-04-13 02:20:59 / 修改时间：02:21:49" itemprop="dateCreated datePublished" datetime="2020-04-13T02:20:59+08:00">2020-04-13</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -233,7 +233,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%9C%AF%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">术法</span></a>
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
                 </span>
             </span>
 
@@ -248,7 +248,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>天地玄宗，万炁本根。广修亿劫，证吾神通。<br>三界内外，惟道独尊。体有金光，覆映吾身。<br>视之不见，听之不闻。包罗天地，养育群生。<br>受持万遍，身有光明。三界侍卫，五帝司迎。<br>万神朝礼，役使雷霆。鬼妖丧胆，精怪忘形。<br>内有霹雳，雷神隐名。洞慧交彻，五炁腾腾。<br>金光速现，覆护真人。急急如律令！</p>
+          <p>**</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">转载自：https:<span class="regexp">//</span>blog.csdn.net<span class="regexp">/jfkidear/</span>article<span class="regexp">/details/</span><span class="number">48132819</span></span><br></pre></td></tr></table></figure>
+
+<p>js代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;script language=<span class="string">"javascript"</span>&gt;     </span><br><span class="line"><span class="keyword">var</span> myTime = setTimeout(<span class="string">"Timeout()"</span>, <span class="number">60000</span>);     </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">resetTime</span>(<span class="params"></span>) </span>&#123;     </span><br><span class="line">    clearTimeout(myTime);     </span><br><span class="line">    myTime = setTimeout(<span class="string">'Timeout()'</span>, <span class="number">60000</span>);     </span><br><span class="line">&#125;    </span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Timeout</span>(<span class="params"></span>) </span>&#123;     </span><br><span class="line">    alert(<span class="string">"您的登录已超时, 请点确定后重新登录!"</span>);     </span><br><span class="line">    <span class="built_in">document</span>.location.href=<span class="string">'login.jsp'</span>;     </span><br><span class="line">&#125;     </span><br><span class="line">  </span><br><span class="line"><span class="built_in">document</span>.documentElement.οnkeydοwn=resetTime;    </span><br><span class="line"><span class="built_in">document</span>.doocumentElement.οnclick=resetTime;    </span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>http页面测试效果:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta http-equiv=<span class="string">"Content-Type"</span> content=<span class="string">"text/html; charset=gb2312"</span>&gt;</span><br><span class="line">    &lt;title&gt;gotoing, please waiting .............................&lt;<span class="regexp">/title&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;script language=<span class="string">"JavaScript"</span>&gt;</span><br><span class="line">    <span class="built_in">document</span>.location.href=<span class="string">"http://www.bing.com"</span></span><br><span class="line">    <span class="keyword">var</span> myTime = setTimeout(<span class="string">"Timeout()"</span>, <span class="number">600</span>);</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">resetTime</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        clearTimeout(myTime);</span><br><span class="line">        <span class="keyword">var</span> myTime = setTimeout(<span class="string">"Timeout"</span>,<span class="number">600</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">Timeout</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(<span class="string">"已超时，准备跳转到备用地址"</span>)</span><br><span class="line">        <span class="built_in">document</span>.location.href=<span class="string">"http://www.baidu.com"</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">document</span>.documentElement.onkeydown=resetTime();</span><br><span class="line">    <span class="built_in">document</span>.doocumentElement.οnclick=resetTime;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>body&gt;</span><br><span class="line">&lt;<span class="regexp">/html&gt;</span></span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -267,7 +275,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -335,20 +343,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
