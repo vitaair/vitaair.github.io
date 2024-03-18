@@ -1,0 +1,1094 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>js如何实现页面跳转（大全）</title>
+    <url>//blog/js%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E9%A1%B5%E9%9D%A2%E8%B7%B3%E8%BD%AC%EF%BC%88%E5%A4%A7%E5%85%A8%EF%BC%89.html</url>
+    <content><![CDATA[<h3 id="v-、总结（点击显示或隐藏总结内容）"><a href="#v-、总结（点击显示或隐藏总结内容）" class="headerlink" title="v 、总结（点击显示或隐藏总结内容）"></a>v 、总结（点击显示或隐藏总结内容）</h3><h3 id="一句话总结："><a href="#一句话总结：" class="headerlink" title="一句话总结："></a>一句话总结：</h3><p>1、location的href属性：</p>
+<p>​        js跳转主要是通过window的location对象的href属性，因为location对象本来就是表示的浏览器窗口window的location，那肯定就是这个决定网页的url。</p>
+<p>2、open方法</p>
+<p>3、history对象的三个方法</p>
+<p>4、location的assign方法</p>
+<h3 id="一、测试题-简答题"><a href="#一、测试题-简答题" class="headerlink" title="一、测试题-简答题"></a>一、测试题-简答题</h3><h3 id="1、js跳转的本质是什么？"><a href="#1、js跳转的本质是什么？" class="headerlink" title="1、js跳转的本质是什么？"></a>1、js跳转的本质是什么？</h3><p>解答：浏览器对象窗口location（url）的改变，</p>
+<h3 id="2、js中的window的location对象和网页url相同么？"><a href="#2、js中的window的location对象和网页url相同么？" class="headerlink" title="2、js中的window的location对象和网页url相同么？"></a>2、js中的window的location对象和网页url相同么？</h3><p>解答：其实可以看做是一回事，都是指的网页的网址。</p>
+<h3 id="3、js跳转常用来做哪些事情（两件）？"><a href="#3、js跳转常用来做哪些事情（两件）？" class="headerlink" title="3、js跳转常用来做哪些事情（两件）？"></a>3、js跳转常用来做哪些事情（两件）？</h3><p>解答：a、广告跳转。 b、做链接的效果。</p>
+<h3 id="4、js跳转用到的是哪个对象的哪个属性？"><a href="#4、js跳转用到的是哪个对象的哪个属性？" class="headerlink" title="4、js跳转用到的是哪个对象的哪个属性？"></a>4、js跳转用到的是哪个对象的哪个属性？</h3><p>解答：肯定是location对象的href属性。</p>
+<h3 id="5、js跳转主要的几种方法？"><a href="#5、js跳转主要的几种方法？" class="headerlink" title="5、js跳转主要的几种方法？"></a>5、js跳转主要的几种方法？</h3><p>解答：location的href属性，open方法，hostory对象，location的assign方法</p>
+<h3 id="6、页面停留指定时间再跳转怎么实现？"><a href="#6、页面停留指定时间再跳转怎么实现？" class="headerlink" title="6、页面停留指定时间再跳转怎么实现？"></a>6、页面停留指定时间再跳转怎么实现？</h3><p>解答：函数加timeout定时器实现。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">jumurl</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">window</span>.location.href = <span class="string">'http://www.mahaixiang.cn/'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    setTimeout(jumurl,<span class="number">3000</span>);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="7、解释一下top-location-href-’http-www-mahaixiang-cn-39-这个语句？"><a href="#7、解释一下top-location-href-’http-www-mahaixiang-cn-39-这个语句？" class="headerlink" title="7、解释一下top.location.href=’http://www.mahaixiang.cn/&#39;;这个语句？"></a>7、解释一下top.location.href=’<a href="http://www.mahaixiang.cn/&#39;;这个语句？" target="_blank" rel="noopener">http://www.mahaixiang.cn/&#39;;这个语句？</a></h3><p>解答：页面跳出框架。</p>
+<h3 id="8、location和框架（iframe）配合可以生产各种位置的广告。这句话对么？"><a href="#8、location和框架（iframe）配合可以生产各种位置的广告。这句话对么？" class="headerlink" title="8、location和框架（iframe）配合可以生产各种位置的广告。这句话对么？"></a>8、location和框架（iframe）配合可以生产各种位置的广告。这句话对么？</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">解答：对的。上面是广告下面是站群的代码：</span><br><span class="line">document.writeln("<span class="tag">&lt;<span class="name">iframe</span> <span class="attr">scrolling</span>=<span class="string">'no'</span> <span class="attr">frameborder</span>=<span class="string">'0'</span> <span class="attr">marginheight</span>=<span class="string">'0'</span> <span class="attr">marginwidth</span>=<span class="string">'0'</span> <span class="attr">width</span>=<span class="string">'100%'</span> <span class="attr">height</span>=<span class="string">'5000'</span> <span class="attr">allowTransparency</span> <span class="attr">src</span>=<span class="string">http://www.mahaixiang.cn/</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span>");</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="9、document的write方法和writeIn方法一般是干嘛的？"><a href="#9、document的write方法和writeIn方法一般是干嘛的？" class="headerlink" title="9、document的write方法和writeIn方法一般是干嘛的？"></a>9、document的write方法和writeIn方法一般是干嘛的？</h3><p>解答：向document（页面）里面写入东西的啊。</p>
+<h2 id="二、js如何实现页面跳转（大全）"><a href="#二、js如何实现页面跳转（大全）" class="headerlink" title="二、js如何实现页面跳转（大全）"></a>二、js如何实现页面跳转（大全）</h2><p>​        所谓的js页面跳转就是利用javesrcipt<strong>对打开的页面URL进行跳转</strong>，如我们打开的是A页面，通过javsrcipt脚本就会跳转到B页面。<br>​        目前很多垃圾站经常用js跳转将正常页面跳转到广告页面，当然也有一些网站为了追求吸引人的视觉效果，把一些栏目链接做成js链接，但这是一个比较严重的蜘蛛陷阱，无论是SEO人员还是网站设计人员应当尽力避免。<br>​        很多站长在制作网站的时候，为了某种展示或SEO优化的目的，常常需要利用js跳转效果，所以对于一个站长或SEO来说，熟练的掌握或使用js技术（具体可查看马海祥博客《JavaScript是什么？JavaScript功能有哪些》的相关介绍），已成为一门必学的技能了。<br>​        在我这么多年做SEO的过程中，也收集和使用了很多的js代码，今天我就借助马海祥博客的平台跟大家分享一些常用的js页面跳转代码，希望能对大家有所帮助。</p>
+<h3 id="一、常规的JS页面跳转代码"><a href="#一、常规的JS页面跳转代码" class="headerlink" title="一、常规的JS页面跳转代码"></a>一、常规的JS页面跳转代码</h3><h4 id="1、在原来的窗体中直接跳转用"><a href="#1、在原来的窗体中直接跳转用" class="headerlink" title="1、在原来的窗体中直接跳转用"></a>1、在原来的窗体中直接跳转用</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">	<span class="built_in">window</span>.location.href=<span class="string">"你所要跳转的页面"</span>;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="2、在新窗体中打开页面用："><a href="#2、在新窗体中打开页面用：" class="headerlink" title="2、在新窗体中打开页面用："></a>2、在新窗体中打开页面用：</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">	<span class="built_in">window</span>.open(<span class="string">'你所要跳转的页面'</span>);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="3、JS页面跳转参数的注解"><a href="#3、JS页面跳转参数的注解" class="headerlink" title="3、JS页面跳转参数的注解"></a>3、JS页面跳转参数的注解</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;SCRIPT LANGUAGE=<span class="string">"javascript"</span>&gt;</span><br><span class="line">　　&lt;!--</span><br><span class="line">　　<span class="built_in">window</span>.open (<span class="string">'page.html'</span>, <span class="string">'newwindow'</span>, <span class="string">'height=100, width=400, top=0,left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no'</span>)</span><br><span class="line">　　<span class="comment">//写成一行</span></span><br><span class="line">　　--&gt;</span><br><span class="line">&lt;<span class="regexp">/SCRIPT&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>参数解释：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">‘<span class="tag">&lt;<span class="name">SCRIPT</span> <span class="attr">LANGUAGE</span>=<span class="string">"javascript"</span>&gt;</span>’ js脚本开始；</span><br><span class="line"><span class="javascript">‘<span class="built_in">window</span>.open’ 弹出新窗口的命令；</span></span><br><span class="line"><span class="actionscript"><span class="string">'page.html'</span> 弹出窗口的文件名；</span></span><br><span class="line"><span class="actionscript"><span class="string">'newwindow'</span> 弹出窗口的名字（不是文件名），非必须，可用空<span class="string">'代替；</span></span></span><br><span class="line">‘height=100’ 窗口高度；</span><br><span class="line">‘width=500’ 窗口宽度；</span><br><span class="line">‘top=0’ 窗口距离屏幕上方的象素值；</span><br><span class="line">‘left=0’ 窗口距离屏幕左侧的象素值。</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="二、跳转指定页面的JS代码"><a href="#二、跳转指定页面的JS代码" class="headerlink" title="二、跳转指定页面的JS代码"></a>二、跳转指定页面的JS代码</h3><p>第1种：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script language=<span class="string">"javascript"</span> type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="built_in">window</span>.location.href=<span class="string">"login.jsp?backurl="</span>+<span class="built_in">window</span>.location.href;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>第2种：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script language=<span class="string">"javascript"</span>&gt;</span><br><span class="line">    alert(<span class="string">"返回"</span>);　　<span class="built_in">window</span>.history.back(<span class="number">-1</span>);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>第3种：<strong>这个方法是只针对IE的</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script language=<span class="string">"javascript"</span>&gt;</span><br><span class="line">	<span class="built_in">window</span>.navigate(<span class="string">"top.jsp"</span>);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>第4种：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script language=<span class="string">"JavaScript"</span>&gt; </span><br><span class="line">　　self.location=’top.htm’; </span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>第5种：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script language=<span class="string">"javascript"</span>&gt; </span><br><span class="line">　　alert(<span class="string">"非法访问！"</span>); </span><br><span class="line">　　top.location=’xx.jsp’; </span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="三、页面停留指定时间再跳转（如3秒）"><a href="#三、页面停留指定时间再跳转（如3秒）" class="headerlink" title="三、页面停留指定时间再跳转（如3秒）"></a>三、页面停留指定时间再跳转（如3秒）</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">jumurl</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">window</span>.location.href = <span class="string">'http://www.mahaixiang.cn/'</span>;</span><br><span class="line">	&#125;　　</span><br><span class="line">	setTimeout(jumurl,<span class="number">3000</span>);　　</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="四、根据访客来源跳转的JS代码"><a href="#四、根据访客来源跳转的JS代码" class="headerlink" title="四、根据访客来源跳转的JS代码"></a>四、根据访客来源跳转的JS代码</h3><h4 id="1、JS判断来路代码"><a href="#1、JS判断来路代码" class="headerlink" title="1、JS判断来路代码"></a>1、JS判断来路代码</h4><p>此段代码主要用于百度谷歌点击进入跳转，直接打开网站不跳转：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script LANGUAGE=<span class="string">"Javascript"</span>&gt;</span><br><span class="line">　　<span class="keyword">var</span> s=<span class="built_in">document</span>.referrer</span><br><span class="line">　　<span class="keyword">if</span>(s.indexOf(<span class="string">"google"</span>)&gt;<span class="number">0</span> || s.indexOf(<span class="string">"baidu"</span>)&gt;<span class="number">0</span> || s.indexOf(<span class="string">"yahoo"</span>)&gt;<span class="number">0</span> )</span><br><span class="line">　　location.href=<span class="string">"http://www.mahaixiang.cn/"</span>;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="2、JS直接跳转代码"><a href="#2、JS直接跳转代码" class="headerlink" title="2、JS直接跳转代码"></a>2、JS直接跳转代码</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script LANGUAGE=<span class="string">"Javascript"</span>&gt;　　</span><br><span class="line">    location.href=<span class="string">"http://www.mahaixiang.cn/"</span>;　　</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3、ASP跳转代码判断来路"><a href="#3、ASP跳转代码判断来路" class="headerlink" title="3、ASP跳转代码判断来路"></a>3、ASP跳转代码判断来路</h4><figure class="highlight vbscript"><table><tr><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">　　<span class="keyword">if</span> <span class="built_in">instr</span>(<span class="built_in">Request</span>.ServerVariables(<span class="string">"http_referer"</span>),<span class="string">"www.baidu.com"</span>)&gt;<span class="number">0</span> <span class="keyword">then</span></span><br><span class="line">　　<span class="built_in">response</span>.redirect(<span class="string">"http://www.mahaixiang.cn/"</span>)</span><br><span class="line">　　<span class="keyword">end</span> <span class="keyword">if</span></span><br><span class="line">　　%&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="4、ASP直接跳转的"><a href="#4、ASP直接跳转的" class="headerlink" title="4、ASP直接跳转的"></a>4、ASP直接跳转的</h4><figure class="highlight erlang-repl"><table><tr><td class="code"><pre><span class="line">&lt;<span class="comment">%</span></span><br><span class="line">　　response.redirect(<span class="string">"http://www.mahaixiang.cn/"</span>)</span><br><span class="line">　　<span class="comment">%&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="五、广告与网站页面一起的JS代码"><a href="#五、广告与网站页面一起的JS代码" class="headerlink" title="五、广告与网站页面一起的JS代码"></a>五、广告与网站页面一起的JS代码</h3><h4 id="1、上面是广告下面是站群的代码"><a href="#1、上面是广告下面是站群的代码" class="headerlink" title="1、上面是广告下面是站群的代码"></a>1、上面是广告下面是站群的代码</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">document</span>.writeln(<span class="string">"&lt;iframe scrolling='no' frameborder='0' marginheight='0' marginwidth='0' width='100%' height='5000' allowTransparency src=http://www.mahaixiang.cn/&gt;&lt;/iframe&gt;"</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="2、全部覆盖的代码"><a href="#2、全部覆盖的代码" class="headerlink" title="2、全部覆盖的代码"></a>2、全部覆盖的代码</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">document</span>.write(<span class="string">"&lt;/iframe&gt;&lt;iframe src='http://www.mahaixiang.cn/' rel='nofollow' scrolling='no' frameborder='0' width='100%' height='2000'&gt;"</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="3、混淆防止搜索引擎被查的js调用"><a href="#3、混淆防止搜索引擎被查的js调用" class="headerlink" title="3、混淆防止搜索引擎被查的js调用"></a>3、混淆防止搜索引擎被查的js调用</h4><p>具体的展示上面是广告下面是站群的代码：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> ss = <span class="string">'&lt;center id="showcloneshengxiaon"&gt;&lt;ifr'</span>+<span class="string">'ame scrolling="no" marginheight=0 marginwidth=0 frameborder="0" width="100%" width="14'</span>+<span class="string">'00" height="63'</span>+<span class="string">'50" src="ht'</span>+<span class="string">'tp://'</span>+<span class="string">'ww'</span>+<span class="string">'w.hx'</span>+<span class="string">'zhan'</span>+<span class="string">'qun.c'</span>+<span class="string">'om/"&gt;&lt;/iframe&gt;&lt;/center&gt;'</span>;</span><br><span class="line">　　<span class="built_in">eval</span>(<span class="string">"do"</span>+<span class="string">"cu"</span>+<span class="string">"ment.wr"</span>+<span class="string">"ite('"</span>+ss+<span class="string">"');"</span>); </span><br><span class="line">　　<span class="keyword">try</span>&#123;</span><br><span class="line">　　 setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">　　 <span class="keyword">try</span>&#123;</span><br><span class="line">　　 <span class="built_in">document</span>.getElementById(<span class="string">"div"</span>+<span class="string">"All"</span>).style.display=<span class="string">"no"</span>+<span class="string">"ne"</span>;</span><br><span class="line">　　 &#125;<span class="keyword">catch</span>(e)&#123;&#125;</span><br><span class="line">　　 <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="built_in">document</span>.body.children.length;i++)&#123;</span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line"><span class="keyword">var</span> tagname = <span class="built_in">document</span>.body.children[i].tagName;</span><br><span class="line"><span class="keyword">var</span> myid = <span class="built_in">document</span>.body.children[i].id;</span><br><span class="line"><span class="keyword">if</span>(myid!=<span class="string">"iconDiv1"</span> &amp;&amp; myid!=<span class="string">"showcloneshengxiaon"</span>)&#123;</span><br><span class="line"><span class="comment">// if(tagname!="center")&#123;</span></span><br><span class="line"><span class="built_in">document</span>.body.children[i].style.display=<span class="string">"non"</span>+<span class="string">"e"</span>;</span><br><span class="line"><span class="comment">//&#125;</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;<span class="keyword">catch</span>(e)&#123;&#125;</span><br><span class="line">　　 &#125;</span><br><span class="line">　　 &#125;,<span class="number">100</span>);</span><br><span class="line">　　&#125;<span class="keyword">catch</span>(e)&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="六、页面跳出框架"><a href="#六、页面跳出框架" class="headerlink" title="六、页面跳出框架"></a>六、页面跳出框架</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    top.location.href=<span class="string">'http://www.mahaixiang.cn/'</span>;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="七、返回上一页"><a href="#七、返回上一页" class="headerlink" title="七、返回上一页"></a>七、返回上一页</h3><script type="text/javascript">　　window.history.back(-1);　　</script>点评：虽然目前有的搜索引擎技术已经能够得到javescipt脚本上的链接，甚至能执行脚本并跟踪链接，但对于一些权重比较低的网站，搜索引擎觉得没有必要，不会浪费精力去抓取分析，不过，对于实现网站的某种特效，还是有很大帮助的。
+
+<p>参考：</p>
+<figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">https:</span><span class="comment">//www.cnblogs.com/cyy-13/p/5775344.html</span></span><br><span class="line"><span class="symbol">https:</span><span class="comment">//www.cnblogs.com/Renyi-Fan/p/9130325.html</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JS实现页面超时后自动跳转到登陆页面</title>
+    <url>//blog/JS%E5%AE%9E%E7%8E%B0%E9%A1%B5%E9%9D%A2%E8%B6%85%E6%97%B6%E5%90%8E%E8%87%AA%E5%8A%A8%E8%B7%B3%E8%BD%AC%E5%88%B0%E7%99%BB%E9%99%86%E9%A1%B5%E9%9D%A2.html</url>
+    <content><![CDATA[<p>**</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">转载自：https:<span class="regexp">//</span>blog.csdn.net<span class="regexp">/jfkidear/</span>article<span class="regexp">/details/</span><span class="number">48132819</span></span><br></pre></td></tr></table></figure>
+
+<p>js代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script language=<span class="string">"javascript"</span>&gt;     </span><br><span class="line"><span class="keyword">var</span> myTime = setTimeout(<span class="string">"Timeout()"</span>, <span class="number">60000</span>);     </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">resetTime</span>(<span class="params"></span>) </span>&#123;     </span><br><span class="line">    clearTimeout(myTime);     </span><br><span class="line">    myTime = setTimeout(<span class="string">'Timeout()'</span>, <span class="number">60000</span>);     </span><br><span class="line">&#125;    </span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Timeout</span>(<span class="params"></span>) </span>&#123;     </span><br><span class="line">    alert(<span class="string">"您的登录已超时, 请点确定后重新登录!"</span>);     </span><br><span class="line">    <span class="built_in">document</span>.location.href=<span class="string">'login.jsp'</span>;     </span><br><span class="line">&#125;     </span><br><span class="line">  </span><br><span class="line"><span class="built_in">document</span>.documentElement.οnkeydοwn=resetTime;    </span><br><span class="line"><span class="built_in">document</span>.doocumentElement.οnclick=resetTime;    </span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>http页面测试效果:</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta http-equiv=<span class="string">"Content-Type"</span> content=<span class="string">"text/html; charset=gb2312"</span>&gt;</span><br><span class="line">    &lt;title&gt;gotoing, please waiting .............................&lt;<span class="regexp">/title&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;script language=<span class="string">"JavaScript"</span>&gt;</span><br><span class="line">    <span class="built_in">document</span>.location.href=<span class="string">"http://www.bing.com"</span></span><br><span class="line">    <span class="keyword">var</span> myTime = setTimeout(<span class="string">"Timeout()"</span>, <span class="number">600</span>);</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">resetTime</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        clearTimeout(myTime);</span><br><span class="line">        <span class="keyword">var</span> myTime = setTimeout(<span class="string">"Timeout"</span>,<span class="number">600</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">Timeout</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(<span class="string">"已超时，准备跳转到备用地址"</span>)</span><br><span class="line">        <span class="built_in">document</span>.location.href=<span class="string">"http://www.baidu.com"</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">document</span>.documentElement.onkeydown=resetTime();</span><br><span class="line">    <span class="built_in">document</span>.doocumentElement.οnclick=resetTime;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>body&gt;</span><br><span class="line">&lt;<span class="regexp">/html&gt;</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JS中实现页面跳转和刷新方法总结</title>
+    <url>//blog/JS%E4%B8%AD%E5%AE%9E%E7%8E%B0%E9%A1%B5%E9%9D%A2%E8%B7%B3%E8%BD%AC%E5%92%8C%E5%88%B7%E6%96%B0%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93.html</url>
+    <content><![CDATA[<h1 id=""><a href="#" class="headerlink" title=""></a></h1><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">转载自：https:<span class="regexp">//</span>juejin.im<span class="regexp">/post/</span><span class="number">5</span>d6520796fb9a06ad5472d96</span><br></pre></td></tr></table></figure>
+
+<p>window.location(.href)=”URL”</p>
+<p>其实 <code>.href</code> 可以省略</p>
+<p><code>window.location</code> 和 <code>window.location.href</code> 实现的效果是一样的</p>
+<p>例如：</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">window.location</span> = <span class="string">"http://www.baidu.com"</span></span><br><span class="line"><span class="attr">window.location.href</span> = <span class="string">"http://www.baidu.com"</span></span><br></pre></td></tr></table></figure>
+
+<p>上面两种方法都可以从当前页面跳转到目标页面<br>不同之处在于 <code>window.location</code> 返回的是对象，如果没有<code>.href</code>，它的默认参数就是<code>href</code></p>
+<h2 id="winodw-location-assign-“URL”"><a href="#winodw-location-assign-“URL”" class="headerlink" title="winodw.location.assign(“URL”)"></a>winodw.location.assign(“URL”)</h2><p>这个方法和上面的方法差不多<br>用法：</p>
+<figure class="highlight autoit"><table><tr><td class="code"><pre><span class="line">winodw.location.<span class="built_in">assign</span>(<span class="string">"http://www.baidu.com"</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="window-location-replace-“URL”"><a href="#window-location-replace-“URL”" class="headerlink" title="window.location.replace(“URL”)"></a>window.location.replace(“URL”)</h2><p>如果用<code>window.location.replace(&quot;http://www.baidu.com&quot;)</code> 实现跳转页面, 它和上面方法的区别在于它<strong>跳转后不会保存跳出页面的信息.</strong></p>
+<p>所以如果使用 <code>history</code> 历史返回按钮是无效的</p>
+<p>它的效果类似于在网页上点击右键, 在新窗口打开或新标签页打开.<br>而 <code>window.location.href</code> 实现的效果是在页面上点击目标链接, 然后可以点击历史返回按钮, 返回到之前页面。</p>
+<h2 id="历史页跳转"><a href="#历史页跳转" class="headerlink" title="历史页跳转"></a>历史页跳转</h2><p>下面的两种方法都可以实现返回历史页，相当于点了页面左上角的返回按钮</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">window</span><span class="selector-class">.history</span><span class="selector-class">.back</span>();</span><br><span class="line"><span class="selector-tag">window</span><span class="selector-class">.history</span><span class="selector-class">.go</span>(<span class="selector-tag">-1</span>);</span><br></pre></td></tr></table></figure>
+
+<p><code>back</code>和<code>go</code>里面都可以放数值</p>
+<p>例如：里面放上 <code>-1</code> 意思就是返回上一级，里面放上 <code>-2</code> 就是返回上上级，以此类推<br>而且里面还可以放上指定的路由路径，比如 <code>window.history.go(&#39;../routes/admin/&#39;);</code> 这样可以跳转到指定的路由模块</p>
+<h2 id="meta-refresh"><a href="#meta-refresh" class="headerlink" title="meta refresh"></a>meta refresh</h2><p>如果用户浏览器禁用了<code>javascript</code>, 那么可以用<code>meta refresh</code>来实现自动跳转:果要实现 JS 自动跳转，可以加个定时器：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">noscript</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"refresh"</span> <span class="attr">content</span>=<span class="string">"0;URL=http://www.baidu.com/"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">noscript</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>如果要实现 JS 自动跳转，可以加个定时器：</p>
+<figure class="highlight actionscript"><table><tr><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123; ... &#125;, <span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="重新加载本页"><a href="#重新加载本页" class="headerlink" title="重新加载本页"></a>重新加载本页</h2><p>如果你的代码逻辑执行完了，想要重新加载页面的话，可以用这两种方法：</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">window</span>.<span class="keyword">location</span>.reload()</span><br><span class="line"><span class="keyword">window</span>.<span class="keyword">location</span>.replace()</span><br></pre></td></tr></table></figure>
+
+<p>这两种方法都可以重新加载本页，但是<code>replace()</code>可以导向另外一个<code>URL</code><br>例如：<code>window.location.replace(&quot;http://www.baidu.com&quot;)</code></p>
+<h2 id="window-navigate-‘URL’"><a href="#window-navigate-‘URL’" class="headerlink" title="window.navigate(‘URL’)"></a>window.navigate(‘URL’)</h2><p><code>window.navigate(&#39;URL&#39;)</code> 这个方法是只针对<code>IE</code>的，不适用于火狐等其他浏览器，在HTML DOM Window Object中，根本没有列出<code>window.navigate</code>这个方法，所以这个方法尽量少用，遗忘最好。</p>
+<h2 id="self、parent、this、top"><a href="#self、parent、this、top" class="headerlink" title="self、parent、this、top"></a>self、parent、this、top</h2><figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">top.location.href</span>=”url”         在顶层页面打开url（跳出框架）  </span><br><span class="line"><span class="attr">self.location.href</span>=”url”        仅在本页面打开url地址  </span><br><span class="line"><span class="attr">parent.location.href</span>=”url”      在父窗口打开Url地址  </span><br><span class="line"><span class="attr">this.location.href</span>=”url”        用法和self的用法一致</span><br></pre></td></tr></table></figure>
+
+<p><code>if (top.location == self.location)</code> 判断当前<code>location</code>是否为顶层 来禁止<code>frame</code>引用，如果页面当中有自定义的<code>frame</code>的话，也可以将<code>parent self top</code>换为自定义<code>frame</code>的名称 ，效果就是在自定义<code>frame</code>窗口打开<code>url</code>。</p>
+<p>示例：</p>
+<figure class="highlight glsl"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(top != self)&#123;</span><br><span class="line">	top.<span class="keyword">location</span>.href = <span class="keyword">location</span>.href;</span><br><span class="line">&#125;	<span class="comment">//禁止frame引用</span></span><br></pre></td></tr></table></figure>
+
+<p>以下是从网上找到的一个例子，不是很直观， 你可以加上上面那三行代码， 可以先去掉， 再加上， 看一下效果，应该就清楚了</p>
+<p>top.html代码</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">&lt;script <span class="attribute">language</span>=javascript&gt;</span><br><span class="line">    function rs()&#123;</span><br><span class="line">        <span class="keyword">if</span>(top !== self)&#123;</span><br><span class="line">            top.location.href = location.href;</span><br><span class="line">        &#125;</span><br><span class="line">        parent.left.location.<span class="attribute">href</span>=<span class="string">"top.htm"</span> ;</span><br><span class="line">        parent.bot.location.<span class="attribute">href</span>=<span class="string">"top.htm"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&lt; /script&gt;</span><br><span class="line">&lt; input <span class="attribute">type</span>=button <span class="attribute">name</span>=name <span class="attribute">value</span>=<span class="string">"ksdj"</span> <span class="attribute">onclick</span>=rs();&gt;</span><br></pre></td></tr></table></figure>
+
+<p>test.html代码</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">&lt;FRAMESET <span class="attribute">COLS</span>=<span class="string">"150,*"</span>&gt;</span><br><span class="line">	&lt; FRAME <span class="attribute">SRC</span>=<span class="string">"left.htm"</span> <span class="attribute">name</span>=left&gt;</span><br><span class="line">	&lt; FRAMESET <span class="attribute">ROWS</span>=<span class="string">"150,*"</span>&gt;</span><br><span class="line">		 &lt; FRAME <span class="attribute">SRC</span>=<span class="string">"top.htm"</span> <span class="attribute">name</span>=top&gt;</span><br><span class="line">		 &lt; FRAME <span class="attribute">SRC</span>=<span class="string">"bot.htm"</span> <span class="attribute">name</span>=bot&gt;</span><br><span class="line">	&lt; /FRAMESET&gt;</span><br><span class="line">&lt; /FRAMESET&gt;</span><br></pre></td></tr></table></figure>
+
+<p>尝试一下,可能是这样的效果!</p>
+<p><code>top</code>表示主窗口，<code>location</code>表示当前窗口，如果你的文件只有一个框架，没有<code>iframe</code>和<code>frame</code>，那么是完全一致的，没有区别。</p>
+<p><code>top.location</code>是在顶层<code>frame</code>中打开新页<br><code>window.location</code>是在当前<code>frame</code>中打开新页<br><code>parent.location</code>在当前窗口的父窗口打开Url地址</p>
+<h2 id="JS页面跳转和刷新的常用方式"><a href="#JS页面跳转和刷新的常用方式" class="headerlink" title="JS页面跳转和刷新的常用方式"></a>JS页面跳转和刷新的常用方式</h2><h3 id="页面跳转"><a href="#页面跳转" class="headerlink" title="页面跳转"></a>页面跳转</h3><figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="built_in">window</span>.location.href=<span class="string">"index.php"</span>;  </span><br><span class="line"><span class="built_in">window</span>.history.back(<span class="number">-1</span>);<span class="comment">//类似于按钮，参数是负几，就后退几次。  </span></span><br><span class="line"><span class="built_in">window</span>.navigate(<span class="string">"index.jsp"</span>); <span class="comment">//navigate对象包含有关浏览器的信息，也可以作为页面跳转，后面直接加要跳转的地方。  </span></span><br><span class="line"></span><br><span class="line">self.location.href=index.htm;  </span><br><span class="line"><span class="comment">//self指代当前窗口对象,属于window最上层的对象;  </span></span><br><span class="line"><span class="comment">//location.href 指的是某window对象的URL地址.  </span></span><br><span class="line"><span class="comment">//self.location.href指当前窗口的URL地址,去掉self默认为当前窗口的URL地址.  </span></span><br><span class="line"></span><br><span class="line">top.location=index.php;  </span><br><span class="line"><span class="comment">//top 属性返回最顶层的先辈窗口。  </span></span><br><span class="line"><span class="comment">//该属性返回队一个顶级窗口的只读引用。  </span></span><br><span class="line"><span class="comment">//如果窗口本身就是一个顶级窗口，top 属性存放对窗口自身的引用。  </span></span><br><span class="line"><span class="comment">//如果窗口是一个框架，那么 top 属性引用包含框架的顶层窗口。</span></span><br><span class="line"></span><br><span class="line">location.replace(<span class="built_in">document</span>.referrer);  </span><br><span class="line"><span class="built_in">document</span>.referrer   </span><br><span class="line">history.go(<span class="number">-1</span>);<span class="comment">//不刷新页面  </span></span><br><span class="line">history.back();<span class="comment">//不刷新页面</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Javascript页面刷新"><a href="#Javascript页面刷新" class="headerlink" title="Javascript页面刷新"></a>Javascript页面刷新</h3><figure class="highlight basic"><table><tr><td class="code"><pre><span class="line"><span class="symbol">1 </span>   history.go(<span class="number">0</span>)   </span><br><span class="line"><span class="symbol">2 </span>   location.reload()   </span><br><span class="line"><span class="symbol">3 </span>   location=location   </span><br><span class="line"><span class="symbol">4 </span>   location.assign(location)   </span><br><span class="line"><span class="symbol">5 </span>   document.execCommand(<span class="comment">'Refresh')   </span></span><br><span class="line"><span class="symbol">6 </span>   <span class="keyword">window</span>.navigate(location)   </span><br><span class="line"><span class="symbol">7 </span>   location.replace(location)   </span><br><span class="line"><span class="symbol">8 </span>   document.URL=location.href</span><br></pre></td></tr></table></figure>
+
+<h3 id="自动刷新"><a href="#自动刷新" class="headerlink" title="自动刷新"></a>自动刷新</h3><blockquote>
+<p>页面自动刷新：把如下代码加入<code>&lt;head&gt;</code>区域中<br><code>&lt;meta http-equiv=&quot;refresh&quot; content=&quot;2&quot;&gt;</code><br>其中2指每隔2秒刷新一次页面.</p>
+</blockquote>
+<blockquote>
+<p>页面自动跳转：把如下代码加入<code>&lt;head&gt;</code>区域中<br><code>&lt;meta http-equiv=&quot;refresh&quot; content=&quot;2;url=http://www.baidu.com&quot;&gt;</code><br>其中2指隔2秒后跳转到<code>http://www.baidu.com</code>页面</p>
+</blockquote>
+<blockquote>
+<p>JS实现页面自动刷新</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">language</span>=<span class="string">"JavaScript"</span>&gt;</span>  </span><br><span class="line"><span class="actionscript">    setTimeout(<span class="string">'window.location.reload()'</span>,<span class="number">1000</span>) <span class="comment">//指定1秒刷新一次  </span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span>  </span><br><span class="line"></span><br><span class="line">JS刷新框架的脚本语句</span><br><span class="line"></span><br><span class="line">//如何刷新包含该框架的页面用   </span><br><span class="line">[javascript] view plain copy print?</span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">language</span>=<span class="string">JavaScript</span>&gt;</span>  </span><br><span class="line">   parent.location.reload();  </span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span>    </span><br><span class="line"></span><br><span class="line">//子窗口刷新父窗口</span><br><span class="line">[javascript] view plain copy print?</span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">language</span>=<span class="string">JavaScript</span>&gt;</span>  </span><br><span class="line">    self.opener.location.reload();  </span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span>  </span><br><span class="line">(或<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:opener.location.reload()"</span>&gt;</span>刷新<span class="tag">&lt;/<span class="name">a</span>&gt;</span>   )  </span><br><span class="line"></span><br><span class="line">//如何刷新另一个框架的页面用   </span><br><span class="line">[javascript] view plain copy print?</span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">language</span>=<span class="string">JavaScript</span>&gt;</span>  </span><br><span class="line">   parent.另一FrameID.location.reload();  </span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span>  </span><br><span class="line"></span><br><span class="line">如果想关闭窗口时刷新或者想开窗时刷新的话，在<span class="tag">&lt;<span class="name">body</span>&gt;</span>中调用以下语句即可。</span><br></pre></td></tr></table></figure>
+
+<h3 id="jquery方法"><a href="#jquery方法" class="headerlink" title="jquery方法"></a>jquery方法</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(location).attr(<span class="string">'href'</span>, <span class="string">'http://www.jb51.net'</span>);</span><br><span class="line"></span><br><span class="line">$(<span class="built_in">window</span>).attr(<span class="string">'location'</span>,<span class="string">'http://www.jb51.net'</span>);</span><br><span class="line"></span><br><span class="line">$(location).prop(<span class="string">'href'</span>, <span class="string">'http://www.jb51.net'</span>)</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>idea常用快捷键</title>
+    <url>//blog/idea%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE.html</url>
+    <content><![CDATA[<h3 id=""><a href="#" class="headerlink" title=""></a></h3><figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">自动补全变量名称 : <span class="type">Ctrl</span> + Alt + v</span><br><span class="line">自动补全属性名称 : <span class="type">Ctrl</span> + Alt + f</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>IDE</category>
+      </categories>
+      <tags>
+        <tag>IDE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>圣源觉真经</title>
+    <url>//blog/%E5%9C%A3%E6%BA%90%E8%A7%89%E7%9C%9F%E7%BB%8F.html</url>
+    <content><![CDATA[<h2 id="（封面）"><a href="#（封面）" class="headerlink" title="（封面）"></a>（封面）</h2><p>皇经到处鬼敬神钦   切须净手诵必真心 </p>
+<p>士农工商业   应知此方针   降笔千秋在   皇经万古流</p>
+<h2 id="（正文上段）"><a href="#（正文上段）" class="headerlink" title="（正文上段）"></a>（正文上段）</h2><p><strong>恭请 圣源觉真经 志心皈命礼 (三称)</strong></p>
+<p><strong>九天玉皇公 人皇氏圣人 舍身堵北缺 代存万众生</strong></p>
+<p> <strong>万众大恩典 功德无量深 生平心仁义 性行道德深</strong> </p>
+<p><strong>刻已代众生 救世功德成 灵魂万年显 天日永保留</strong></p>
+<p><strong>万教拜帝心 大仁大义成 精神在九天 心仍救世存</strong></p>
+<p><strong>上天为帝主 劝善天下人 帝命大白星 星君下凡尘</strong></p>
+<p><strong>奉旨降笔写 分为三段经 上中下三节 一切皆降笔</strong></p>
+<p><strong>原文用白话 五字成圣经 名称圣源觉 即是玉皇经</strong></p>
+<p><strong>孝悌兼忠信 礼义及廉耻 玉皇大帝心 道行八种礼</strong></p>
+<p><strong>圣文传凡世 诵念神鬼钦 老少诵奉行 万事皆清平</strong></p>
+<p><strong>天下分三界 由帝手判公 目视如电闪 不得漏毫分</strong></p>
+<p><strong>左右两旁立 慈苦大法童 生平自割肉 贫为药济穷</strong></p>
+<p><strong>身佩七宝带 无极变化通 手执双宝剑 拥护玉皇公</strong></p>
+<p> <strong>南斗北斗星</strong> <strong>玉皇用大臣 凡间生死事 两尊星君分</strong></p>
+<p><strong>五雷大将军 声威震西东 镇兵千百万 一切协天兵</strong></p>
+<p><strong>五教道教理 仁慈道德心 五教皆平等 一切皈命礼</strong></p>
+<p><strong>九重天外圣 地中五岳神 一切听号令 万方土地遵</strong></p>
+<p><strong>圣源觉真经 日月星同存 经文动天日 正气万古留</strong></p>
+<p><strong>万教经中宝 无极最上经 能超凡入圣 可超度亡人</strong></p>
+<p><strong>玉皇威灵显 仁义道德心 日仁义昭月 道德天同存</strong></p>
+<p><strong>解化千万劫 超度万众生 一切救世心 普救众生存</strong></p>
+<p><strong>上中下圣文 万教经中源 神圣佛仙道 传教第一遍</strong></p>
+<p><strong>真心诵皇经 福神到家庭 早晚焚香念 出入多贵人</strong></p>
+<p><strong>上段圣源觉 常念化灾星 诸仙佛法大 拥护诵皇经</strong> </p>
+<p><strong>诵毕用三拱手礼</strong></p>
+<h2 id="（正文中段）"><a href="#（正文中段）" class="headerlink" title="（正文中段）"></a>（正文中段）</h2><p><strong>中段圣源觉 上天消息文</strong> <strong>天地降帝生 就是玉皇公</strong></p>
+<p><strong>玉皇大帝名 人人称天公 生平动天日 万教皆遵从</strong></p>
+<p><strong>金阙正殿坐 总管善恶文 头戴金皇冠 身穿金龙袍</strong></p>
+<p><strong>体高丈二尺 眉目清秀幼 五子须端正 庄严是天然</strong></p>
+<p><strong>大慈大悲心 变出圣源觉 略说上天理 人人皆未明</strong></p>
+<p><strong>宇宙大空中 变化万星球 亿亿里一只 人物无一定</strong></p>
+<p><strong>每球皆不等 有时破裂分 银河更加远 将近九天门</strong></p>
+<p><strong>上天无早晚 时时皆光明 只见太阳光 照耀万星球</strong></p>
+<p><strong>地球在中间 凡尘在地球 一切天变化 个个有帝名</strong></p>
+<p><strong>天下文明世 万教各众神 一切法力大 可过外星球</strong></p>
+<p><strong>外球说不尽 天气物不同 无非有道德 可住万星球</strong></p>
+<p><strong>天地变化生 皆由上空中 上天一切事 玉皇手中分</strong></p>
+<p><strong>太阳日光照 照耀众生存 阴阳循环转 变化日日新</strong></p>
+<p><strong>月星众生宝 天气众生根 慈云降甘雨 由帝各星辰</strong></p>
+<p><strong>寒来暑往气 春夏秋冬时 一年四季节 方便耕种分</strong></p>
+<p><strong>凡间混沌开 人兽混草木 夺食其肉血 赤身露体宿</strong></p>
+<p><strong>其世无知耻 亦无亲属分 只是未开化 一切乱行为</strong></p>
+<p><strong>帝慈心不忍 即命各星宿 下凡再出世 教人开化心</strong></p>
+<p><strong>古时到现今 历代创造人 一切帝王侯 及且领导人</strong></p>
+<p><strong>上天各星宿 皆是帝降生 国家兴亡运 代代由帝分</strong></p>
+<p><strong>九天威灵显 至今救世存 一片大慈悲 勿听异说求</strong></p>
+<p><strong>家中安玉皇 必遵圣源觉 心须行仁义 性要道德存</strong></p>
+<p><strong>国家百般律 勿犯规矩方 勤劳增生产 玉皇最喜欢</strong></p>
+<p><strong>信仰圣源觉 保佑自己身 在家或出外 事事定联陞</strong></p>
+<p><strong>经中法语正 降神驱鬼语 妖魔必下拜 诸邪定潜逃</strong></p>
+<p><strong>皇经存家中 可避诸邪祟 镇宅及压煞 洁净保留存</strong></p>
+<p><strong>中段圣源觉 一切降福临 玉皇心慈善 有求皆必应</strong> </p>
+<p><strong>诵毕用三拱手礼</strong></p>
+<h2 id="（正文下段）"><a href="#（正文下段）" class="headerlink" title="（正文下段）"></a>（正文下段）</h2><p><strong>下段圣源觉 玉皇天理经 慈善并仁义 勤学记在心</strong></p>
+<p><strong>每日念一转 运限定光明 玉皇行仁义 多诵五福临</strong></p>
+<p><strong>杀身成仁性 舍身取义心 孔孟留句话 须当访圣人</strong></p>
+<p><strong>男女少年人 细心听圣经 勤学圣贤话 荣华必护身</strong></p>
+<p><strong>父母生我身 长大须成人 为子须孝顺 孝顺敬天日</strong></p>
+<p><strong>双亲最大恩 本身为天日 倘若骂爷娘 只是逆天日</strong></p>
+<p><strong>贰拾肆孝贤 存留在上天 古人行孝顺 孝顺感动天</strong></p>
+<p><strong>共住勿异心 父慈子孝顺 兄宽弟忍和 百福此推寻</strong></p>
+<p><strong>静座思己过 勿谈闲事非 说人过量话 自然有天理</strong></p>
+<p><strong>言多必有失 出口勿伤人 若不养心性 定遭苦难寻</strong></p>
+<p><strong>平风作波浪 无形生事非 使人伤心恨 凶星祸悬眉</strong></p>
+<p><strong>高声说话丑 谨戒恶言语 毒骂或发誓 皆是报自己</strong></p>
+<p><strong>性烈多事件 祸难百般有 仇敌定重重 切须再三忍</strong></p>
+<p><strong>口角与讼事 胜败皆空虚 忍气留财福 凡事天必知</strong></p>
+<p><strong>性善人人钦 宽和万事成 原谅是仁义 自戒性烈心</strong></p>
+<p><strong>天理圣源觉 劝善世上人 仁义道德全 人生主要根</strong></p>
+<p><strong>米麦豆薯粟 人生重要物 不可乱消耗 须念来不易</strong></p>
+<p><strong>粥饭人生命 无食不生存 虽然土上生 须念生长难</strong></p>
+<p><strong>畜生亦如此 不可多杀生 有理必要用 方可杀生命</strong></p>
+<p><strong>无理乱消耗 上天有罪名 万物天地变 多耗必有折</strong></p>
+<p><strong>善恶无形影 视之亦无纵 吸之无别味 虚空过往有</strong></p>
+<p><strong>玉皇恩爱深 句句劝人心 爱民如爱己 天无两样心</strong></p>
+<p><strong>人生在世间 谨守为最先 若不从正业 差错在眼前</strong></p>
+<p><strong>嫖赌自贱身 财帛天数定 家和为第一 勤劳值千金</strong></p>
+<p><strong>痴心狂赌难 倾家又荡产 诵念早日改 妻儿乐团圆</strong></p>
+<p><strong>人人虽有过 知者须改心 一切已差错 须当教子孙</strong></p>
+<p><strong>经中行道德 人生要将心 凡事将心念 万事福自寻</strong></p>
+<p><strong>将心人为本 立身孝顺心 上天循环理 不将事难成</strong></p>
+<p><strong>为人不将心 不将害本身 一切祸难有 罪恶自己寻</strong></p>
+<p><strong>结交须大义 共事勿私心 凡事利己念 心高误本身</strong></p>
+<p><strong>福不在财多 财多不是福 福在子孙贤 子孙贤是福</strong></p>
+<p><strong>荣华富贵家 不可自夸华 骄傲多薄福 心仁福增加</strong></p>
+<p><strong>奢华是枝花 不如多施舍 善有善来报 天增是豪华</strong></p>
+<p><strong>穷人勿灰心 心灰事难成 勤俭守本份 富贵必轮流</strong></p>
+<p><strong>烂茅一般级 福在自己修 身中无寸土 只要心德修</strong></p>
+<p><strong>善事无妨做 恶事早改修 贫苦有善念 天须化贵人</strong></p>
+<p><strong>生平无愧恶 神钦鬼敬扶 行为心德正 万教尽皆通</strong></p>
+<p><strong>修桥施路功 良药济贫穷 常作大善事 定为动天公</strong></p>
+<p><strong>为善最安乐 为恶天不容 过去有不法 结果如何休</strong></p>
+<p><strong>生平有愧恶 切须改善心 若不早日改 鬼祟必缠身</strong></p>
+<p><strong>行为无良心 贪心烦恼有 奸刁终害己 早改得自由</strong></p>
+<p><strong>天地变化人 善恶出在心 善事门户福 恶者罪状深</strong></p>
+<p><strong>男女向前程 保守好光阴 在世仁为本 子孙孝顺心</strong></p>
+<p><strong>恶者心不仁 有过改维新 前途事业远 须防退步身</strong></p>
+<p><strong>狼毒枭恶心 差错自改修 暗中用计较 必遭天理寻</strong></p>
+<p><strong>糊行罪万般 谋为事事难 妻离及子散 子逆做人难</strong></p>
+<p><strong>天地循环理 罚罪一世为 急急回心改 阴功早日修</strong></p>
+<p><strong>勿为天聋哑 报应或早迟 赏善罚罪恶 时时记在心</strong></p>
+<p><strong>经中照天理 诵后须保存 图书再刻版 扶持万古留</strong></p>
+<p><strong>皇经传天下 教人道德存 救世天必见 劝善大有功</strong></p>
+<p><strong>积善之家庭 上天降吉祥 玉皇增福寿 子孙世代昌</strong></p>
+<p><strong>百本传刻印 谋为贵人扶 三五百本印 小人久病除</strong></p>
+<p><strong>千本印刻者 荣华代代存 合群印皇经 积福到家门</strong></p>
+<p><strong>印经或抄写 皆是作阴功 玉皇心仁义 不亏施经人</strong></p>
+<p><strong>乐助发善心 福寿定延龄 施经种福田 恶煞不侵身</strong></p>
+<p><strong>一生念千遍 凡谋皆吉祥 一生念皇经 百年升天堂</strong></p>
+<p><strong>玉皇心印经 变成圣源觉 人人亦可念 天增福寿长</strong></p>
+<p><strong>玉皇大天尊玄穹高上帝(三称)</strong></p>
+<p><strong>诵毕用三拱手礼</strong></p>
+]]></content>
+      <categories>
+        <category>术法</category>
+      </categories>
+      <tags>
+        <tag>术法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>金光神咒</title>
+    <url>//blog/%E9%87%91%E5%85%89%E7%A5%9E%E5%92%92.html</url>
+    <content><![CDATA[<p>天地玄宗，万炁本根。广修亿劫，证吾神通。<br>三界内外，惟道独尊。体有金光，覆映吾身。<br>视之不见，听之不闻。包罗天地，养育群生。<br>受持万遍，身有光明。三界侍卫，五帝司迎。<br>万神朝礼，役使雷霆。鬼妖丧胆，精怪忘形。<br>内有霹雳，雷神隐名。洞慧交彻，五炁腾腾。<br>金光速现，覆护真人。急急如律令！</p>
+]]></content>
+      <categories>
+        <category>术法</category>
+      </categories>
+      <tags>
+        <tag>术法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>求工作疏</title>
+    <url>//blog/%E6%B1%82%E5%B7%A5%E4%BD%9C%E7%96%8F.html</url>
+    <content><![CDATA[<p>弟子往昔以来、未闻佛法前犯下诸种罪业，造成今生工作不顺，弟子志诚悔过，发愿痛改前非。祈请诸佛菩萨加持我，庇佑我远离戒除一切恶习，消除业障违缘，精进学佛。祈请诸佛菩萨加持我，庇佑我尽快找到如意工作。</p>
+<h2 id="弟子希望的工作能够："><a href="#弟子希望的工作能够：" class="headerlink" title="弟子希望的工作能够："></a>弟子希望的工作能够：</h2><ol>
+<li>愿弟子广结善缘，找到软件开发或大数据开发或架构方面或项目管理方面的工作，顺利解决工作问题。</li>
+<li>愿弟子的能力与工作相匹配，且单位稳定性强，有良好的发展空间，能长期做下去。</li>
+<li>愿新单位气氛和谐，同事间和谐相处，领导公正平和且能带弟子一起成长。</li>
+<li>愿新单位是大中型企业或以上的甲方单位，有双休和五险一金，不用经常加班。</li>
+<li>愿新单位月薪能够给到税前20k以上。</li>
+<li>愿新单位工作地点与弟子住所的距离是半小时左右车程，交通方便。</li>
+</ol>
+<h2 id="为此弟子发愿："><a href="#为此弟子发愿：" class="headerlink" title="为此弟子发愿："></a>为此弟子发愿：</h2><ol>
+<li><p><strong>从今日起2020年04月01日，每天至少念</strong></p>
+<p><strong>阿弥陀佛心咒 - 108遍</strong></p>
+<p><strong>六字大明咒 - 108遍</strong></p>
+<p><strong>文殊咒 - 108遍</strong></p>
+<p><strong>心经咒 - 108遍</strong></p>
+<p><strong>莲师心咒 - 108遍</strong>   </p>
+<p><strong>准提心咒 - 108遍</strong></p>
+<p><strong>七佛灭罪真言 - 108遍</strong></p>
+<p><strong>药师心咒 - 108遍</strong></p>
+<p><strong>灭定业真言 - 108遍</strong></p>
+<p><strong>呵呼嘘吹嘻嘶六字诀 - 108遍</strong></p>
+<p><strong>抄写心经 - 1遍</strong></p>
+<p><strong>并将所有功德回向十方三界一切有情众生，愿它们离苦得乐，消除业障，未来究竟成佛。</strong></p>
+</li>
+<li><p><strong>日后努力工作，乐于助人，不做阻碍他人事业发展的事。</strong></p>
+</li>
+<li><p><strong>以“十善”标准要求自己，善待他人，孝敬父母。</strong></p>
+</li>
+<li><p><strong>尽心持戒</strong></p>
+</li>
+<li><p><strong>吃素，尽量全素</strong></p>
+</li>
+<li><p><strong>如愿后每月拿出税后工资的10%用于供养或放生帮助他人等，尽量做到日行一善。</strong></p>
+</li>
+<li><p><strong>如愿后，如实将此经历写成文章，发表网络，利益他人。</strong></p>
+</li>
+</ol>
+<p>勉行此7项，愿诸佛菩萨，愍我愚诚，满我所愿，令弟子及家人长夜安稳，临命终时乘佛慈悲，往生净土。感恩佛菩萨，阿弥陀佛。</p>
+]]></content>
+      <categories>
+        <category>感应</category>
+      </categories>
+      <tags>
+        <tag>感应</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>频繁放生后，算命先生竟看不到我的命了</title>
+    <url>//blog/%E9%A2%91%E7%B9%81%E6%94%BE%E7%94%9F%E5%90%8E%EF%BC%8C%E7%AE%97%E5%91%BD%E5%85%88%E7%94%9F%E7%AB%9F%E7%9C%8B%E4%B8%8D%E5%88%B0%E6%88%91%E7%9A%84%E5%91%BD%E4%BA%86.html</url>
+    <content><![CDATA[<p>转载自：<a href="http://www.xuefo.net/nr/article61/612025.html" target="_blank" rel="noopener">http://www.xuefo.net/nr/article61/612025.html</a></p>
+<p>   我的记性从小就特别好，沾染上算命之后，先是记忆力有所衰退(但还是不错)，接着就是莫名其妙的考试会差几分，一到考试前老有很多力量来阻<a href="http://www.surat2.go.th/ew/index.html" target="_blank" rel="noopener">碍</a>我，身体健康也有很多隐患……失败多了，我整个人开始变得特别敏感和脆弱，我开始不停地想很多奇怪的问题，怀疑人生，算命师是不是在暗地操作害我运势不好……好在佛菩萨一直对我很照顾哦，一而再再而三的把很多优秀美好的人送到我身边，直接或间接的带我度过了难关。</p>
+<p>　　我永远不会忘记在我的抑郁崩溃爆发的前一个月，我偶然间替家里人去寺庙帮忙，遇到一个穿着一身民族风的姐姐，她就像天使一样，开启了我的新世界大门。让我发现了人生不止是成功和失败，以及预知未来，还有感恩，修行，和利益众生。有一天我问她，：“姐姐，我问你一个问题，人的命运可以改变吗，算命会越算越差吗”，她对我说了这样一段话，我当时就懵了。</p>
+<p>　　“之前我对玄学特别感兴趣的时候我去学了算命，没有学多久我就学成了，基本上能算出这个人的一生，后来我想为大家做贡献，希望迷茫者能够及时止损行善积德，我开</p>
+<p>　　始免费帮别人算命，但是来找我算的人通常都是求婚姻，求学业，求地位，他们有的人</p>
+<p>　　既不关心到底是什么因素在影响和决定一个人的命运，也不懂自己的命运为什么是这样的，我们出生于某年某月某日，看似是各种各样的突然和计划，其实都隐藏了很多我们难以想象的综合因缘，就像我和你在这里遇到，我相信一定也是上天的安排，只是我现在还不知道而已。现在我不算命了”。</p>
+<p>　　姐姐当时问了我的生辰八字(出于防备心我一开始没有告诉她)，她很淡定的沉默了一下：“你不要再去算命了，也不要再对这些事情耿耿于怀，我想告诉你，作为一个那么有福报的人，你应该学着如何去挖掘自己潜在的能量…………”她是个非常忙的人，平时不闲聊不说人长短也不和别人争高低，过得洒脱自在，我们一起去寺院住的那3天，她和我分享了她的人生故事，从18岁说到30岁(在之后的3年时间里，我们再也没机会见过面)，从那个时候开始，我的心里有很多好的种子开始慢慢发芽了，只是我自己不知道而已。生命中遇到的每一个人，从来都不是等我们准备好才出现的，那都是惊喜。</p>
+<p>　　走的时候，姐姐送了我一本书，叫《正见》，“希望我没有看错人哦，不知道你有没有缘分看懂这本书，第二年，记得把这本书还给我”。不是因为我，她才变得闪耀的，而是因为她的承诺和使命，让每一个靠近她的人，都感受到了一团光芒，待久了你就再也不想走回黑暗了，途中相遇，皆是善缘，这一点我特别感激。</p>
+<p>　　人突然长大的一瞬间是各式各样的，有的人会失眠，有的人会喝醉，有的要嚎哭整晚，也许我一直在长大，但这种长大是可以忽略不计的。一个月后，生平最痛苦的那一年的那一天来临了，我哭的眼睛都睁不开的时候，动了善念，去放生吧，一条鱼告诉了我答案。</p>
+<p>　　当天我径直的走进一家卖鱼店，地上全是鱼鳞和各类动物的鲜血，空气里弥漫着一种杀戮和腥臭的味道，老板特别熟络的问我“几个人吃啊”“要多重啊”“什么鱼啊”。我面无表情的回答：“我不吃，多重都无所谓，你随意吧”。做这一行的人通常是很敏感的，马上就秒懂我是去放生，老板有事耽误了几分钟，我没催，就原地站着发呆，看完鲤鱼池看中华鲟池再看乌龟池……有一种感觉是很奇怪的，我看到了无数个即将被送上餐桌的生命，好像听到很多个求救的声音在我耳边回荡，我想到，它们投生为动物来到了这个地方，就难逃厄运，每天来来回回的人那么多，有多少人会为它们驻足停留呢……</p>
+<p>　　突然间，我的视线被砧板下篮子里的两只牛蛙吸引了，它们浑身都在发抖，篮子很浅很浅，两小只牛蛙就那么紧紧的挨着一动也不动，其中一只牛蛙的右前腿搭在旁边那只牛蛙的左前腿上，像是在互相珍重道别。要不要把它们买了拿去放了，我心里开始纠结起来，不马上想清楚这个问题它们很快就会死掉。很快，我亲眼看到牛蛙被菜刀拍的血肉模糊，然后解剖，切片，整个桌上全是血……</p>
+<p>　　老板帮我随意挑了条鲤鱼，我执意让他多装点水，用两个结实点儿的袋子，他不停的点头说他知道：放生的事他们不会大意的，大热天的我带着这条鱼来来回回跑了2个小时，终于找到了一个满意的放生位置。时值三月，冬天刚过，河流开始进入汛期，水流比较湍急，我对着这条鱼不停的重复“不要去吃那种很香的鱼饲料，长得慢一点也没关系，记得要避开渔网，说了好多次好多次”，它就待在浅河滩看着我，嘴巴张开好像在对我说话，像一个很久没联系的老朋友。我又把它推到了稍微深一点的水滩里，它不想走，很抗拒的待在原地不动，我哭了，过去的破败和不堪此时像放电影一般在我脑海里不停地回放，我又是快乐的，只是些许的快乐，都能让我感受到，生命的成长，就是要受创，生命的奇妙，在于只要有善念，便可以复原。</p>
+<p>　　鲤鱼还是一动不动的没有走，我从河里把它捧了起来丢到了远一点的地方，它又游了回来，最后我轻轻的摸了它的头：“快走吧，我也要走了，未来你会有很好的去处的”，这一次它没有回来。看着它消失在我的视线里，仿佛心里有一块大石头，瞬间放下了……如果让我对过去说一句话，会说什么呢：假设能遇见在角落里瑟瑟发抖充满害怕和恐惧的那些众生，我想小声告诉他们：一切都会好起来的，经过苦难和痛苦的洗礼，我们的灵魂才会变得更加强壮而细腻。</p>
+<p>　　从那一天开始，我的命运就开始慢慢改变了，我不再去算命，一有时间和机会就会频繁去放生，放生金额不等，放生物命也没有特定的种类……一年后妈妈皈依了一位具德的上师，也不再拉着我去算这算那了，有一天我问她：“你没有再和算命的联系了吧，不要再去算命了求求你了”。她说，半年前去过一次她家，算命师觉得很奇怪，她看不到我的命了，之前她都能很清楚的看到我的近况，我几乎很恐怖的被远程监控着……这边沉默了一会，回答：“挺好的，我的命已经不归她管了”。</p>
+<p>　　心好命又好，富贵直到老;命好心不好，福变为祸兆;心好命不好，祸转为福报;心命俱不好，遭殃且贫夭，一点都没错。命运可以看得出来，但算不出来!改变命运的方法，不是画个符作个法就可以解决的，如果有算命先生说可以做法给你改命，那也只是拆了东墙补西墙，治标不治本。</p>
+<p>　　不择手段的行为，只会损人的福，也许本来不差的命，被算命给算坏了。“心比天高”后面紧跟着的往往是“命如纸薄”。坏命改好只有一个办法：修慈悲心、多行善事。谨以此文，献给每一个曾深受算命困扰的人，希望你们能早日皈信佛法，领悟人生的真谛，所求皆圆满，愿吉祥!</p>
+<p>　　附：梦参老和尚开示：</p>
+<p>　　明明你是皈依佛的，你跑那算命、打卦或者信一个外道，咱们这台湾的会道门很多，那你都算破了三皈了，破了三皈了，不算佛弟子。并不是五戒你破了，就是三皈你都破了。</p>
+<p>　　我们是否应该持十戒?我看你十戒也持不到，不是那么容易的。你受过三皈，你能把三皈保住，你人天的福德不会失掉的，知道吗?</p>
+<p>　　十戒，看你这样子你还没受十戒，你受了再说吧!你能够受几戒持几戒就受几戒，不一定限在十戒。比较不容易犯戒，我跟你相反的看法，我感觉你比较容易犯戒。</p>
+]]></content>
+      <categories>
+        <category>感应</category>
+      </categories>
+      <tags>
+        <tag>感应</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>礼佛大忏悔文</title>
+    <url>//blog/%E7%A4%BC%E4%BD%9B%E5%A4%A7%E5%BF%8F%E6%82%94%E6%96%87.html</url>
+    <content><![CDATA[<h2 id="在线礼忏"><a href="#在线礼忏" class="headerlink" title="在线礼忏"></a><a href="http://www.xuefo.net/nf/xclc.asp" target="_blank" rel="noopener">在线礼忏</a></h2><p>您选择礼佛大忏悔文，请根据录音礼拜诸佛。礼佛完毕后，请下拉此页表填写回向！<br>（第一次礼忏的可以先看一下图片下面的文字）
+　</p>
+<p><strong><img src="http://www.xuefo.net/nf/images/35fo.jpg" alt="img"></strong></p>
+<h2 id="礼佛大忏悔文"><a href="#礼佛大忏悔文" class="headerlink" title="礼佛大忏悔文"></a>礼佛大忏悔文</h2><p><strong>大慈大悲愍(mǐn)众生 大喜大舍济含识 相好光明以自严 众等至心归命礼（一拜）</strong><br><strong>南无皈依金刚上师（一拜） 皈依佛 皈依法 皈依僧（一拜）</strong><br><strong>我今发心，不为自求人天福报，声闻缘觉乃至权乘诸位菩萨，唯依最上乘发菩提心，愿与法界众生一时同得阿耨多罗三藐三菩提（一拜）南无皈依十方尽虚空界一切诸佛（一拜）</strong><br><strong>南无皈依十方尽虚空界一切尊法（一拜）南无皈依十方尽虚空界一切贤圣僧（一拜）</strong><br><strong>南无如来应供正遍知明行足善逝世间解无上士调御丈夫天人师佛世尊（一拜）</strong><br><strong>南无普光佛（一拜）南无普明佛（一拜）南无普净佛（一拜）</strong><br><strong>南无多摩罗跋旃(zhān)檀香佛（一拜）南无旃檀光佛（一拜）南无摩尼幢(chuáng)佛（一拜）</strong><br><strong>南无欢喜藏摩尼宝积佛（一拜）南无一切世间乐见上大精进佛（一拜）</strong><br><strong>南无摩尼幢灯光佛（一拜）南无慧炬(jù)照佛（一拜）南无海德光明佛（一拜）</strong><br><strong>南无金刚牢强普散金光佛（一拜）南无大强精进勇猛佛（一拜）南无大悲光佛（一拜）</strong><br><strong>南无慈力王佛（一拜）南无慈藏佛（一拜）南无旃檀窟庄严胜佛（一拜）</strong><br><strong>南无贤善首佛（一拜）南无善意佛（一拜）南无广庄严王佛（一拜）南无金华光佛（一拜）</strong><br><strong>南无宝盖照空自在力王佛（一拜）南无虚空宝华光佛（一拜）南无琉璃庄严王佛（一拜）</strong><br><strong>南无普现色身光佛（一拜）南无不动智光佛（一拜）南无降伏众魔王佛（一拜）</strong><br><strong>南无才光明佛（一拜）南无智慧胜佛（一拜）南无弥勒仙光佛（一拜）</strong><br><strong>南无善寂月音妙尊智王佛（一拜）南无世净光佛（一拜）南无龙种上尊王佛（一拜）</strong><br><strong>南无日月光佛（一拜）南无日月珠光佛（一拜）南无慧幢胜王佛（一拜）</strong><br><strong>南无师子吼自在力王佛（一拜）南无妙音胜佛（一拜）南无常光幢佛（一拜）</strong><br><strong>南无观世灯佛（一拜）南无慧威灯王佛（一拜）南无法胜王佛（一拜）南无须弥光佛（一拜）</strong><br><strong>南无须曼那华光佛（一拜）南无优昙钵(bō)罗华殊胜王佛（一拜）南无大慧力王佛（一拜）</strong><br><strong>南无阿閦(chù)毗欢喜光佛（一拜）南无无量音声王佛（一拜）南无才光佛（一拜）</strong><br><strong>南无金海光佛（一拜）南无山海慧自在通王佛（一拜）南无大通光佛（一拜）</strong><br><strong>南无一切法常满王佛（一拜）南无释迦牟尼佛（一拜）南无金刚不坏佛（一拜）</strong><br><strong>南无宝光佛（一拜）南无龙尊王佛（一拜）南无精进军佛（一拜）南无精进喜佛（一拜）</strong><br><strong>南无宝火佛（一拜）南无宝月光佛（一拜）南无现无愚佛（一拜）南无宝月佛（一拜）</strong><br><strong>南无无垢佛（一拜）南无离垢佛（一拜）南无勇施佛（一拜）南无清净佛（一拜）</strong><br><strong>南无清净施佛（一拜）南无娑留那佛（一拜）南无水天佛（一拜）南无坚德佛（一拜）</strong><br><strong>南无旃檀功德佛（一拜）南无无量掬光佛（一拜）南无光德佛（一拜）南无无忧德佛（一拜）</strong><br><strong>南无那罗延佛（一拜）南无功德华佛（一拜）南无莲华光游戏神通佛（一拜）</strong><br><strong>南无财功德佛（一拜）南无德念佛（一拜）南无善名称功德佛（一拜）</strong><br><strong>南无红焰帝幢王佛（一拜）南无善游步功德佛（一拜）南无斗战胜佛（一拜）</strong><br><strong>南无善游步佛（一拜）南无周匝庄严功德佛（一拜）南无宝华游步佛（一拜）</strong><br><strong>南无宝莲华善住娑罗树王佛（一拜）南无法界藏身阿弥陀佛（一拜）</strong><br><strong>如是等，一切世界，诸佛世尊，常住在世。是诸世尊，当慈念我，若我此生，若我前生，从无始，生死以来，所作众罪，若自作，若教他作，见作随喜，若塔若僧，若四方僧物，若自取，若教他取，见取随喜，五无间罪，若自作，若教他作，见作随喜，十不善道，若自作，若教他作，见作随喜。所作罪障，或有覆藏，或不覆藏，应堕地狱，饿鬼、畜生，诸余恶趣，边地下贱，及蔑（miè）戾（lì）车，如是等处，所作罪障，今皆忏悔（一拜）。</strong><br><strong>今诸佛世尊，当证知我，当忆念我，我复于诸佛世尊前，作如是言，若我此生，若我余生，曾行布施，或守净戒，乃至施与畜生，一抟(tuán)之食，或修净行，所有善根，成就众生，所有善根，修行菩提，所有善根，及无上智，所有善根，一切合集，校计筹量，皆悉回向，阿耨多罗三藐三菩提。如过去未来现在诸佛，所作回向，我亦如是回向。众罪皆忏悔，诸福尽随喜，及请佛功德，愿成无上智，去来现在佛，于众生最胜，无量功德海，我今皈命礼（一拜）。</strong><br><strong>所有十方世界中 三世一切人师子 我以清净身语意 一切遍礼尽无余 普贤行愿威神力 普现一切如来前 一身复现刹尘身 一一遍礼刹尘佛（一拜）</strong><br><strong>于一尘中尘数佛 各处菩萨众会中 无尽法界尘亦然 深信诸佛皆充满 各以一切音声海 普出无尽妙言辞 尽于未来一切劫 赞佛甚深功德海（一拜）</strong><br><strong>以诸最胜妙华曼 伎乐涂香及伞盖 如是最胜庄严具 我以供养诸如来 最胜衣服最胜香 末香烧香与灯烛 一一皆如妙高聚 我悉供养诸如来 我以广大胜解心 深信一切三世佛 悉以普贤行愿力 普遍供养诸如来（一拜）</strong><br><strong>我昔所造诸恶业 皆由无始贪嗔痴 从身语意之所生 一切我今皆忏悔（一拜）</strong><br><strong>十方一切诸众生 二乘有学及无学 一切如来与菩萨 所有功德皆随喜（一拜）</strong><br><strong>十方所有世间灯 最初成就菩提者 我今一切皆劝请 转于无上妙法轮（一拜）</strong><br><strong>诸佛若欲示涅磐 我悉至诚而劝请 惟愿久住刹尘劫 利乐一切诸众生（一拜）</strong><br><strong>所有礼赞供养福 请佛住世转法轮 随喜忏悔诸善根 回向众生及佛道（一拜）</strong><br><strong>愿将以此胜功德 回向无上真法界 性相佛法及僧伽 二谛融通三昧印 如是无量功德海 我今皆悉尽回向 所有众生身口意 见惑弹谤我法等 如是一切诸业障 悉皆消灭尽无余 念念智周于法界 广度众生皆不退 乃至虚空世界尽 众生及业烦恼尽 如是四法广无边 愿今回向亦如是（一拜 ）</strong><br><strong>南无大行普贤菩萨（三称毕起立）。</strong></p>
+<h2 id="回向文"><a href="#回向文" class="headerlink" title="回向文"></a>回向文</h2><p><strong>愿以此功德，庄严佛净土。</strong><br><strong>上报四重恩，下济三途苦。</strong><br><strong>愿有见闻者，悉发菩提心。</strong><br><strong>尽此一报身，同生极乐国。</strong></p>
+]]></content>
+      <categories>
+        <category>经咒</category>
+      </categories>
+      <tags>
+        <tag>经咒</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git常用命令</title>
+    <url>//blog/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html</url>
+    <content><![CDATA[<h3 id="本地git获得github的提交权限"><a href="#本地git获得github的提交权限" class="headerlink" title="本地git获得github的提交权限"></a>本地git获得github的提交权限</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 设置用户名和邮箱</span></span><br><span class="line">git config --global user.name <span class="string">'your_name'</span></span><br><span class="line">git config --global user.email <span class="string">'your_email'</span></span><br><span class="line"><span class="comment"># 生成SSH密匙,之后按三次回车</span></span><br><span class="line">ssh-keygen -t rsa -C <span class="string">'your_email'</span></span><br><span class="line"><span class="comment"># 之后再/c/user/用户名/.ssh文件下，找到id_rsa.pub文件，打开复制</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="添加公钥到github"><a href="#添加公钥到github" class="headerlink" title="添加公钥到github"></a>添加公钥到github</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">添加生成的id_rsa.pub文件中的公钥到github的**setting / SSH AND GPG KEY / SSH keys</span><br></pre></td></tr></table></figure>
+
+<h3 id="测试是否关联成功"><a href="#测试是否关联成功" class="headerlink" title="测试是否关联成功"></a>测试是否关联成功</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git bash输入ssh git@github.com, 如果提示successfully authenticated则成功</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建本地仓库"><a href="#创建本地仓库" class="headerlink" title="创建本地仓库"></a>创建本地仓库</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># cd到项目目录,初始化git仓库</span></span><br><span class="line">git init</span><br><span class="line"><span class="comment"># 把所有项目文件添加到提交暂存区</span></span><br><span class="line">git add .</span><br><span class="line"><span class="comment"># 把暂存区中的内容提交到仓库</span></span><br><span class="line">git commit -m <span class="string">'commit first'</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="创建远程仓库"><a href="#创建远程仓库" class="headerlink" title="创建远程仓库"></a>创建远程仓库</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 登录github，创建仓库，之后复制仓库地址</span></span><br><span class="line">git@github.com:vitaair/hexo_blog.git</span><br></pre></td></tr></table></figure>
+
+<h3 id="同步本地仓库到远程仓库"><a href="#同步本地仓库到远程仓库" class="headerlink" title="同步本地仓库到远程仓库"></a>同步本地仓库到远程仓库</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 关联本地仓库和远程仓库</span></span><br><span class="line">git remote add origin git@github.com:vitaair/hexo_blog.git</span><br><span class="line"><span class="comment"># 把本地仓库内容push到远程仓库的master分支 </span></span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>push</code>的<code>-u</code>参数是设置本地仓库默认的<code>upstream</code>,这里就是把本地仓库同远程仓库的master分支进行关联，之后在这个仓库pull时不带参数也默认从master分支拉取。</p>
+</blockquote>
+<h3 id="删除-idea-文件夹"><a href="#删除-idea-文件夹" class="headerlink" title="删除.idea 文件夹"></a>删除.idea 文件夹</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git rm -r --cached .idea  <span class="comment">#--cached不会把本地的.idea删除</span></span><br><span class="line">git commit -m <span class="string">'delete .idea dir'</span></span><br><span class="line">git push -u origin mastergit remote add origin git@github.com:vitaair/hexo_blog.git</span><br><span class="line"><span class="comment"># 把本地仓库内容push到远程仓库的master分支 </span></span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除-iml文件-先手动删除iml文件-再操作如下指令即可"><a href="#删除-iml文件-先手动删除iml文件-再操作如下指令即可" class="headerlink" title="删除.iml文件(先手动删除iml文件,再操作如下指令即可)"></a>删除.iml文件(先手动删除iml文件,再操作如下指令即可)</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git status                       <span class="comment"># 查看当前状态，确认是否已经删除了iml文件</span></span><br><span class="line">git pull                         <span class="comment"># 不是必要步骤，只要能保证项目是最新的即可</span></span><br><span class="line">git add .                        <span class="comment"># add后面有一个空格然后是 . 号，添加改变的文件</span></span><br><span class="line">git commit -m <span class="string">'delete iml file'</span>  <span class="comment"># 提交到本地仓库</span></span><br><span class="line">git push                         <span class="comment"># 提交到远程仓库</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>terminal</category>
+      </categories>
+      <tags>
+        <tag>terminal</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>心经的不可思议</title>
+    <url>//blog/%E5%BF%83%E7%BB%8F%E7%9A%84%E4%B8%8D%E5%8F%AF%E6%80%9D%E8%AE%AE.html</url>
+    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>​        根据一些修行人的经验，心经可以帮你相当大的忙，你可以三遍心经21遍心咒（揭谛揭谛波罗揭谛 波罗僧揭谛菩提娑婆诃。</p>
+<p>​        反复的求观世音菩萨帮你达成你心中的好的愿望！一般而言，观世音菩萨绝对会闻声救苦，帮你达成你的善愿，关键就是看你去不去念。其次你要注意的是：<strong>你是念心经，不是首先要去理解其中的深奥意思的。</strong>我的意思就是说：<strong>什么都不管，念就是了！！！</strong></p>
+<h2 id="念的程序是这样的：（口念和心念都无所谓！）"><a href="#念的程序是这样的：（口念和心念都无所谓！）" class="headerlink" title="念的程序是这样的：（口念和心念都无所谓！）"></a>念的程序是这样的：（口念和心念都无所谓！）</h2><p>​        <strong>从头到尾念第一遍</strong></p>
+<p>​        <strong>从头到尾念第二遍</strong></p>
+<p>​        <strong>从头到尾念第三遍</strong></p>
+<p>​        <strong>再念心经心咒21遍（揭谛揭谛 波罗揭谛 波罗僧揭谛 菩提娑婆诃）</strong></p>
+<p>​        再念祈求文：<strong>弟子诚心祈求南无大悲观世音菩萨和诸护法金刚帮弟子达成……（你的良好愿望）</strong></p>
+<p>​        再念感谢文：<strong>弟子诚心感谢南无大悲观世音菩萨和诸护法金刚！</strong></p>
+<h2 id="附：心经全文："><a href="#附：心经全文：" class="headerlink" title="附：心经全文："></a>附：心经全文：</h2><p><strong>《般若波罗蜜多心经》</strong></p>
+<p><strong>观自在菩萨 行深般若波罗蜜多时</strong></p>
+<p><strong>照见五蕴皆空 度一切苦厄</strong></p>
+<p><strong>舍利子</strong></p>
+<p><strong>色不异空 空不异色</strong></p>
+<p><strong>色即是空 空即是色</strong></p>
+<p><strong>受想行识 亦复如是</strong></p>
+<p><strong>舍利子</strong></p>
+<p><strong>是诸法空相 不生不灭</strong></p>
+<p><strong>不垢不净 不增不减</strong></p>
+<p><strong>是故空中无色 无受想行识</strong></p>
+<p><strong>无眼耳鼻舌身意 无色声香味触法</strong></p>
+<p><strong>无眼界 乃至无意识界</strong></p>
+<p><strong>无无明 亦无无明尽</strong></p>
+<p><strong>乃至无老死 亦无老死尽</strong></p>
+<p><strong>无苦集灭道 无智亦无得 以无所得故</strong></p>
+<p><strong>菩提萨陲 依般若波罗蜜多故</strong></p>
+<p><strong>心无挂碍 无挂碍故 无有恐怖</strong></p>
+<p><strong>远离颠倒梦想 究竟涅槃</strong></p>
+<p><strong>三世诸佛 依般若波罗蜜多故</strong></p>
+<p><strong>得阿耨多罗三藐三菩提</strong></p>
+<p><strong>故知般若波罗蜜多</strong></p>
+<p><strong>是大神咒 是大明咒 是无上咒</strong></p>
+<p><strong>是无等等咒 能除一切苦 真实不虚</strong></p>
+<p><strong>故说般若波罗蜜多咒</strong></p>
+<p><strong>即说咒曰 揭谛揭谛 波罗揭谛</strong></p>
+<p><strong>波罗僧揭谛 菩提娑婆诃</strong></p>
+<h2 id="结束语："><a href="#结束语：" class="headerlink" title="结束语："></a>结束语：</h2><p>​        你能遇见心经，就是知！你能念诵心经，就是行！你能得到加持，就是证！</p>
+<p>​        非常的高兴你能念心经，其实这个心经非常的重要，平时有麻烦是可以靠心经来帮你度过难关的！简单又功效宏大！</p>
+<p>​        像这样的三遍心经加21遍心咒，是完整的一次祈愿程序。当然越多次完整的越好，多多益善！到时候你就会知道心经的厉害！多多念心经吧！</p>
+<h2 id="转载："><a href="#转载：" class="headerlink" title="转载："></a>转载：</h2><p>——以上内容转自元音法师，有缘者得之。</p>
+]]></content>
+      <categories>
+        <category>经咒</category>
+      </categories>
+      <tags>
+        <tag>经咒</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ShadowSocks 使用教程</title>
+    <url>//blog/ShadowSocks%20%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B.html</url>
+    <content><![CDATA[<h2 id="基础篇"><a href="#基础篇" class="headerlink" title="基础篇"></a>基础篇</h2><h3 id="下载ShadowSocks"><a href="#下载ShadowSocks" class="headerlink" title="下载ShadowSocks"></a>下载ShadowSocks</h3><p>地址<a href="https://github.com/shadowsocks/shadowsocks-windows/releases/download/2.5.8/Shadowsocks-2.5.8.zip" target="_blank" rel="noopener">https://github.com/shadowsocks/shadowsocks-windows/releases/download/2.5.8/Shadowsocks-2.5.8.zip</a></p>
+<h3 id="解压Shadowsocks-2-5-8-zip"><a href="#解压Shadowsocks-2-5-8-zip" class="headerlink" title="解压Shadowsocks-2.5.8.zip"></a>解压Shadowsocks-2.5.8.zip</h3><p>得到Shadowsocks.exe，右键以管理员身份运行。</p>
+<h3 id="打开http-www-ishadowsocks-com-free"><a href="#打开http-www-ishadowsocks-com-free" class="headerlink" title="打开http://www.ishadowsocks.com/#free"></a>打开<a href="http://www.ishadowsocks.com/#free" target="_blank" rel="noopener">http://www.ishadowsocks.com/#free</a></h3><p>获得账号密码（或者使用自己的），这里得到账号如下：服务器地址:US1.ISS.TF 端口:8989 密码:08757213 加密方式:AES-256-CFB</p>
+<h3 id="将得到的ss账号填入Shadowsocks-exe"><a href="#将得到的ss账号填入Shadowsocks-exe" class="headerlink" title="将得到的ss账号填入Shadowsocks.exe"></a>将得到的ss账号填入Shadowsocks.exe</h3><p>如图，然后点击确定</p>
+<h3 id="到屏幕右下角找到灰色小飞机图标右键"><a href="#到屏幕右下角找到灰色小飞机图标右键" class="headerlink" title="到屏幕右下角找到灰色小飞机图标右键"></a>到屏幕右下角找到灰色小飞机图标右键</h3><h3 id="点击启动系统代理"><a href="#点击启动系统代理" class="headerlink" title="点击启动系统代理"></a>点击启动系统代理</h3><p>然后就可以开始自由上网了</p>
+<h2 id="高级篇"><a href="#高级篇" class="headerlink" title="高级篇"></a>高级篇</h2><h3 id="1．基础知识普及"><a href="#1．基础知识普及" class="headerlink" title="1．基础知识普及"></a>1．基础知识普及</h3><h4 id="系统代理模式：PAC模式"><a href="#系统代理模式：PAC模式" class="headerlink" title="系统代理模式：PAC模式"></a>系统代理模式：PAC模式</h4><p>PAC模式也称为智能模式，这个模式可以让墙的网站走SS，而没被墙的，不走SS，这样就不影响原来的网速</p>
+<h4 id="系统代理模式：全局模式"><a href="#系统代理模式：全局模式" class="headerlink" title="系统代理模式：全局模式"></a>系统代理模式：全局模式</h4><p>全局模式是让所有网站都走SS，有时PAC不够精确，被墙了的，没有走SS，就需要启动这个模式了，但是一直使用这个模式就会影响自己的网速</p>
+<h4 id="服务器：编辑服务器"><a href="#服务器：编辑服务器" class="headerlink" title="服务器：编辑服务器"></a>服务器：编辑服务器</h4><p>这个就是进入到添加ss账号的桌面，这里添加后就可以记录多个账号，都有多个账号时候，哪个账号前有勾，就说明使用哪个，点击一下其他账号，就使用其它账号了，添加服务器界面下面1080端口，是指ss绑定哪个端口，这个值可以随便改，但是不能使已经被其他程序占用的，怎么看是否被占用，命令行中输入netstat-ano</p>
+<h4 id="开机启动"><a href="#开机启动" class="headerlink" title="开机启动"></a>开机启动</h4><p>开机后自动启动</p>
+<h4 id="允许来自局域网的连接"><a href="#允许来自局域网的连接" class="headerlink" title="允许来自局域网的连接"></a>允许来自局域网的连接</h4><p>如果有安装手机，或者局域网的其他设备需要ss账号，就需要勾选这个</p>
+<h3 id="2．安卓设备通过电脑上的ss进行科学上网"><a href="#2．安卓设备通过电脑上的ss进行科学上网" class="headerlink" title="2．安卓设备通过电脑上的ss进行科学上网"></a>2．安卓设备通过电脑上的ss进行科学上网</h3><h4 id="将手机链接到同一局域网"><a href="#将手机链接到同一局域网" class="headerlink" title="将手机链接到同一局域网"></a>将手机链接到同一局域网</h4><h4 id="在wifi同一选项中有个代理选项"><a href="#在wifi同一选项中有个代理选项" class="headerlink" title="在wifi同一选项中有个代理选项"></a>在wifi同一选项中有个代理选项</h4><p>打开那项，输入电脑ip（ipconfig），端口（8123）</p>
+<h4 id="电脑上ss小飞机右键勾上允许来自局域网的连接"><a href="#电脑上ss小飞机右键勾上允许来自局域网的连接" class="headerlink" title="电脑上ss小飞机右键勾上允许来自局域网的连接"></a>电脑上ss小飞机右键勾上允许来自局域网的连接</h4><p>然后就可以手机自由上网了。<br> 注：弱弱的说下，这样搞的就不需要root权限，另外苹果手机也可以用这个方法科学上网</p>
+<h3 id="3．QQ使用ss科学上网"><a href="#3．QQ使用ss科学上网" class="headerlink" title="3．QQ使用ss科学上网"></a>3．QQ使用ss科学上网</h3><h4 id="打开QQ客户端"><a href="#打开QQ客户端" class="headerlink" title="打开QQ客户端"></a>打开QQ客户端</h4><p>点击右上角向下的三角形，弹出如图界面</p>
+<h4 id="类型选择sock5代理"><a href="#类型选择sock5代理" class="headerlink" title="类型选择sock5代理"></a>类型选择sock5代理</h4><p>地址输入127.0.0.1（如果ss是安装在其他电脑上，就输入那台电脑的ip），端口输入1080，这里的1080需要和前面的添加服务器界面的1080一样，如果前面你修改为了其他端口，就需要把此处也修改为和前面一样的端口。</p>
+<h4 id="点击确定"><a href="#点击确定" class="headerlink" title="点击确定"></a>点击确定</h4><p>开始登陆QQ吧</p>
+<p>小提示<br> 勾上允许来自局域网的连接，其实就是对外提供了代理<br> 8123端口，就是http代理的端口<br> 1080端口，就是sock5代理的端口<br> ss给我们提供的就是sock5代理，然后使用了ss_privoxy把sock5代理转换为了http代理，懂了这个原理后，后面的很多东西就可以自己DIY了。</p>
+]]></content>
+      <categories>
+        <category>IDE工具</category>
+      </categories>
+      <tags>
+        <tag>IDE工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>FastStone Capture 9.3注册码 序列号</title>
+    <url>//blog/FastStone%20Capture%209.3%E6%B3%A8%E5%86%8C%E7%A0%81%20%E5%BA%8F%E5%88%97%E5%8F%B7.html</url>
+    <content><![CDATA[<p>FastStone Capture 9.3注册码 序列号</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">name/用户名：TEAM JiOO　　</span><br><span class="line">key/注册码：CPCWXRVCZW30HMKE8KQQUXW　　</span><br><span class="line"></span><br><span class="line">USER NAME: TEAM_BRAiGHTLiNG_2007　　</span><br><span class="line">CODE: XPNMF<span class="literal">-ISDYF</span><span class="literal">-LCSED</span><span class="literal">-BPATU</span>　　</span><br><span class="line">RPTME<span class="literal">-IMDHD</span><span class="literal">-MIEPX</span><span class="literal">-VLXAW</span>　　</span><br><span class="line">企业版序列号：　　</span><br><span class="line">name：bluman　　</span><br><span class="line">serial/序列号/注册码：VPISCJULXUFGDDXYAUYF</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>IDE工具</category>
+      </categories>
+      <tags>
+        <tag>IDE工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Idea 插件下载超时解决方法</title>
+    <url>//blog/Idea%20%E6%8F%92%E4%BB%B6%E4%B8%8B%E8%BD%BD%E8%B6%85%E6%97%B6%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%20.html</url>
+    <content><![CDATA[<p>找到：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">settings-&gt;system settings-&gt;updata</span><br></pre></td></tr></table></figure>
+
+<p>去掉：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Use secure Connetion</span><br><span class="line">或者</span><br><span class="line">Ignored Updates里的ip:<span class="number">192.7</span><span class="number">.142</span><span class="number">.36</span></span><br></pre></td></tr></table></figure>
+
+<p>原因：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">是使用了https协议下载导致的问题</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>IDE工具</category>
+      </categories>
+      <tags>
+        <tag>IDE工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>photoshop cc 2019 主页一直显示正在载入处理</title>
+    <url>//blog/photoshop%20cc%202019%20%E4%B8%BB%E9%A1%B5%E4%B8%80%E7%9B%B4%E6%98%BE%E7%A4%BA%E6%AD%A3%E5%9C%A8%E8%BD%BD%E5%85%A5%E5%A4%84%E7%90%86.html</url>
+    <content><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>photoshop 是一款常用的图片处理软件，目前版本已经升级到 CC 2019版本了，2019版软件现在是直接连通网络的，所以打开软件的时候主页会一直显示正在载入。下面教大家如何关闭主页屏幕</p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="1-启动photoshop-cc-2019软件"><a href="#1-启动photoshop-cc-2019软件" class="headerlink" title="1 启动photoshop cc 2019软件"></a>1 启动photoshop cc 2019软件</h3><h3 id="2-我们会看到主页显示“正在载入中”"><a href="#2-我们会看到主页显示“正在载入中”" class="headerlink" title="2 我们会看到主页显示“正在载入中”"></a>2 我们会看到主页显示“正在载入中”</h3><h3 id="3-接下来我们找到上方导航栏目中的“编辑”"><a href="#3-接下来我们找到上方导航栏目中的“编辑”" class="headerlink" title="3 接下来我们找到上方导航栏目中的“编辑”"></a>3 接下来我们找到上方导航栏目中的“编辑”</h3><h3 id="4-鼠标点击“编辑”在下拉菜单中找到“首选项”，点击“首选项”找到“常规”，点击进入"><a href="#4-鼠标点击“编辑”在下拉菜单中找到“首选项”，点击“首选项”找到“常规”，点击进入" class="headerlink" title="4 鼠标点击“编辑”在下拉菜单中找到“首选项”，点击“首选项”找到“常规”，点击进入"></a>4 鼠标点击“编辑”在下拉菜单中找到“首选项”，点击“首选项”找到“常规”，点击进入</h3><h3 id="5-在弹出的窗口中找到“停用主页屏幕”，并勾选上"><a href="#5-在弹出的窗口中找到“停用主页屏幕”，并勾选上" class="headerlink" title="5 在弹出的窗口中找到“停用主页屏幕”，并勾选上"></a>5 在弹出的窗口中找到“停用主页屏幕”，并勾选上</h3><h3 id="6-然后点击“确定”"><a href="#6-然后点击“确定”" class="headerlink" title="6 然后点击“确定”"></a>6 然后点击“确定”</h3><h3 id="7-点击软件右上角的“X”关闭软件"><a href="#7-点击软件右上角的“X”关闭软件" class="headerlink" title="7 点击软件右上角的“X”关闭软件"></a>7 点击软件右上角的“X”关闭软件</h3><h3 id="8-重新启动软件，软件界面的“正在载入”就消失不见了"><a href="#8-重新启动软件，软件界面的“正在载入”就消失不见了" class="headerlink" title="8 重新启动软件，软件界面的“正在载入”就消失不见了"></a>8 重新启动软件，软件界面的“正在载入”就消失不见了</h3>]]></content>
+      <categories>
+        <category>IDE工具</category>
+      </categories>
+      <tags>
+        <tag>IDE工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>摩利支天菩萨六字最上心真言</title>
+    <url>//blog/%E6%91%A9%E5%88%A9%E6%94%AF%E5%A4%A9%E8%8F%A9%E8%90%A8%E5%85%AD%E5%AD%97%E6%9C%80%E4%B8%8A%E5%BF%83%E7%9C%9F%E8%A8%80.html</url>
+    <content><![CDATA[<p>有求必应的咒语，求财富增吉祥乃至诸世间事，皆可诵此六字最上心真言！**</p>
+<h2 id="【摩利支天菩萨心咒】（长咒）"><a href="#【摩利支天菩萨心咒】（长咒）" class="headerlink" title="【摩利支天菩萨心咒】（长咒）"></a><strong>【摩利支天菩萨心咒】（长咒）</strong></h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">『南摩三满多。母陀南。嗡。摩利支。梭哈』（至少一百零八遍）</span><br></pre></td></tr></table></figure>
+
+<h2 id="【摩利支天菩萨六字最上心真言】（短咒）"><a href="#【摩利支天菩萨六字最上心真言】（短咒）" class="headerlink" title="【摩利支天菩萨六字最上心真言】（短咒）"></a>【摩利支天菩萨六字最上心真言】（短咒）</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">『嗡。摩利支。梭哈』（至少一百零八遍）</span><br></pre></td></tr></table></figure>
+
+<p>​        行者若无暇受持读诵本经，可一心持诵【摩利支天菩萨心咒】，供养菩萨之宝像，功德亦无量无边，所求善愿，无不称心如意。顶礼如来正法圣贤众拿摩摩利支天菩萨。</p>
+<h2 id="【摩利支天菩萨介绍】"><a href="#【摩利支天菩萨介绍】" class="headerlink" title="【摩利支天菩萨介绍】"></a>【摩利支天菩萨介绍】</h2><p>​        <strong>他是一位具有自我隐形神通，同时为能救人于厄难，是诸众生的保护神。(摩利支天在道教被称为斗姆元君)。此天威力极大，上管三十六天罡星，下管七十二地煞星，二十八宿皆为此天所管。能保佑你一生逢凶化吉、远离官灾、一生平安。</strong> </p>
+<h2 id="【摩利支天菩萨法门及功德】"><a href="#【摩利支天菩萨法门及功德】" class="headerlink" title="【摩利支天菩萨法门及功德】 　　"></a><strong>【摩利支天菩萨法门及功德】</strong> 　　</h2><p>​        <strong>修持摩利支天菩萨法门具足息灾、增益、怀爱及降伏四法之功德，能满足行者所求种种正确及善性之心愿。譬如修持者不会被别人诈骗其财物，亦不会被人捉縳囚禁，亦或被与行者有仇怨之人加害。其它如治病（肉体上四大不调之病及灵界病）、护身（防止一切毒丸虫恶兽及人与非人之侵害）、求聪明长寿、求辩论得胜、求降雨、求福、求子女等等，莫不一一灵验应心，具如经中所说，功德赞不能尽。</strong></p>
+<p>​        <strong>如前所说，摩利支天菩萨示现不同之法相，为教化不同根器之众生，亦配合不同修法之用途。在经中记载菩萨之修法有多种多样，为满足众生各种之需求。不同之修法，有其特别规定之画像方法、真言、观想及手印。在摩利支天菩萨之真言当中，以菩萨之【摩利支天菩萨六字最上心真言】为行者最易学习及持诵，此真言就是菩萨之最上心印。「佛说大摩里支菩萨经」卷一：「今有成就之法，用好彩帛及板木等，于其上画无忧树，于此树下画摩里支菩萨，身如黄金色，作童女相，挂青天衣，手执莲花，顶戴宝塔庄严。如是画已，于此帧前，诵最上心真言八千遍，所求之事，决定成就。」</strong></p>
+<p>​        <strong>依密教所传，修习摩利支天法，如果得到成就，其最大功能是消灾与隐身。依《大摩里支菩萨经》所载，此尊‘能令有情在道路中隐身、众人中隐身。水、火、盗贼一切诸难皆能隐身。’如能赤诚依法修持，则一切天魔恶鬼外道，都无法觅得修法者的行踪。除此之外，还有息灾、增益、降伏等作用，各法均有不可思议之感应。</strong></p>
+<p>​        <strong>摩利支天是隐身和消灾的保护神。此天威力极大，上管三十六天罡星，下管七十二地煞星，二十八宿皆为此天所管。不空译之摩利支天经曰：“有天名摩利支，有大神通自在之法。常行日前，日不见彼，彼能见日。无人能见，无人能知，无人能害，无人欺诳，无人能缚，无人能债其财物，无人能罚，不畏怨家，能得其便。”摩利支天也被称为战神，有护身、隐身、得财、诤论胜利等功德。</strong></p>
+<p>​        <strong>由唐朝传入日本后，摩利支天被称为阳炎之女神，日本的武士相信摩利支天能够给他们带来武运，战无不胜．日本忍者由于经常进行密教修练，也将摩利支天作为自己的守护本尊．更重要的是因为摩利支天能够隐形，连天界的众多神明也看不到她的身影，所以修行隐身术的忍者都使用密教中的一个关于她的手印（摩利支天隐形印）。</strong></p>
+<p>　　</p>
+<h2 id="【佛说大摩里支菩萨经】"><a href="#【佛说大摩里支菩萨经】" class="headerlink" title="【佛说大摩里支菩萨经】"></a><strong>【佛说大摩里支菩萨经】</strong></h2><p>​        <strong>若人持诵之时。凡有所求须称自名。即时摩里支菩萨。以慈悲力为彼众生。于道路中拥护。非道路中拥护。众人中拥护水难时拥护。火难时拥护。乃至一切之处悉皆拥护。令得增长一切吉祥之事。</strong></p>
+<h2 id="为什么在佛门众多咒语中，摩利支天咒是容易应验呢？"><a href="#为什么在佛门众多咒语中，摩利支天咒是容易应验呢？" class="headerlink" title="为什么在佛门众多咒语中，摩利支天咒是容易应验呢？"></a><strong>为什么在佛门众多咒语中，摩利支天咒是容易应验呢？</strong></h2><p>​        <strong>主要原因是『摩利支天菩萨』，太可爱了！</strong></p>
+<p>　　</p>
+<p>​        <strong>只要你有求于她，摩利支天不管你是谁，反正先让你如愿以偿，以后的事以后再说！这就是『先以利钩牵，后令入佛智』。郑和下西洋七次，每次都平安归来，都靠此摩利支天咒的帮忙！实在太不可思议！</strong></p>
+<p>　　</p>
+<p>​        <strong>中天竺又名法净寺，位于天竺路中段、稽留峰麓。始建于隋开皇十七年(597)，长时期内是下天竺的一个分院。南宋初，因寺内摩利支天(佛教护法神二十诸天的第十六位)女神“感应显灵”，而备受朝廷尊宠，建摩利支专殿；又因祈雨“灵验”蜚声湖上，至南宋后期，寺院达到鼎盛。</strong></p>
+<h2 id="摩里支菩萨六字-最上心真言"><a href="#摩里支菩萨六字-最上心真言" class="headerlink" title="*摩里支菩萨六字 最上心真言   *"></a>*<em>摩里支菩萨六字 最上心真言   *</em></h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">唵 摩里支 娑嚩贺</span><br></pre></td></tr></table></figure>
+
+<p>​        <strong>此真言诵八百遍 得大聪敏。日诵千遍得长寿无病。增长大力众人敬爱。诵阿喻多数得成就法。诵一俱胝设先造五逆罪亦得成就。若欲成就隐身点眼药。革屣圣剑含丸药。得神通得大人敬爱。降伏冤家破坏冤家。降伏兵众降伏夜叉女。破坏拏吉儞鬼。制彼药毒。除隔四日疟病。令诸天入悟。失财却获。如是一切所欲所求之事。诵此真言王。发勇猛心如摩里支菩萨。一切能作 无不成就。</strong></p>
+<p>​        <strong>如是摩里支菩萨真言等。若阿闍梨依法受持。恒时持诵所求之事无不成就。所谓圣剑眼药革屣丸药。降伏夜叉女天女龙女。阿修罗女紧曩罗女等。悉皆随顺敬爱和合。彼持明者以真言威德。如摩里支菩萨神通威力。所有天龙夜叉干闼婆。羯吒布单曩毘舍左。罗叉母鬼拏枳儞鬼。乌娑多啰迦饿鬼身鬼。迷鬼大曜吠多拏唧左迦。及仆从诸恶鬼等怀恶心者。彼持明者影尚不能侵。何况害其身。是故持明阿闍利。能获清净大福。能增长广大吉祥。能消除一切重罪。能成就本尊三昧。当证毘卢法身。摩里支经汝等宜应信受读诵。</strong></p>
+]]></content>
+      <categories>
+        <category>经咒</category>
+      </categories>
+      <tags>
+        <tag>经咒</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>学会9个古老咒语，驱动你的幸福能场</title>
+    <url>//blog/%E5%AD%A6%E4%BC%9A9%E4%B8%AA%E5%8F%A4%E8%80%81%E5%92%92%E8%AF%AD%EF%BC%8C%E9%A9%B1%E5%8A%A8%E4%BD%A0%E7%9A%84%E5%B9%B8%E7%A6%8F%E8%83%BD%E5%9C%BA.html</url>
+    <content><![CDATA[<p>##转载自：<a href="https://www.liaotuo.com" target="_blank" rel="noopener">https://www.liaotuo.com</a></p>
+<p><img src="https://www.liaotuo.com/uploadfile/2017/0327/20170327103927118.jpeg" alt="学会9个古老咒语，驱动你的幸福能场"></p>
+<p>　　<strong>【第1咒】阿弥陀佛心咒【（ 心念耳闻 ）嗡 阿 弥 爹 哇 噻】</strong>——呼唤宇宙的祝福能量</p>
+<p>　　<strong>【第2咒】六字真言【唵 嘛 呢 叭 咪 吽】</strong>——开启善待自己、善待他人的慈悲心</p>
+<p>　　<strong>【第3咒】文殊咒</strong>【<strong>嗡 阿 喇 巴 札 那 谛</strong>】****——开启<a href="https://www.liaotuo.com/remen/zhihui.html" target="_blank" rel="noopener">智慧</a>的力量</p>
+<p>　　<strong>【第4咒】心经咒【揭谛揭谛 波罗揭谛 波罗僧揭谛 菩提娑婆诃</strong>】——回归心灵的<a href="https://www.liaotuo.com/remen/zizai.html" target="_blank" rel="noopener">自在</a>力</p>
+<p>　　<strong>【第5咒】绿度母心咒【嗡 大咧 度大咧 度咧 梭哈】</strong>——<a href="https://www.liaotuo.com/remen/shengming.html" target="_blank" rel="noopener">生命</a><a href="https://www.liaotuo.com/remen/yuanman.html" target="_blank" rel="noopener">圆满</a>的<a href="https://www.liaotuo.com/remen/qiyuan.html" target="_blank" rel="noopener">祈愿</a></p>
+<p>　　<strong>【第6咒】莲师心咒</strong> 【<strong>嗡 啊 吽 班杂 咕噜 贝玛 悉地 吽</strong>】——净化驱邪第一咒，净<a href="https://www.liaotuo.com/remen/huashen.html" target="_blank" rel="noopener">化身</a>、语、意</p>
+<p>　　<strong>【第7咒】准提心咒 【南无飒哆喃 三藐三菩陀 俱胝喃 怛侄他 唵折戾主戾 准提娑婆诃</strong> 】——接轨宇宙的清净力量</p>
+<p>　　<strong>【第8咒】七佛灭罪真言【离婆离婆帝 求诃求诃帝 陀罗尼帝 尼诃啰帝 毗黎你帝 摩诃伽帝 真陵乾帝 莎婆诃】</strong>——更改业力程式的密码</p>
+<p>　　<strong>【第9咒】药师心咒【 喋雅他嗡 贝堪则贝堪则 玛哈贝堪则 拉杂萨目 嘎喋梭哈】</strong>——疗愈身心的宇宙圣药</p>
+<h2 id="一、咒语为什么有效？"><a href="#一、咒语为什么有效？" class="headerlink" title="一、咒语为什么有效？"></a>一、<a href="https://www.liaotuo.com/remen/zhouyu.html" target="_blank" rel="noopener">咒语</a>为什么有效？</h2><h3 id="1-咒语，宇宙共通的语言"><a href="#1-咒语，宇宙共通的语言" class="headerlink" title="　　1. 咒语，宇宙共通的语言"></a>　　1. 咒语，宇宙共通的语言</h3><p>　　心中存了怎样的念头，就会引动宇宙怎样的力量。</p>
+<h3 id="2-咒语，接通宇宙能量的秘密通道"><a href="#2-咒语，接通宇宙能量的秘密通道" class="headerlink" title="　　2. 咒语，接通宇宙能量的秘密通道"></a>　　2. 咒语，接通宇宙能量的秘密通道</h3><p>　　德国物理学家普朗克说：万物因为力而得以兴起与存在……我们必须得假设在“力”的背后存在有<a href="https://www.liaotuo.com/remen/yishi.html" target="_blank" rel="noopener">意识</a>、有智慧的心智，这个心智就是万物的母体。</p>
+<h3 id="3-咒语完整封存了神圣经典的精髓"><a href="#3-咒语完整封存了神圣经典的精髓" class="headerlink" title="　　3. 咒语完整封存了神圣经典的精髓"></a>　　3. 咒语完整封存了神圣经典的精髓</h3><p>　　咒语是一种神圣的记忆装置，在此装置内“完整封装”了一段神圣经典的核心要义。</p>
+<h3 id="4-细微心念拥有超乎想像的巨大影响力"><a href="#4-细微心念拥有超乎想像的巨大影响力" class="headerlink" title="　　4. 细微心念拥有超乎想像的巨大影响力"></a>　　4. 细微心念拥有超乎想像的巨大影响力</h3><p>　　我们身处在一个看似稳固的世界，事实上这个世界一点也不稳固；相反的，它时时刻刻都在变化。而这看似稳固的状态，其实涵藏无尽的细微变化。</p>
+<h3 id="5-一朝相连，永不分离——从“因缘”到“量子纠缠”的神秘连结"><a href="#5-一朝相连，永不分离——从“因缘”到“量子纠缠”的神秘连结" class="headerlink" title="　　5. 一朝相连，永不分离——从“因缘”到“量子纠缠”的神秘连结"></a>　　5. 一朝相连，永不分离——从“<a href="https://www.liaotuo.com/remen/yinyuan1.html" target="_blank" rel="noopener">因缘</a>”到“量子纠缠”的神秘连结</h3><p>　　一旦两个物体发生连结，它们的关系就永远存在。</p>
+<h3 id="6-心的力量有多大——把“可能”转变为“真实”的超能力"><a href="#6-心的力量有多大——把“可能”转变为“真实”的超能力" class="headerlink" title="　　6. 心的力量有多大——把“可能”转变为“真实”的超能力"></a>　　6. 心的力量有多大——把“可能”转变为“真实”的超能力</h3><p>　　哪怕是一立方公尺的能量，也足以煮沸全世界的海洋。</p>
+<h3 id="7-意识创造出宇宙万物"><a href="#7-意识创造出宇宙万物" class="headerlink" title="　　7. 意识创造出宇宙万物"></a>　　7. 意识创造出宇宙万物</h3><p>　　意识形成能量，能量创造宇宙万物。</p>
+<h3 id="8-接通宇宙意识的直达车"><a href="#8-接通宇宙意识的直达车" class="headerlink" title="　　8. 接通宇宙意识的直达车"></a>　　8. 接通宇宙意识的直达车</h3><p>　　<a href="https://www.liaotuo.com/remen/xinshi.html" target="_blank" rel="noopener">心识</a>意念结合咒语，呼唤宇宙的能量。</p>
+<h2 id="二、学会9个古老咒语，驱动你的幸福能场"><a href="#二、学会9个古老咒语，驱动你的幸福能场" class="headerlink" title="二、学会9个古老咒语，驱动你的幸福能场"></a>二、学会9个古老咒语，驱动你的幸福能场</h2><h3 id="【第1咒】阿弥陀佛心咒——呼唤宇宙的祝福能量"><a href="#【第1咒】阿弥陀佛心咒——呼唤宇宙的祝福能量" class="headerlink" title="　　【第1咒】阿弥陀佛心咒——呼唤宇宙的祝福能量"></a>　　【第1咒】阿弥陀<a href="https://www.liaotuo.com/remen/foxin.html" target="_blank" rel="noopener">佛心</a>咒——呼唤宇宙的祝福能量</h3><p>　　<strong>1. 宇宙西方的智慧光是祝福的源头</strong></p>
+<p>　　呼唤宇宙西方的无量智慧光，与我们的身心灵共振，便是最大的祝福力。</p>
+<p>　　<strong>2. 借助他力，到达净土</strong></p>
+<p>　　人们必须借助宇宙的智慧能量，才有机会前往纯净美好的智慧空间。</p>
+<p>　　<strong>3. 诸佛是宇宙智慧能量的汇聚处</strong></p>
+<p>　　宇宙的智慧能量并非唯一，所有超越时空的诸佛都可以与我们连结。</p>
+<p>　　<strong>4. 唤醒本有的觉醒能力</strong></p>
+<p>　　运用咒语，可以协助人们开发那潜藏在心灵深处的智慧能量。</p>
+<p>　　<strong>5. “南摩”能启动一百分的祝福力</strong></p>
+<p>　　“南摩”是威力强大的咒字，代表心灵意识全部地奉献给神圣的宇宙智者，能启动一百分的祝福能量。</p>
+<h3 id="【第2咒】六字真言——开启善待自己、善待他人的慈悲心"><a href="#【第2咒】六字真言——开启善待自己、善待他人的慈悲心" class="headerlink" title="　　【第2咒】六字真言——开启善待自己、善待他人的慈悲心"></a>　　【第2咒】六字<a href="https://www.liaotuo.com/remen/zhenyan.html" target="_blank" rel="noopener">真言</a>——开启善待自己、善待他人的慈悲心</h3><p>　　<strong>1. 慈悲是宇宙万物的神秘键结</strong></p>
+<p>　　在慈悲里，宇宙神圣意识体与个人意识及潜意识是相连结的</p>
+<p>　　<strong>2. 慈悲的能量作用</strong></p>
+<p>　　自己<a href="https://www.liaotuo.com/remen/jietuo.html" target="_blank" rel="noopener">解脱</a><a href="https://www.liaotuo.com/remen/fannao.html" target="_blank" rel="noopener">烦恼</a>，也要别人一起解脱烦恼，如此才算是圆满。</p>
+<p>　　<strong>3. 启动宇宙的慈悲能量</strong></p>
+<p>　　礼敬莲中宝：不仅为自己，凡事也多为他人着想。</p>
+<p>　　<strong>4. 重整心灵的驱动程式</strong></p>
+<p>　　持咒是向宇宙资料库重新下载心灵程式，让心识回到清明无染的原始状态。</p>
+<p>　　<strong>5. 宇宙运作的两种秩序</strong></p>
+<p>　　在量子力学的前提下，所有事物在具有物质形式之前，都是从一个意识开始。可见的物质世界是“显现于外的秩序”；肉眼看不见的世界充满各种形式能量，是“内在隐含的秩序”。</p>
+<h3 id="【第3咒】文殊咒——开启智慧的力量"><a href="#【第3咒】文殊咒——开启智慧的力量" class="headerlink" title="【第3咒】文殊咒——开启智慧的力量"></a>【第3咒】文殊咒——开启智慧的力量</h3><p>　　<strong>1. 具备人间智慧与觉醒智慧</strong></p>
+<p>　　这股内在心灵与宇宙共通的善与美，就是转化我们所存在之物质世界的神奇力量。</p>
+<p>　　<strong>2. 让咒语启动你的直觉和灵感</strong></p>
+<p>　　咒语无论是有意义或无意义，均蕴藏伟大的能量，丝毫不减损其威力。</p>
+<h3 id="【第4咒】心经咒——回归心灵的自在力"><a href="#【第4咒】心经咒——回归心灵的自在力" class="headerlink" title="　　【第4咒】心经咒——回归心灵的自在力"></a>　　【第4咒】心经咒——回归心灵的自在力</h3><p>　　<strong>1. 获取自在力的途径</strong></p>
+<p>　　由“<a href="https://www.liaotuo.com/remen/rensheng.html" target="_blank" rel="noopener">人生</a>智慧”走向“宇宙智慧”，达到自由自在、心无挂碍的境界。</p>
+<p>　　<strong>2. 经与咒：两种心灵路径</strong></p>
+<p>　　“<a href="https://www.liaotuo.com/remen/dujing.html" target="_blank" rel="noopener">读经</a>”是思维文字语言而体悟的智慧，“持咒”是透过音声直接连通宇宙的智慧。</p>
+<p>　　<strong>3. 念诵梵字咒语的简单法则</strong></p>
+<p>　　<a href="https://www.liaotuo.com/fozhou/" target="_blank" rel="noopener">念咒</a>的第一个简单技巧，就是学会简单的断音法。</p>
+<p>　　<strong>4. 暂停一下！学习四短咒的叮咛</strong></p>
+<p>　　呼唤宇宙无限量的光芒：阿弥陀佛心咒</p>
+<p>　　连结宇宙慈悲的能量：六字真言</p>
+<p>　　下载宇宙智慧的能量：文殊咒</p>
+<p>　　通往宇宙自在大道：心经咒</p>
+<h3 id="【第5咒】绿度母心咒——生命圆满的祈愿"><a href="#【第5咒】绿度母心咒——生命圆满的祈愿" class="headerlink" title="　　【第5咒】绿度母心咒——生命圆满的祈愿"></a>　　【第5咒】绿度母心咒——生命圆满的祈愿</h3><p>　　<strong>1. 让我们都成为度母吧！</strong></p>
+<p>　　嗡！度母啊！祈请度母啊！快速成为度母啊！吉祥成就！</p>
+<p>　　<strong>2. 度母心咒藏有三个幸福码</strong></p>
+<p>　　从物质的满愿，到心灵的救度，再到全宇宙的圆满。</p>
+<h3 id="【第6咒】莲师心咒——净化驱邪第一咒，净化身、语、意"><a href="#【第6咒】莲师心咒——净化驱邪第一咒，净化身、语、意" class="headerlink" title="　　【第6咒】莲师心咒——净化驱邪第一咒，净化身、语、意"></a>　　【第6咒】莲师心咒——净化驱邪第一咒，净化身、语、意</h3><p>　　<strong>1. 第二位人间佛陀——莲华生大师</strong></p>
+<p>　　他的足迹往北到达西藏，往西最远到达阿富汗，往东则曾抵缅甸，在各地留下<a href="https://www.liaotuo.com/remen/fofa.html" target="_blank" rel="noopener">佛法</a>的秘密教导。</p>
+<p>　　<strong>2. 让身、语、意直达宇宙能量场</strong></p>
+<p>　　宇宙最根本的三个音声：“嗡”连结身体，“啊”连结语言，“轰”连结心灵。</p>
+<p>　　<strong>3. 观想能加快持咒的效力</strong></p>
+<p>　　持咒包括三个心理转化过程：“祈求”宇宙能量、“相信”宇宙能量，与最后“接收到”宇宙能量。</p>
+<p>　　<strong>4. 藏传佛教里的本尊相应法</strong></p>
+<p>　　西藏佛教秘密教法里的“究竟本尊”，很接近量子力学里的“万物母体”</p>
+<p>　　<strong>5. 脉轮是能量的启动枢纽</strong></p>
+<p>　　三个咒音“嗡、啊、轰”依序被安置于“顶轮、喉轮、脐轮”三个轮脉，对应出“身、语、意”，是三个重要的能量启动枢纽。</p>
+<h3 id="【第7咒】准提心咒——接轨宇宙的清净力量"><a href="#【第7咒】准提心咒——接轨宇宙的清净力量" class="headerlink" title="　　【第7咒】准提心咒——接轨宇宙的清净力量"></a>　　【第7咒】准提心咒——接轨宇宙的清净力量</h3><p>　　<strong>1. 七千万个宇宙智慧能量的汇聚处</strong></p>
+<p>　　宇宙在过去、现在、未来都存在着智慧、清净的泉源，其中所具有的神奇力量就是“准提”。</p>
+<p>　　<strong>2. 最大的清净力量</strong></p>
+<p>　　下载宇宙的清净力量，回复心灵的原厂设定。</p>
+<p>　　<strong>3. 认识业力这回事</strong></p>
+<p>　　业就好比电脑中无法移除的原始软体，从一出厂就跟着系统程式。</p>
+<h3 id="【第8咒】七佛灭罪真言——更改业力程式的密码"><a href="#【第8咒】七佛灭罪真言——更改业力程式的密码" class="headerlink" title="　　【第8咒】七佛灭罪真言——更改业力程式的密码"></a>　　【第8咒】七佛灭罪真言——更改业力程式的密码</h3><p>　　<strong>1. 请求七位宇宙智者，移除累世业力</strong></p>
+<p>　　引动七位宇宙智慧者的超自然力量，消灭根除因业力而带来的负面能量。</p>
+<p>　　<strong>2. 呼唤超自然力量移除恶业</strong></p>
+<p>　　业力会组成种种的<a href="https://www.liaotuo.com/remen/yinguo.html" target="_blank" rel="noopener">因果</a>关系，想要消除，就要转化负面能量。</p>
+<h3 id="【第9咒】药师咒——疗愈身心的宇宙圣药"><a href="#【第9咒】药师咒——疗愈身心的宇宙圣药" class="headerlink" title="　　【第9咒】药师咒——疗愈身心的宇宙圣药"></a>　　【第9咒】<a href="https://www.liaotuo.com/fozhou/yaoshizhou/42882.html" target="_blank" rel="noopener">药师咒</a>——疗愈身心的宇宙圣药</h3><p>　　<strong>1. 情绪与细胞（DNA）的实验</strong></p>
+<p>　　对于已离开身体的细胞，情绪的影响力依旧存在，彼此的<a href="https://www.liaotuo.com/remen/ganying.html" target="_blank" rel="noopener">感应</a>仍十分强烈且明显。</p>
+<p>　　<strong>2. 以心控物，让药显现</strong></p>
+<p>　　“以心控物”的能力，可以超越时间和空间的限制。</p>
+<p>　　<strong>3. 宇宙大医王的疗愈力</strong></p>
+<p>　　在咒语里融入大医王的智慧明光，疗愈“身体”与“心灵”两种层面的<a href="https://www.liaotuo.com/remen/tongku.html" target="_blank" rel="noopener">痛苦</a>。</p>
+<p>　　<strong>4. 助念是一种神奇的治疗念力</strong></p>
+<p>　　治疗师完全不认识这些病人，也没见过他们，但远距念力所发挥的疗效却令人惊叹不已！</p>
+<h2 id="三、这样持咒才有效！"><a href="#三、这样持咒才有效！" class="headerlink" title="三、这样持咒才有效！"></a>三、这样持咒才有效！</h2><h3 id="1-感激"><a href="#1-感激" class="headerlink" title="　　1. 感激"></a>　　1. 感激</h3><p>　　唯有心灵丰足了，才能心想事成。</p>
+<h3 id="2-远离负面想法"><a href="#2-远离负面想法" class="headerlink" title="　　2. 远离负面想法"></a>　　2. 远离负面想法</h3><p>　　神秘的渴望、远大的目标、崇高的梦想，忽然之间一一实现了。</p>
+<h3 id="3-回到纯净赤裸的心"><a href="#3-回到纯净赤裸的心" class="headerlink" title="　　3. 回到纯净赤裸的心"></a>　　3. 回到纯净赤裸的心</h3><p>　　超越人类语言的限制约束，让自己的心识先回到语言的源头。</p>
+<h3 id="4-回向"><a href="#4-回向" class="headerlink" title="　　4. 回向"></a>　　4. <a href="https://www.liaotuo.com/remen/huixiang.html" target="_blank" rel="noopener">回向</a></h3><p>　　呼唤咒语既能提供“自身”解决问题的能量，也能转化给相连结的“一切生命体”。</p>
+<h3 id="5-持咒可以带来什么生活好处？"><a href="#5-持咒可以带来什么生活好处？" class="headerlink" title="　　5. 持咒可以带来什么生活好处？"></a>　　5. 持咒可以带来什么<a href="https://www.liaotuo.com/remen/shenghuo.html" target="_blank" rel="noopener">生活</a>好处？</h3><p>　　引动宇宙美善的力量，实现自己的愿望。</p>
+<h3 id="6-持咒时，你的心在做什么？"><a href="#6-持咒时，你的心在做什么？" class="headerlink" title="　　6. 持咒时，你的心在做什么？"></a>　　6. 持咒时，你的心在做什么？</h3><p>　　透过咒语进行个人的心智重整，在这难得平静喜悦的片刻，好好地享受宇宙智慧的温暖守护。</p>
+<h3 id="7-随时创造自己的神圣空间"><a href="#7-随时创造自己的神圣空间" class="headerlink" title="　　7. 随时创造自己的神圣空间"></a>　　7. 随时创造自己的神圣空间</h3><p>　　专注的持咒，能创造出自己的神圣空间，轻松撷取宇宙能量。</p>
+<h3 id="8-不同的情况、心境与困难，可以持什么咒？"><a href="#8-不同的情况、心境与困难，可以持什么咒？" class="headerlink" title="　　8. 不同的情况、心境与困难，可以持什么咒？"></a>　　8. 不同的情况、心境与困难，可以持什么咒？</h3><p>　　各个咒语的主要作用都不同，可按自身情况、时地加以选择应用。</p>
+<h2 id="咒语，宇宙共通的语言"><a href="#咒语，宇宙共通的语言" class="headerlink" title="咒语，宇宙共通的语言"></a>咒语，宇宙共通的语言</h2><p>　　心中存了怎样的念头，就会引动宇宙怎样的力量。</p>
+<p>　　人的深层意识是<a href="https://www.liaotuo.com/remen/shane.html" target="_blank" rel="noopener">善恶</a>并存的，既有天使般的善，也有魔鬼般的恶，再良善之人也难免心生恶念，再邪恶者也有心地美好的时刻。每个人的内心都是一个小宇宙，如果我们引发出心中的善，就如同与天使做朋友；诱导出心中的恶，则等同跟魔鬼打交道。一个人内心的小宇宙是这样，我们所身处的这个大宇宙更是如此，某些场域汇聚着正面的智慧能量，某些空间却涵藏着超强破坏力。那么，你心中的念头会引发出正面或负面的能量呢？</p>
+]]></content>
+      <categories>
+        <category>经咒</category>
+      </categories>
+      <tags>
+        <tag>经咒</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>优化Hexo个人博客 </title>
+    <url>//blog/%E4%BC%98%E5%8C%96Hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2.html</url>
+    <content><![CDATA[<h2 id="转载自"><a href="#转载自" class="headerlink" title="转载自"></a>转载自</h2><p><a href="https://zhuanlan.zhihu.com/p/71164003" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/71164003</a></p>
+<h2 id="安装主题"><a href="#安装主题" class="headerlink" title="安装主题"></a>安装主题</h2><p>在 Hexo 项目源码目录下，有两个重要的配置文件，其名称均为 _config.yml 。 其中，一份位于站点根目录下，主要包含 Hexo本身的配置；另一份位于主题目录下，主要用于主题相关的配置。为了描述方便，在以下说明中，将前者称为<strong>站点配置文件</strong>， 后者称为<strong>主题配置文件</strong>。</p>
+<h2 id="下载NexT主题"><a href="#下载NexT主题" class="headerlink" title="下载NexT主题"></a>下载NexT主题</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd hexo</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
+
+<h2 id="启用NexT主题"><a href="#启用NexT主题" class="headerlink" title="启用NexT主题"></a>启用NexT主题</h2><p>修改<strong>站点配置文件</strong>，查找关键词theme，并修改为主题名字next：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Extensions    #(注意冒号间的空格)</span><br><span class="line">## Plugins: https:&#x2F;&#x2F;hexo.io&#x2F;plugins&#x2F;</span><br><span class="line">## Themes: https:&#x2F;&#x2F;hexo.io&#x2F;themes&#x2F;</span><br><span class="line">theme: next</span><br></pre></td></tr></table></figure>
+
+<p>在切换主题之后、验证之前， 我们最好使用 hexo clean 来清除 Hexo 的缓存。</p>
+<h2 id="主题设置"><a href="#主题设置" class="headerlink" title="主题设置"></a>主题设置</h2><h2 id="设置Scheme"><a href="#设置Scheme" class="headerlink" title="设置Scheme"></a>设置Scheme</h2><p>在Hexo主题中，有四种不同的模式！进入<strong>主题配置文件</strong>，搜索关键词找到scheme属性，选择自己喜欢的模式：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># ---------------------------------------------------------------</span><br><span class="line"># Scheme Settings</span><br><span class="line"># ---------------------------------------------------------------</span><br><span class="line"># Schemes</span><br><span class="line"># scheme: Muse    # 默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白</span><br><span class="line">scheme: Mist     # Muse 的紧凑版本，整洁有序的单栏外观</span><br><span class="line"># scheme: Pisces  # 默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白</span><br><span class="line"># scheme: Gemini  # 类似 Pisces</span><br></pre></td></tr></table></figure>
+
+<h2 id="设置语言"><a href="#设置语言" class="headerlink" title="设置语言"></a>设置语言</h2><p>编辑<strong>站点配置文件</strong>，搜索关键词language，并设置成你所需要的语言：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">language: zh-CN</span><br></pre></td></tr></table></figure>
+
+<h2 id="设置菜单"><a href="#设置菜单" class="headerlink" title="设置菜单"></a>设置菜单</h2><p>进入<strong>主题配置文件</strong>，找到menu字段，菜单内容的设置格式是：item name: link || menu photo，其中item name 是一个名称，link时具体菜单分类，菜单的||后面是菜单的图标,具体菜单图标可参考<a href="https://link.zhihu.com/?target=http%3A//fontawesome.dashgame.com/">Font Awesome</a>网站。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 菜单示例配置</span><br><span class="line">menu:</span><br><span class="line">  home: &#x2F; || home</span><br><span class="line">  reading: &#x2F;reading&#x2F; || book</span><br><span class="line">  archives: &#x2F;archives&#x2F; || archive</span><br><span class="line">  categories: &#x2F;categories&#x2F; || th</span><br><span class="line">  #tags: &#x2F;tags&#x2F; || tags</span><br><span class="line">  about: &#x2F;about&#x2F; || user</span><br></pre></td></tr></table></figure>
+
+<h2 id="头像设置"><a href="#头像设置" class="headerlink" title="头像设置"></a>头像设置</h2><p>在<strong>主题配置文件</strong>，搜索字段avatar，值设置成头像的链接地址。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 将头像放置主题目录下的 source&#x2F;uploads&#x2F; （新建uploads目录若不存在） 配置为：</span><br><span class="line">avatar: &#x2F;uploads&#x2F;avatar.png</span><br><span class="line"># 放置在 source&#x2F;images&#x2F; 目录下, 配置为：</span><br><span class="line">avatar: &#x2F;images&#x2F;avatar.png</span><br><span class="line"># 完整的互联网 URI</span><br><span class="line">avatar:</span><br><span class="line">   url: http:&#x2F;&#x2F;example.com&#x2F;avatar.png</span><br></pre></td></tr></table></figure>
+
+<h2 id="设置侧边栏"><a href="#设置侧边栏" class="headerlink" title="设置侧边栏"></a>设置侧边栏</h2><p>在<strong>主题配置文件</strong>，搜索sidebar关键词，设置为hide模式，如下图所示：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sidebar:</span><br><span class="line">  #display: post    &#x2F;&#x2F; 默认显示方式</span><br><span class="line">  #display: always  &#x2F;&#x2F; 一直显示</span><br><span class="line">  display: hide     &#x2F;&#x2F; 初始隐藏</span><br><span class="line">  #display: remove  &#x2F;&#x2F; 移除侧边栏</span><br></pre></td></tr></table></figure>
+
+<p>各位可根据个人喜好进行设置。</p>
+<h2 id="设置站点描述"><a href="#设置站点描述" class="headerlink" title="设置站点描述"></a>设置站点描述</h2><p>在<strong>站点配置文件</strong>中，搜索关键词Site，如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: Chloneda             #你的站点标题</span><br><span class="line">subtitle: Less is more</span><br><span class="line">description: Less is more   #你的站点描述</span><br><span class="line">keywords: chloneda</span><br><span class="line">author: chloneda            #站点作者</span><br></pre></td></tr></table></figure>
+
+<h2 id="进阶设定"><a href="#进阶设定" class="headerlink" title="进阶设定"></a>进阶设定</h2><h2 id="添加标签页面"><a href="#添加标签页面" class="headerlink" title="添加标签页面"></a>添加标签页面</h2><p>hexo根目录下，执行以下命令，新建标签页面。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
+
+<p>修改站点目录<strong>source/tags</strong>的 index.md 文件：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 添加标签页面测试</span><br><span class="line">tags: Test  #添加标签</span><br><span class="line">categories: Test    #添加分类</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>修改<strong>主题配置文件</strong>，搜索关键词menu，取消 <strong>#tags: /tags/ || tags</strong>注释，内容如下:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 菜单示例配置</span><br><span class="line">menu:</span><br><span class="line">  home: &#x2F; || home</span><br><span class="line">  reading: &#x2F;reading&#x2F; || book</span><br><span class="line">  archives: &#x2F;archives&#x2F; || archive</span><br><span class="line">  categories: &#x2F;categories&#x2F; || th</span><br><span class="line">  tags: &#x2F;tags&#x2F; || tags</span><br><span class="line">  about: &#x2F;about&#x2F; || user</span><br></pre></td></tr></table></figure>
+
+<h2 id="新添菜单翻译对应的中文"><a href="#新添菜单翻译对应的中文" class="headerlink" title="新添菜单翻译对应的中文"></a>新添菜单翻译对应的中文</h2><p>打开 <strong>hexo&gt;theme&gt;next&gt;languages&gt;zh-CN.yml</strong>文件，在menu下添加 <strong>tags: 标签</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: 首页</span><br><span class="line">  archives: 目录</span><br><span class="line">  categories: 分类</span><br><span class="line">  tags: 标签</span><br><span class="line">  about: 关于</span><br><span class="line">  search: 搜索</span><br><span class="line">  schedule: 日程表</span><br><span class="line">  sitemap: 站点地图</span><br><span class="line">  commonweal: 公益404</span><br><span class="line">  resources: 资源</span><br></pre></td></tr></table></figure>
+
+<p><strong>注：添加其他页面也类似。</strong></p>
+<h2 id="首页显示预览"><a href="#首页显示预览" class="headerlink" title="首页显示预览"></a>首页显示预览</h2><p>首页显示文章列表，列表里的每一篇文章只显示预览，不显示全文。</p>
+<p>进入<strong>主题配置文件</strong>，搜索关键词<strong>auto_excerpt</strong>，把enable对应的false改为true。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Automatically Excerpt. Not recommand.</span><br><span class="line"># Please use &lt;!-- more --&gt; in the post to control excerpt accurately.</span><br><span class="line">auto_excerpt:</span><br><span class="line">  enable: false</span><br><span class="line">  length: 150</span><br></pre></td></tr></table></figure>
+
+<h2 id="友情链接"><a href="#友情链接" class="headerlink" title="友情链接"></a>友情链接</h2><p>打开<strong>主题配置文件</strong>,搜索关键字 Blog rolls,添加自己需要的链接：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">links: #链接接</span><br><span class="line">  baidu: https:&#x2F;&#x2F;www.baidu.com&#x2F;</span><br><span class="line">  google: https:&#x2F;&#x2F;www.google.com&#x2F;</span><br></pre></td></tr></table></figure>
+
+<h2 id="本地搜索"><a href="#本地搜索" class="headerlink" title="本地搜索"></a>本地搜索</h2><p>在<strong>Hexo</strong>的根目录下执行以下命令。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+
+<p>打开<strong>主题配置文件</strong>,搜索关键字local_search,将enable的值设置为 true：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Local search</span><br><span class="line"># Dependencies: https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-generator-searchdb</span><br><span class="line">local_search:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure>
+
+<p>打开<strong>站点配置文件</strong>，搜索关键词search，修改为如下内容：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 本地搜索</span><br><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: 10000</span><br></pre></td></tr></table></figure>
+
+<h2 id="添加RSS"><a href="#添加RSS" class="headerlink" title="添加RSS"></a>添加RSS</h2><p>在Hexo根目录执行安装指令，安装 <strong>hexo-generator-feed</strong> 插件：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-feed --save</span><br></pre></td></tr></table></figure>
+
+<p>打开<strong>站点配置文件</strong>，追加feed信息:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 设置RSS</span><br><span class="line">feed:</span><br><span class="line">  type: rss2</span><br><span class="line">  path: rss2.html</span><br><span class="line">  limit: 5</span><br><span class="line">  hub:</span><br><span class="line">  content: &#39;true&#39;</span><br></pre></td></tr></table></figure>
+
+<p>打开<strong>主题配置文件</strong>，找到rss，设置为:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rss: &#x2F;atom.xml</span><br></pre></td></tr></table></figure>
+
+<h2 id="添加社交链接"><a href="#添加社交链接" class="headerlink" title="添加社交链接"></a>添加社交链接</h2><p>在<strong>主题配置文件</strong>中，找到social属性，添加社交链接，步骤如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">social:</span><br><span class="line">  E-Mail: mailto:yourname@gmail.com || envelope</span><br><span class="line">  Google: https:&#x2F;&#x2F;plus.google.com&#x2F;yourname || google</span><br><span class="line">  Twitter: https:&#x2F;&#x2F;twitter.com&#x2F;yourname || twitter</span><br><span class="line">  Facebook: https:&#x2F;&#x2F;www.facebook.com&#x2F;yourname || facebook</span><br></pre></td></tr></table></figure>
+
+<p>格式为： 社交平台名称：链接</p>
+<h2 id="设置代码高亮"><a href="#设置代码高亮" class="headerlink" title="设置代码高亮"></a>设置代码高亮</h2><p>首先需要改动的地方有： + 站点配置文件_config.yml。 + 主题配置文件_config.yml。</p>
+<p>在<strong>站点配置文件</strong>中，搜索highlight关键词:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">highlight:</span><br><span class="line">  enable: true</span><br><span class="line">  line_number: true</span><br><span class="line">  auto_detect: true</span><br><span class="line">  tab_replace:</span><br></pre></td></tr></table></figure>
+
+<p>文字自动检测默认不启动，改成true使其起作用。</p>
+<p>再到<strong>主题配置文件</strong>，搜索highlight_theme关键词，修改代码主题样式：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Code Highlight theme</span><br><span class="line"># Available values: normal | night | night eighties | night blue | night bright</span><br><span class="line"># https:&#x2F;&#x2F;github.com&#x2F;chriskempson&#x2F;tomorrow-theme</span><br><span class="line">highlight_theme: night</span><br></pre></td></tr></table></figure>
+
+<h2 id="添加复制按钮"><a href="#添加复制按钮" class="headerlink" title="添加复制按钮"></a>添加复制按钮</h2><p>在<strong>主题配置文件</strong>中，搜索关键词codeblock，将copy_button的enable值修改为true。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">codeblock:</span><br><span class="line">  # Manual define the border radius in codeblock</span><br><span class="line">  # Leave it empty for the default 1</span><br><span class="line">  border_radius:</span><br><span class="line">  # Add copy button on codeblock</span><br><span class="line">  copy_button:</span><br><span class="line">    enable: true</span><br></pre></td></tr></table></figure>
+
+<h2 id="添加阅读次数统计"><a href="#添加阅读次数统计" class="headerlink" title="添加阅读次数统计"></a>添加阅读次数统计</h2><p><strong>主题配置文件</strong>中，搜索关键词busuanzi_count，设置文章阅读次数统计及网站访客量:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Show Views&#x2F;Visitors of the website&#x2F;page with busuanzi.</span><br><span class="line"># Get more information on http:&#x2F;&#x2F;ibruce.info&#x2F;2015&#x2F;04&#x2F;04&#x2F;busuanzi</span><br><span class="line">busuanzi_count:</span><br><span class="line">  enable: true</span><br><span class="line">  total_visitors: true</span><br><span class="line">  total_visitors_icon: user</span><br><span class="line">  total_views: true</span><br><span class="line">  total_views_icon: eye</span><br><span class="line">  post_views: true</span><br><span class="line">  post_views_icon: eye</span><br></pre></td></tr></table></figure>
+
+<h2 id="添加-README-md"><a href="#添加-README-md" class="headerlink" title="添加 README.md"></a>添加 README.md</h2><p>每个项目<strong>README.md</strong>文件可以简单说明这个项目的用途。在Hexo目录下的 source 根目录下添加一个 README.md 文件，修改<strong>站点配置文件</strong>，将 skip_render 参数的值设置为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">skip_render: README.md</span><br></pre></td></tr></table></figure>
+
+<p>再次使用<strong>hexo d</strong>命令部署博客的时候就不会在渲染 README.md 这个文件。</p>
+<h2 id="进阶配置"><a href="#进阶配置" class="headerlink" title="进阶配置"></a>进阶配置</h2><h2 id="自定义网站头像"><a href="#自定义网站头像" class="headerlink" title="自定义网站头像"></a>自定义网站头像</h2><p>自定义头像可以使用 <strong>比特虫</strong> 网站制作！</p>
+<p>在<strong>主题配置文件</strong>中，按以下修改：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">favicon:</span><br><span class="line">  small: &#x2F;images&#x2F;favicon-16x16-next.png     #你的头像名称</span><br><span class="line">  medium: &#x2F;images&#x2F;favicon-32x32-next.png    #你的头像名称</span><br><span class="line">  apple_touch_icon: &#x2F;images&#x2F;apple-touch-icon-next.png</span><br><span class="line">  safari_pinned_tab: &#x2F;images&#x2F;logo.svg</span><br><span class="line">  #android_manifest: &#x2F;images&#x2F;manifest.json</span><br><span class="line">  #ms_browserconfig: &#x2F;images&#x2F;browserconfig.xml</span><br></pre></td></tr></table></figure>
+
+<h2 id="添加自定义页面-友链"><a href="#添加自定义页面-友链" class="headerlink" title="添加自定义页面[友链]"></a>添加自定义页面[友链]</h2><p><strong>设置菜单项的显示中文文本</strong>，打开<strong>themes/next/languages/zh-CN.yml</strong>文件,搜索 menu 关键字，修改对应中文或者新增。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: 首页</span><br><span class="line">  archives: 目录</span><br><span class="line">  categories: 分类</span><br><span class="line">  tags: 标签</span><br><span class="line">  about: 关于</span><br><span class="line">  search: 搜索</span><br><span class="line">  # schedule: 日程表</span><br><span class="line">  # sitemap: 站点地图</span><br><span class="line">  # commonweal: 公益404</span><br><span class="line">  # 新增menu</span><br><span class="line">  links: 友链 # 新增该选项表示新增“友链”菜单</span><br></pre></td></tr></table></figure>
+
+<p>在<strong>主题配置文件</strong>，搜索menu，新增<strong>links: /links/ || link</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 菜单示例配置</span><br><span class="line">menu:</span><br><span class="line">  home: &#x2F; || home</span><br><span class="line">  reading: &#x2F;reading&#x2F; || book</span><br><span class="line">  archives: &#x2F;archives&#x2F; || archive</span><br><span class="line">  categories: &#x2F;categories&#x2F; || th</span><br><span class="line">  #tags: &#x2F;tags&#x2F; || tags</span><br><span class="line">  about: &#x2F;about&#x2F; || user</span><br><span class="line">  links: &#x2F;links&#x2F; || link</span><br></pre></td></tr></table></figure>
+
+<p>hexo根目录下，执行以下命令，新建友链页面。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new page links</span><br></pre></td></tr></table></figure>
+
+<p>修改站点目录下<strong>source/links</strong>的 index.md 文件：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 友链</span><br><span class="line">tags: links</span><br><span class="line">categories: links</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p><strong>注：其它自定义菜单也是类似步骤</strong></p>
+<h2 id="增加背景音乐"><a href="#增加背景音乐" class="headerlink" title="增加背景音乐"></a>增加背景音乐</h2><p>在本博客的<strong>侧边栏</strong>增加网易云音乐，生成音乐外链可参考<strong>链接</strong> ，复制链接，将外链插入到Hexo根路径的侧边栏文件中：<strong>/themes/next/layout/_macro/sidebar.swig</strong>，即侧边栏友情链接<strong>theme.links</strong>这一项之后。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% if theme.links %&#125;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;div class&#x3D;&quot;links-of-blogroll-title&quot;&gt;</span><br><span class="line">       ....省略部分代码</span><br><span class="line">      &lt;&#x2F;div&gt;</span><br><span class="line">      &lt;ul class&#x3D;&quot;links-of-blogroll-list&quot;&gt;</span><br><span class="line">        ....省略部分代码</span><br><span class="line">      &lt;&#x2F;ul&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">    &lt;div id&#x3D;&quot;music163player&quot;&gt;</span><br><span class="line">    &lt;iframe frameborder&#x3D;&quot;no&quot; border&#x3D;&quot;0&quot; marginwidth&#x3D;&quot;0&quot; marginheight&#x3D;&quot;0&quot; width&#x3D;330 height&#x3D;86</span><br><span class="line">        src&#x3D;&quot;&#x2F;&#x2F;music.163.com&#x2F;outchain&#x2F;player?type&#x3D;2&amp;id&#x3D;5239700&amp;auto&#x3D;0&amp;height&#x3D;66&quot;&gt;</span><br><span class="line">    &lt;&#x2F;iframe&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="添加打赏功能"><a href="#添加打赏功能" class="headerlink" title="添加打赏功能"></a>添加打赏功能</h2><p>如今已进入知识付费时代，打赏是读者对笔者创造的最大支持，更是对劳动者的尊重。打赏功能具体步骤为： <strong>获取二维码</strong> - 微信二维码的获取（可百度）。 - 获取支付宝收款二维码（可百度）。</p>
+<p><strong>添加二维码图片资源</strong> 得到二维码图片资源后，读者们可将二维码图片放到<strong>NexT根目录/source/images/</strong>文件夹下。</p>
+<p><strong>开启打赏功能</strong> 打开<strong>主题配置文件</strong>，搜索reward关键词，添加打赏的配置信息。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Reward</span><br><span class="line"># If true, reward would be displayed in every article by default.</span><br><span class="line"># And you can show or hide one article specially through add page variable &#96;reward: true&#x2F;false&#96;.</span><br><span class="line">reward:</span><br><span class="line">  enable: true  &#x2F;&#x2F;默认是false，改为true</span><br><span class="line">  comment: 您的支持是对我最大的鼓励</span><br><span class="line">  wechatpay: &#x2F;images&#x2F;wechatpay.jpg  #图片链接或图片相对路径</span><br><span class="line">  alipay: &#x2F;images&#x2F;alipay.jpg      #图片链接或图片相对路径</span><br></pre></td></tr></table></figure>
+
+<h2 id="开启版权声明"><a href="#开启版权声明" class="headerlink" title="开启版权声明"></a>开启版权声明</h2><p>打开<strong>主题配置文件</strong>,搜索关键字 creative_commons , post 改为 true：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">creative_commons:</span><br><span class="line">  license: by-nc-sa</span><br><span class="line">  sidebar: false</span><br><span class="line">  post: true</span><br></pre></td></tr></table></figure>
+
+<h2 id="优化及设置"><a href="#优化及设置" class="headerlink" title="优化及设置"></a>优化及设置</h2><h2 id="优化url"><a href="#优化url" class="headerlink" title="优化url"></a>优化url</h2><p>seo搜索引擎优化认为，网站的最佳结构是三层，但是默认hexo编译的站点打开文章的url是：sitename/year/mounth/day/title四层的结构，url不利于搜索引擎搜索。</p>
+<p>因此，我们可以将url直接改成sitename/blog/title的形式，同时title最好是用英文，在<strong>站点配置文件</strong>搜索permalink关键词，并修改如下。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">url: https:&#x2F;&#x2F;chloneda.github.io&#x2F;</span><br><span class="line">root: &#x2F;</span><br><span class="line">permalink: &#x2F;blog&#x2F;:title.html</span><br><span class="line">permalink_defaults:</span><br></pre></td></tr></table></figure>
+
+<h2 id="Hexo博客备份"><a href="#Hexo博客备份" class="headerlink" title="Hexo博客备份"></a>Hexo博客备份</h2><p>利用github分支功能进行博客备份，思路说明: + master分支：存放博客的静态网页(默认分支)。 + hexo分支：存放Hexo博客的源码文件。</p>
+<p><strong>master分支部署</strong> 进入<strong>站点配置文件</strong>编辑，搜索deploy关键词：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https:&#x2F;&#x2F;github.com&#x2F;你的github用户名&#x2F;你的github用户名.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改更新博客内容并保存。</li>
+<li>执行hexo clean清除本地旧代码。</li>
+<li>执行hexo g -d生成静态网站并部署到GitHub的master分支上。</li>
+</ul>
+<p><strong>hexo分支配置</strong> - hexo分支，该分支为博客源码分支。 - 使用git clone -b hexo 你的github仓库路径， 拷贝源码仓库。 - 修改hexo主配置_config.xml的deploy部分配置，设置静态页面的发布分支为master。 - 添加.gitignore文件，将静态网页的目录及其他无需提交的源文件及目录排除掉。</p>
+<p><strong>博客源码更新</strong> 在本地对博客进行修改后，提交hexo源代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git checkout hexo</span><br><span class="line">git add .</span><br><span class="line">git commit -m &#39;Code update&#39;</span><br><span class="line">git push origin hexo</span><br></pre></td></tr></table></figure>
+
+<p><strong>发布hexo静态文件</strong> hexo根目录依次执行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate   或者   hexo g</span><br><span class="line">hexo deploy 或者   hexo d</span><br></pre></td></tr></table></figure>
+
+<p>本地资料丢失或其他主机搭建博客步骤： + 拷贝hexo分支源码到本地：git clone -b hexo github项目地址.git。 + 安装hexo及各类插件。 + 本地安装调试。</p>
+<h2 id="Hexo部署脚本"><a href="#Hexo部署脚本" class="headerlink" title="Hexo部署脚本"></a>Hexo部署脚本</h2><p>Hexo修改后利用deploy.sh脚本一键部署，提高部署效率。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line">DIR&#x3D;&#96;dirname $0&#96;</span><br><span class="line"></span><br><span class="line"># Generate blog</span><br><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">sleep 5</span><br><span class="line"></span><br><span class="line"># Deploy</span><br><span class="line">hexo deploy</span><br><span class="line">sleep 5</span><br><span class="line"></span><br><span class="line"># Push hexo code</span><br><span class="line">git add .</span><br><span class="line">current_date&#x3D;&#96;date &quot;+%Y-%m-%d %H:%M:%S&quot;&#96;</span><br><span class="line">git commit -m &quot;Blog updated: $current_date&quot;</span><br><span class="line"></span><br><span class="line">sleep 2</span><br><span class="line">git push origin hexo</span><br><span class="line"></span><br><span class="line">echo &quot;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&gt;Finish!&lt;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&quot;</span><br></pre></td></tr></table></figure>
+
+<p>把该脚本存放至 hexo根目录中，并附加脚本执行权限:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">chmod 775 deploy.sh</span><br></pre></td></tr></table></figure>
+
+<p>在hexo目录根执行脚本:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.&#x2F;deploy.sh</span><br></pre></td></tr></table></figure>
+
+<p>可一键部署博客及备份博客源码至github的分支hexoCode上。</p>
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用github搭建个人博客</title>
+    <url>//blog/%E4%BD%BF%E7%94%A8github%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2.html</url>
+    <content><![CDATA[<h5 id="步骤一：创建一个自己的github账号"><a href="#步骤一：创建一个自己的github账号" class="headerlink" title="步骤一：创建一个自己的github账号"></a>步骤一：创建一个自己的github账号</h5><h5 id="步骤二：创建一个自己的项目"><a href="#步骤二：创建一个自己的项目" class="headerlink" title="步骤二：创建一个自己的项目"></a>步骤二：创建一个自己的项目</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">注意： 我自己的 github 账号是 vitaair，然后我的github.io的前缀也是vitaair【必须是你的用户名，其它名称无效】</span><br></pre></td></tr></table></figure>
+
+<p>所以我的博客地址就是：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">vitaair.github.io</span><br></pre></td></tr></table></figure>
+
+<h5 id="步骤三：创建好之后，拉取到本地"><a href="#步骤三：创建好之后，拉取到本地" class="headerlink" title="步骤三：创建好之后，拉取到本地"></a>步骤三：创建好之后，拉取到本地</h5><figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">git</span>@github.com:vitaair/vitaair.github.io.git</span><br></pre></td></tr></table></figure>
+
+<h5 id="步骤四：然后采用下面的命令进行添加"><a href="#步骤四：然后采用下面的命令进行添加" class="headerlink" title="步骤四：然后采用下面的命令进行添加"></a>步骤四：然后采用下面的命令进行添加</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">echo <span class="string">"# vitaair.github.io"</span> &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m <span class="string">"first commit"</span></span><br><span class="line">git remote add origin https:<span class="comment">//github.com/vitaair/vitaair.github.io.git</span></span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+
+<p>仓库地址：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">https:<span class="comment">//github.com/vitaair/vitaair.github.io</span></span><br></pre></td></tr></table></figure>
+
+<p>然后就可以访问了：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">ping vitaair.github.io</span><br></pre></td></tr></table></figure>
+
+<h5 id="步骤五：SSH-授权"><a href="#步骤五：SSH-授权" class="headerlink" title="步骤五：SSH 授权"></a>步骤五：SSH 授权</h5><p>本地生成 SSH 秘钥</p>
+<figure class="highlight excel"><table><tr><td class="code"><pre><span class="line">ssh-keygen -<span class="built_in">t</span> rsa -C <span class="string">"vitaair@outlook.com"</span></span><br></pre></td></tr></table></figure>
+
+<p>生成密钥目录</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">私钥：<span class="selector-tag">id_rsa</span></span><br><span class="line">公钥：<span class="selector-tag">id_rsa</span><span class="selector-class">.pub</span></span><br></pre></td></tr></table></figure>
+
+<p>现在用记事本打开 id_rsa.pub，复制文件中的所有内容</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">ssh-rsa nTZ34Fj3YtEhct8oEHPk3wshYNCsSj4UdeFNcK26QzpWDv+<span class="number">91</span>nx9uZio62vo/<span class="number">4f</span>LI45yEIq50fRn5chLyin463NtimcN8B+N2k= vitaair<span class="meta">@outlook</span>.com</span><br></pre></td></tr></table></figure>
+
+<p>访问：</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">https:<span class="regexp">//gi</span>thub.com<span class="regexp">/settings/</span>ssh</span><br></pre></td></tr></table></figure>
+
+<p>添加新秘钥</p>
+<figure class="highlight gauss"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Title</span>：自己随便取</span><br><span class="line"><span class="built_in">Key</span>：  把刚刚复制的都粘贴进来</span><br></pre></td></tr></table></figure>
+
+<h5 id="步骤六：采用hexo搭建自己博客"><a href="#步骤六：采用hexo搭建自己博客" class="headerlink" title="步骤六：采用hexo搭建自己博客"></a>步骤六：采用hexo搭建自己博客</h5><p>安装cnpm，输入以下命令：</p>
+<figure class="highlight coffeescript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">npm</span> install -g cnpm --registry=https://registry.<span class="built_in">npm</span>.taobao.org</span><br></pre></td></tr></table></figure>
+
+<p>新建一个空白的文件夹，比如hexo_blog, 然后采用命令行窗口进入：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<p>检查是否安装成功：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">hexo -version</span><br></pre></td></tr></table></figure>
+
+<p>然后运行初始化命令：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+
+<p>运行成功会得到如下提示：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">INFO  Start blogging with Hexo!</span><br></pre></td></tr></table></figure>
+
+<p>运行下面来启动服务：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+
+<p>在浏览器输入地址，可以看到博客已经生成</p>
+<figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">http:</span><span class="comment">//localhost:4000/</span></span><br></pre></td></tr></table></figure>
+
+<p>下载yelee主题：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">git clone https:<span class="comment">//github.com/MOxFIVE/hexo-theme-yelee.git themes/yelee</span></span><br></pre></td></tr></table></figure>
+
+<p>下载好主题文件之后，我们现在要修改目录下的项目配置文件：<strong>_config.yml</strong>，该成对应主题目录名，如下:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">theme: yelee</span><br></pre></td></tr></table></figure>
+
+<p>更改主题目录名后，需要重新生成主题静态内容：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>重启 hexo 本地服务</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+
+<p>重新访问</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">http:<span class="comment">//localhost:4000/</span></span><br></pre></td></tr></table></figure>
+
+<p>要把本地的静态博客同步到 Github，我们还需要先安装两个跟部署相关的 hexo 插件：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">cnpm install hexo -server --save</span><br><span class="line">cnpm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>在配置文件<strong>_config.yml</strong> 中配置</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:vitaair/vitaair.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+
+<p>先清除掉已经生成的旧文件：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+
+<p>再生成一次静态文件</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>重启 hexo 本地服务</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+
+<p>本地没问题之后， 停掉本地预览</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Ctrl + C</span><br></pre></td></tr></table></figure>
+
+<p>部署到 Github 上,有弹出下面提示框，请输入：yes</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>访问服务器地址进行检查</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">http:<span class="comment">//vitaair.github.io</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用gitee搭建自个人博客</title>
+    <url>//blog/%E4%BD%BF%E7%94%A8%20gitee%20%E6%90%AD%E5%BB%BA%E8%87%AA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2.html</url>
+    <content><![CDATA[<h2 id="gitee-pages介绍"><a href="#gitee-pages介绍" class="headerlink" title="gitee pages介绍"></a>gitee pages介绍</h2><p>​       码云 Pages 是一个免费的静态网页托管服务，我们可以使用 码云 Pages 托管博客、项目官网等静态网页。</p>
+<h2 id="搭建步骤"><a href="#搭建步骤" class="headerlink" title="搭建步骤"></a>搭建步骤</h2><h3 id="步骤1、新建仓库"><a href="#步骤1、新建仓库" class="headerlink" title="步骤1、新建仓库"></a>步骤1、新建仓库</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">点击右上角图像旁边 + 号，选择“新建仓库”</span><br><span class="line">是否开源：私有</span><br><span class="line">（私有：别人无法查看你创建的私有仓库；公开：所有人都能够查看你创建的仓库并且能够下载源码）</span><br><span class="line">仓库名称：vitaair（即gitee的用户名）</span><br><span class="line">路径：vitaair（即gitee的用户名）</span><br><span class="line">使用readme文件初始化这个仓库，画勾</span><br><span class="line">之后，点”创建“，仓库新建成功</span><br><span class="line">注意：之后在步骤<span class="number">3</span>后会生成响应博客地址 vitaair.gitee.io</span><br></pre></td></tr></table></figure>
+
+<h3 id="步骤2、在配置文件-config-yml-中配置"><a href="#步骤2、在配置文件-config-yml-中配置" class="headerlink" title="步骤2、在配置文件_config.yml 中配置"></a>步骤2、在配置文件<strong>_config.yml</strong> 中配置</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span></span><br><span class="line">    <span class="attr">github:</span> <span class="string">git@github.com:vitaair/vitaair.github.io.git</span></span><br><span class="line">    <span class="attr">gitee:</span> <span class="string">git@gitee.com:vitaair/vitaair.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="步骤3、hexo更新代码到Gitee"><a href="#步骤3、hexo更新代码到Gitee" class="headerlink" title="步骤3、hexo更新代码到Gitee"></a>步骤3、hexo更新代码到Gitee</h3><p>本地执行如下命令：（前提，已经安装好hexo，参考博客使用 github.io 搭建了属于自己的个人博客）</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+
+<h3 id="步骤4、启动-Gitee-Pages-服务"><a href="#步骤4、启动-Gitee-Pages-服务" class="headerlink" title="步骤4、启动 Gitee Pages 服务"></a>步骤4、启动 Gitee Pages 服务</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">点击gitee页面右上方 service（服务）-&gt; Gitee Pages页面，</span><br><span class="line">进入后点击左下角 “更新” 按钮</span><br><span class="line">更新成功后，页面中间会出现一行橙色字体 “ 已开启Gitee 服务，网站地址是 http:<span class="comment">//vitaair.gitee.io ”</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo 首页只显示最新一篇文章以及标签及分类设置</title>
+    <url>//blog/%E9%A6%96%E9%A1%B5%E5%8F%AA%E6%98%BE%E7%A4%BA%E6%9C%80%E6%96%B0%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E4%BB%A5%E5%8F%8A%E6%A0%87%E7%AD%BE%E5%8F%8A%E5%88%86%E7%B1%BB%E8%AE%BE%E7%BD%AE.html</url>
+    <content><![CDATA[<h3 id="0、创建“分类”选项"><a href="#0、创建“分类”选项" class="headerlink" title="0、创建“分类”选项"></a>0、创建“分类”选项</h3><h4 id="0-1-更改博客配置文件-config-yml-中的per-page为-1"><a href="#0-1-更改博客配置文件-config-yml-中的per-page为-1" class="headerlink" title="0.1  更改博客配置文件_config.yml 中的per_page为 1"></a>0.1  更改博客配置文件_config.yml 中的per_page为 1</h4><figure class="highlight sas"><table><tr><td class="code"><pre><span class="line"># Home <span class="meta">page</span> setting</span><br><span class="line"># path: Root path for your blogs <span class="meta">index</span> <span class="meta">page</span>. (default = <span class="string">''</span>)</span><br><span class="line"># per_page: Posts displayed per <span class="meta">page</span>. (0 = disable pagination)</span><br><span class="line"># order_by: Posts <span class="meta">order</span>. (<span class="meta">Order</span> <span class="meta">by</span> date descending <span class="meta">by</span> default)</span><br><span class="line">index_generator:</span><br><span class="line">  path: <span class="string">''</span></span><br><span class="line">  per_page: 1</span><br><span class="line">  order_by: -date</span><br></pre></td></tr></table></figure>
+
+<h3 id="1、创建“分类”选项"><a href="#1、创建“分类”选项" class="headerlink" title="1、创建“分类”选项"></a>1、创建“分类”选项</h3><h4 id="1-1-生成“分类”页并添加tpye属性"><a href="#1-1-生成“分类”页并添加tpye属性" class="headerlink" title="1.1 生成“分类”页并添加tpye属性"></a>1.1 生成“分类”页并添加tpye属性</h4><p>打开命令行，进入博客所在文件夹。执行命令</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">$ hexo new<span class="built_in"> page </span>categories</span><br></pre></td></tr></table></figure>
+
+<p>成功后会提示：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">INFO  <span class="string">Created:</span> <span class="regexp">~/Documents/</span>blog<span class="regexp">/source/</span>categories/index.md</span><br></pre></td></tr></table></figure>
+
+<p>根据上面的路径，找到<code>index.md</code>这个文件，打开后默认内容是这样的：</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">---title: 文章分类date: <span class="number">2017</span><span class="number">-05</span><span class="number">-27</span> <span class="number">13</span>:<span class="number">47</span>:<span class="number">40</span>---</span><br></pre></td></tr></table></figure>
+
+<p>添加<code>type: &quot;categories&quot;</code>到内容中，添加后是这样的：</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">---title: 文章分类date: <span class="number">2017</span><span class="number">-05</span><span class="number">-27</span> <span class="number">13</span>:<span class="number">47</span>:<span class="number">40</span>type: <span class="string">"categories"</span>---</span><br></pre></td></tr></table></figure>
+
+<p>保存并关闭文件。</p>
+<h4 id="1-2-给文章添加“categories”属性"><a href="#1-2-给文章添加“categories”属性" class="headerlink" title="1.2 给文章添加“categories”属性"></a>1.2 给文章添加“categories”属性</h4><p>打开需要添加分类的文章，为其添加categories属性。下方的<code>categories: web前端</code>表示添加这篇文章到“web前端”这个分类。注意：hexo一篇文章只能属于一个分类，也就是说如果在“- web前端”下方添加“-xxx”，hexo不会产生两个分类，而是把分类嵌套（即该文章属于 “- web前端”下的 “-xxx ”分类）。</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">---title: jQuery对表单的操作及更多应用date: <span class="number">2017</span><span class="number">-05</span><span class="number">-26</span> <span class="number">12</span>:<span class="number">12</span>:<span class="number">57</span>categories: - web前端---</span><br></pre></td></tr></table></figure>
+
+<p>至此，成功给文章添加分类，点击首页的“分类”可以看到该分类下的所有文章。当然，只有添加了<code>categories: xxx</code>的文章才会被收录到首页的“分类”中。</p>
+<h3 id="2、创建“标签”选项"><a href="#2、创建“标签”选项" class="headerlink" title="2、创建“标签”选项"></a>2、创建“标签”选项</h3><h4 id="2-1-生成“标签”页并添加tpye属性"><a href="#2-1-生成“标签”页并添加tpye属性" class="headerlink" title="2.1 生成“标签”页并添加tpye属性"></a>2.1 生成“标签”页并添加tpye属性</h4><p>打开命令行，进入博客所在文件夹。执行命令</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">$ hexo new<span class="built_in"> page </span>tags</span><br></pre></td></tr></table></figure>
+
+<p>成功后会提示：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">INFO  <span class="string">Created:</span> <span class="regexp">~/Documents/</span>blog<span class="regexp">/source/</span>tags/index.md</span><br></pre></td></tr></table></figure>
+
+<p>根据上面的路径，找到<code>index.md</code>这个文件，打开后默认内容是这样的：</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">---title: 标签date: <span class="number">2017</span><span class="number">-05</span><span class="number">-27</span> <span class="number">14</span>:<span class="number">22</span>:<span class="number">08</span>---</span><br></pre></td></tr></table></figure>
+
+<p>添加<code>type: &quot;tags&quot;</code>到内容中，添加后是这样的：</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">---title: 文章分类date: <span class="number">2017</span><span class="number">-05</span><span class="number">-27</span> <span class="number">13</span>:<span class="number">47</span>:<span class="number">40</span>type: <span class="string">"tags"</span>---</span><br></pre></td></tr></table></figure>
+
+<p>保存并关闭文件。</p>
+<h4 id="2-2-给文章添加“tags”属性"><a href="#2-2-给文章添加“tags”属性" class="headerlink" title="2.2 给文章添加“tags”属性"></a>2.2 给文章添加“tags”属性</h4><p>打开需要添加标签的文章，为其添加tags属性。下方的<code>tags:</code>下方的<code>- jQuery</code> <code>- 表格</code><br><code>- 表单验证</code>就是这篇文章的标签了</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">---title: jQuery对表单的操作及更多应用date: <span class="number">2017</span><span class="number">-05</span><span class="number">-26</span> <span class="number">12</span>:<span class="number">12</span>:<span class="number">57</span>categories: - web前端tags:- jQuery- 表格- 表单验证---</span><br></pre></td></tr></table></figure>
+
+<p>至此，成功给文章添加分类，点击首页的“标签”可以看到该标签下的所有文章。当然，只有添加了<code>tags: xxx</code>的文章才会被收录到首页的“标签”中。</p>
+<p>细心的朋友可能已经发现，这两个的设置几乎一模一样！是的，没错，思路都是一样的。所以我们可以打开scaffolds/post.md文件，在tages:上面加入categories:,保存后，之后执行<code>hexo new 文章名</code>命令生成的文件，页面里就有<code>categories:</code>项了。</p>
+<p>scaffolds目录下，是新建页面的模板，执行新建命令时，是根据这里的模板页来完成的，所以可以在这里根据你自己的需求添加一些默认值。</p>
+<p>教程结束，赶紧去设置吧！</p>
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>//blog/hello-world.html</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+</search>
